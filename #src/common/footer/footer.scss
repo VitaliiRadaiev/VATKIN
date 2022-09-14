@@ -1,0 +1,190 @@
+.footer {
+    position: relative;
+    z-index: 30;
+    padding-top: 2rem;
+
+    @media (min-width: 768px) {
+        border-top: 1px solid #000;
+        padding-top: 0;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        min-height: 5.9rem;
+        font-family: $titleFontFamily;
+        padding: 1.5rem 0;
+
+        @media (max-width: $md2+px) {
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: $md3+px) {
+            gap: 2rem 1rem;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__copy {
+        font-size: 1.2rem;
+        line-height: 1.25em;
+
+        @media (max-width: $md3+px) {
+            font-weight: 300;
+            order: 5;
+            flex: 0 1 calc(50% - 0.5rem);
+        }
+    }
+
+    &__social {
+        padding-left: 0;
+        margin-bottom: 0;
+        font-weight: 300;
+        font-size: 1.8rem;
+        line-height: 1.78em;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (max-width: $md2+px) {
+            flex: 0 1 100%;
+            order: -1;
+            justify-content: space-between;
+        }
+
+        @media (max-width: $md3+px) {
+            flex-wrap: wrap;
+            gap: 0.2rem 1rem;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 32px;
+            order: 3;
+
+            & > li {
+                flex: 0 1 calc(50% - 0.5rem);
+            }
+        }
+    }
+
+    &__language {
+        margin-left: auto;
+        display: flex;
+
+        @media (max-width: $md3+px) {
+            flex: 0 1 calc(50% - 0.5rem);
+            margin-left: -1rem;
+            order: 1;
+        }
+    }
+
+    &__currency {
+        margin-right: auto;
+        display: flex;
+        @media (max-width: $md3+px) {
+            flex: 0 1 calc(50% - 0.5rem);
+            margin-right: 0;
+            order: 2;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @media (max-width: $md3+px) {
+            order: 4;
+            flex: 0 1 calc(50% - 0.5rem);
+            gap: 0.7rem;
+        }
+    }
+
+    &__logo-label {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.25em;
+        text-transform: uppercase;
+
+        @media (max-width: $md3+px) {
+            font-weight: 300;
+            text-transform: none;
+        }
+    }
+
+    &__logo-img {
+        width: 100%;
+        max-width: 11.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: $md3+px) {
+            max-width: 76px;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+    font-family: $titleFontFamily;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    cursor: pointer;
+    align-self: center;
+    height: 100%;
+
+    &:hover {
+        & .dropdown__list {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &__title {
+        padding: 0 1rem;
+        position: relative;
+        padding-right: 1.8rem;
+        &:before {
+            font-family: "icomoon" !important;
+            position: absolute;
+            content: "\e910";
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+        }
+    }
+
+    &__list {
+        position: absolute;
+        bottom: 100%;
+        background-color: #fff;
+        padding: 1rem;
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-2rem);
+
+        @media (max-width: $md3+px) {
+            bottom: auto;
+            top: 100%;
+        }
+
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
