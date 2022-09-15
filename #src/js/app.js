@@ -10,8 +10,7 @@ class App {
 	init() {
 		window.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.add('page-is-load');
-			
-			this.homePreloadHandler();
+		
 
 			if (this.utils.isMobile()) {
 				document.body.classList.add('mobile');
@@ -44,10 +43,6 @@ class App {
 			//this.setFontSize();
 		});
 
-	}
-
-	homePreloadHandler() {
-		console.log('test');
 	}
 
 	headerHandler() {

@@ -9,7 +9,11 @@
 
             function mobileSlider() {
                 if (document.documentElement.clientWidth > 767 && slider.dataset.mobile == 'false') {
-                        sliderData = new Swiper(slider, {
+                    sliderData = new Swiper(slider, {
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        },
                         observer: true,
                         observeParents: true,
                         speed: 600,
@@ -68,8 +72,8 @@
         // })
 
         window.addEventListener('scroll', () => {
-            if(document.documentElement.clientWidth < 768) {
-                if(window.pageYOffset <= 0) {
+            if (document.documentElement.clientWidth < 768) {
+                if (window.pageYOffset <= 0) {
                     slidesWrapper.classList.remove('last-slide');
                 } else {
                     slidesWrapper.classList.add('last-slide');

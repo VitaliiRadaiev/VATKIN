@@ -1,6 +1,6 @@
 <div class="top-line @@mod">
     <div class="top-line__body container">
-        <button class="top-line__burger">
+        <button class="top-line__burger" data-action="open-menu">
             <picture>
                 <source srcset="img/icons/burger.svg" media="(min-width: 992px)">
                 <img src="img/icons/burger-mob.svg" alt="img">
@@ -16,101 +16,100 @@
                 d="M257.24 52.6652C256.609 53.1398 255.979 53.6037 255.332 54.0568C255.186 54.1647 255.03 54.2619 254.879 54.3644C254.405 54.6952 253.925 55.0188 253.44 55.3352C251.925 56.3331 250.378 57.2825 248.793 58.1401C248.448 58.3235 248.098 58.4961 247.753 58.6795L247.419 58.852C245.612 59.7671 243.748 60.5654 241.839 61.2416C239.482 62.0941 237.052 62.7261 234.578 63.1294C229.663 63.8949 224.649 63.7394 219.792 62.6709C214.905 61.5677 210.168 59.8797 205.684 57.6436C204.18 56.9209 202.698 56.1442 201.226 55.3405C198.24 53.7223 195.297 51.9316 192.386 50.1139L191.626 49.634V0.0107982H183.001V44.0622L179.362 41.6781C170.656 35.9661 161.799 30.2053 152.328 25.3563C151.329 24.8421 150.324 24.3404 149.315 23.8514C158.791 19.0616 169.858 10.5126 177.47 0.0107982H176.128C168.43 10.3616 157.395 18.7219 148.096 23.2635C147.202 22.832 146.296 22.4166 145.401 22.0067V0H136.776V18.4415C132.106 16.6861 127.333 15.2145 122.486 14.0348C119.176 13.2365 115.85 12.5836 112.486 12.0982V0.900727H132.291L132.065 0H84.0882L83.8618 0.900727H103.883V11.3323C99.4432 11.2136 95.0055 11.6283 90.6648 12.5675C88.0452 13.1403 85.4721 13.9082 82.967 14.8652C80.8276 15.6925 78.741 16.651 76.7193 17.7348L70.2505 0H61.0865L63.0541 5.39383C62.2078 7.59451 61.3992 9.74656 60.6337 11.78L53.9763 29.7793C50.1382 39.8442 45.7287 50.3026 43.6155 55.3513H44.8014C45.2597 54.1808 45.8795 52.7408 46.4994 51.4571C47.2956 49.8809 48.1849 48.3536 49.1625 46.8831C50.5641 44.6932 52.0483 42.5607 53.6152 40.4858C56.7293 36.343 60.2448 32.5182 64.1107 29.0672C65.9611 27.4192 67.9049 25.8795 69.9325 24.4555L81.2528 55.3513H90.4169L77.4794 19.968C79.5268 18.9544 81.637 18.0733 83.7972 17.3303C90.2353 15.1403 97.0455 14.2582 103.829 14.7358V55.3513H112.454V15.9118C112.923 16.0143 113.392 16.1111 113.855 16.2244C116.346 16.8231 118.82 17.4866 121.246 18.3011C126.569 20.0746 131.75 22.2512 136.744 24.8116V55.3352H145.369V29.4933C146.544 30.1729 147.719 30.8581 148.883 31.5539C157.702 36.8291 166.317 42.5625 175.163 48.1721C177.154 49.4234 179.159 50.6659 181.179 51.8993C181.782 52.2607 182.386 52.6274 182.99 52.978C184.327 53.7763 185.674 54.5602 187.033 55.3297C188.391 56.0992 189.782 56.8616 191.205 57.6168L191.615 57.8325C195.389 59.8309 199.265 61.6313 203.226 63.2263C208.274 65.2908 213.551 66.7396 218.945 67.5414C221.67 67.918 224.423 68.0553 227.171 67.9514C229.915 67.8421 232.641 67.4644 235.311 66.824C237.959 66.1855 240.542 65.3007 243.025 64.181C244.642 63.431 246.216 62.5938 247.742 61.673C248.179 61.4141 248.61 61.1336 249.036 60.8747L249.623 60.497C249.763 60.4053 249.909 60.3191 250.044 60.222C252.267 58.7376 254.385 57.1012 256.383 55.3244L257.229 54.5585C258.89 53.0375 260.464 51.4463 261.984 49.8065L261.472 49.2671C260.092 50.4484 258.679 51.581 257.24 52.6652ZM62.957 27.7835C59.1644 31.4514 55.7245 35.4678 52.6826 39.7795C51.2163 41.8435 49.8308 43.9633 48.5263 46.1388C49.6044 43.5282 63.5069 6.82314 63.5069 6.82314L69.2263 22.4652C67.0275 24.1051 64.9336 25.8813 62.957 27.7835ZM200.542 0H211.571L246.68 44.073V0.00526741H247.758V55.3352H244.626L205.323 5.99774V55.3297H204.245V4.65481L200.542 0ZM27.2334 55.3352H23.7781L0 0H9.38514L29.546 46.8992C35.756 32.201 49.2271 0 49.2271 0H50.6664L27.2334 55.3352Z"
                 fill="currentColor" />
         </svg>
-
     </a>
 </div>
 
-<!-- <header class="header @@mod" data-header data-popup="add-right-padding">
-    <div class="container">
-        <div class="header__body">
-            <div class="header__burger burger" data-side-panel-open="menu-mobile">
-                <span class="burger__cross"></span>
-                <span class="burger__cross"></span>
-                <span class="burger__cross"></span>
-                <span class="burger__cross"></span>
-            </div>
-            <div class="header__logo">
-                <a href="#">
-                    <img src="img/logo/logo.svg" alt="">
-                </a>
-            </div>
-            <nav class="header__menu menu">
-                <ul class="menu__list">
-                    <li class="menu__list-item menu__list-item--has-sab-menu" data-menu-item-has-sab-menu>
-                        <a class="menu__link" href="#">
-                            Catalog
-                        </a>
-                        <div class="menu__sub-menu-wrap">
-                            <ul class="sub-menu">
-                                <li><a class="sub-menu__link" href="#">Swedish wall
-                                        
-                                    </a></li>
-                                <li><a class="sub-menu__link" href="#">Bed</a></li>
-                                <li><a class="sub-menu__link" href="#">Slides board</a></li>
-                                <li><a class="sub-menu__link" href="#">Mats</a></li>
-                                <li><a class="sub-menu__link" href="#">A rock</a></li>
-                                <li><a class="sub-menu__link" href="#">Equipment</a></li>
-                                <li><a class="sub-menu__link" href="#">Walls for climbing</a></li>
-                                <li><a class="sub-menu__link" href="#">Playground</a></li>
-                                <li><a class="sub-menu__link" href="#">Toys</a></li>
-                            </ul>
-                            <div class="menu__img">
-                                <a href="#">
-                                    <img src="img/photo/header-img.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="menu__list-item">
-                        <a class="menu__link" href="#">About Us</a>
-                    </li>
-                    <li class="menu__list-item">
-                        <a class="menu__link" href="#">Gallery</a>
-                    </li>
-                    <li class="menu__list-item">
-                        <a class="menu__link" href="#">Blog</a>
-                    </li>
-                    <li class="menu__list-item">
-                        <a class="menu__link" href="#">
-                            FAQ
-                        </a>
-                    </li>
-                    <li class="menu__list-item">
-                        <a class="menu__link" href="#">
-                            Shipping and payment
-                        </a>
-                    </li>
-                    <li class="menu__list-item">
-                        <a class="menu__link" href="#">
-                            Contacts
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__search">
-                <a href="#" data-action="show-main-search">
-                    <img class="img-svg" src="img/icons/search.svg" alt="">
-                </a>
-            </div>
-            <div class="header__actions">
-                <div class="header-actions">
-                    <div class="header-actions__item">
-                        <a class="header-actions__link" href="#">
-                            <img class="img-svg" src="img/icons/user.svg" alt="">
-                        </a>
+<div class="menu" data-menu>
+    <button class="menu__close" data-action="close-menu"><span></span></button>
+    <div class="menu__scroll-wrap">
+        <div class="menu__col-1">
+            <div class="menu__inner">
+                <div class="menu__lists-wrap">
+                    <div class="menu__col">
+                        <a href="#" class="menu__title">Gallery</a>
+                        <ul class="menu__list">
+                            <li>
+                                <a href="#">Unconscious</a>
+                            </li>
+                            <li>
+                                <a href="#">Feeling of Seasons</a>
+                            </li>
+                            <li>
+                                <a href="#">Concrete Jungles </a>
+                            </li>
+                            <li>
+                                <a href="#">Nature Breeze</a>
+                            </li>
+                            <li>
+                                <a href="#">The War</a>
+                            </li>
+                            <li>
+                                <a href="#">Metallic Shapes</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="header-actions__item">
-                        <a class="header-actions__link" href="#">
-                            <img class="img-svg" src="img/icons/like.svg" alt="">
-                        </a>
+                    <div class="menu__col">
+                        <a href="#" class="menu__title">About</a>
+                        <ul class="menu__list">
+                            <li>
+                                <a href="#">Press</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="header-actions__item">
-                        <a class="header-actions__link" href="#">
-                            <img class="img-svg" src="img/icons/bag.svg" alt="">
-                        </a>
+                    <div class="menu__col">
+                        <a href="#" class="menu__title">Shop</a>
+                        <ul class="menu__list">
+                            <li>
+                                <a href="#">Shop all</a>
+                            </li>
+                            <li>
+                                <a href="#">Books</a>
+                            </li>
+                            <li>
+                                <a href="#">Artworks</a>
+                            </li>
+                            <li>
+                                <a href="#">Merch</a>
+                            </li>
+                            <li>
+                                <a href="#">Print</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <div class="menu__bottom">
+                <ul class="menu__social">
+                    <li>
+                        <a href="#">E-mail</a>
+                    </li>
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#">Behance</a>
+                    </li>
+                    <li>
+                        <a href="#">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="#">Pinterest</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu__col-2">
+            <div class="menu__side-img ibg">
+                <a href="#" class="not-hover">
+                    <img src="img/photo/menu-img.jpg" alt="">
+                </a>
+            </div>
         </div>
     </div>
-</header>  -->
+</div>
