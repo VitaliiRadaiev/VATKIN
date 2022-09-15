@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<style>
+	.cursor {
+		background-color: #1B3128;
+		border: 1px solid #1B3128;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		z-index: 999;
+		position: fixed;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+	}
+</style>
+
+<div class="cursor" data-cursor></div>
+
+<body style="background: #EEF0E8;">
+    <div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+	<div class="main-wrapper">
+		@@include('common/header/_header.html',{
+		"mod": "",
+        "styles": "background: #EEF0E8;"
+		})
+		<!-- == // TOP LINE ================== -->
+		<!-- data-padding-top-header-size -->
+
+		<main class="_page seria-page" >
+            <div data-padding-top-header-size ></div>
+			<section class="seria">
+                <div class="container-sm">
+                    <h1 class="seria__title"></h1>
+                    <div class="seria__text"></div>
+
+                    <ul class="seria__list">
+                        <li class="f-width-100">
+                            <img src="img/photo/seria-img-1.jpg" alt="">
+                        </li>
+                        <li class="f-width-25 x-align-center">
+                            <img src="img/photo/seria-img-2.jpg" alt="">
+                        </li>
+                        <li class="f-width-75">
+                            <img src="img/photo/seria-img-3.jpg" alt="">
+                        </li>
+                        <li class="f-width-50"> 
+                            <img src="img/photo/seria-img-1.jpg" alt="">
+                        </li>
+                        <li class="f-width-25 y-align-center">
+                            <img src="img/photo/seria-img-2.jpg" alt="">
+                        </li>
+                        <li class="f-width-75 y-align-center">
+                            <img src="img/photo/seria-img-3.jpg" alt="">
+                        </li>
+                        <li class="f-width-auto"> 
+                            <img src="img/photo/seria-img-1.jpg" alt="">
+                        </li>
+                        <li class="f-width-auto x-align-bottom">
+                            <img src="img/photo/seria-img-2.jpg" alt="">
+                        </li>
+                        <li class="f-width-auto">
+                            <img src="img/photo/seria-img-3.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+		</main>
+
+		<!-- == FOOTER ================== -->
+		@@include('common/footer/_footer.html',{})
+		<!-- == // FOOTER ================== -->
+	</div>
+	@@include('_js-bottom.html',{})
+</body>
+
+</html>

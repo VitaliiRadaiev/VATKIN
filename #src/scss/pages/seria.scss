@@ -1,0 +1,71 @@
+.seria {
+    padding: 10rem 0;
+    
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18rem 10rem;
+
+        & > li {
+            &.f-width-auto {
+                & img {
+                    width: auto;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+
+.f-width-25 {
+    flex: 0 1 calc(25% - (10rem * 3 / 4));
+}
+.f-width-50 {
+    flex: 0 1 calc(50% - 5rem);
+}
+.f-width-75 {
+    flex: 0 1 calc(75% - (10rem * 3 / 4));
+}
+.f-width-100 {
+    flex: 0 1 100%;
+}
+.f-width-auto {
+    flex: 0 1 auto;
+}
+
+.x-align-top {
+    align-self: flex-start;
+}
+.x-align-center {
+    align-self: center;
+}
+.x-align-bottom {
+    align-self: flex-end;
+}
+
+.y-align-left {
+    margin-right: auto;
+}
+
+.y-align-right {
+    margin-left: auto;
+}
+
+.y-align-center {
+    margin-left: auto;
+    margin-right: auto;
+}

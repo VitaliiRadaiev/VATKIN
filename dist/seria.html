@@ -109,89 +109,26 @@ defer
 </head>
 
 <style>
-	body {
-		min-height: auto;
-		height: 100%;
-		overflow: hidden;
-		display: block !important;
-	}
-
-	body.page-is-full-load {
-		overflow: auto;
-	}
-
-	body:not(.page-is-full-load) .main-logo {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-		max-width: 108.7rem;
-		padding: 2rem;
-	}
-
-	body:not(.page-is-full-load) .main-logo {
-		color: #fff;
-	}
-
-	body:not(.page-is-full-load) .home-preload {
-		opacity: 1;
-		transform: scale(1);
-		visibility: visible;
-	}
-
-	.home-preload {
+	.cursor {
+		background-color: #1B3128;
+		border: 1px solid #1B3128;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		z-index: 999;
 		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-		transform: scale(0.6);
-		background-color: #000;
-		z-index: 49;
-		transition: all .6s ease;
-		visibility: hidden;
-	}
-
-	.home-preload img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 1;
-		object-fit: cover;
-		transition: all .3s ease;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
 	}
 </style>
 
 <div class="cursor" data-cursor></div>
 
-<body>
+<body style="background: #EEF0E8;">
+    <div class="_preload-body"></div>
 	<!-- == TOP LINE ================== -->
 	<div class="main-wrapper">
-		<div class="home-preload"
-			data-images="img/photo/preload-img-1.jpg,img/photo/preload-img-2.jpg,img/photo/preload-img-3.jpg"></div>
-		<script>
-			function getRandomInt(max) {
-				return Math.floor(Math.random() * max);
-			}
-
-			let homePreload = document.querySelector('.home-preload');
-			if (homePreload) {
-
-				let imagesUrl = homePreload.dataset.images.split(',');
-				let img = document.createElement('img');
-				homePreload.append(img);
-				img.src = imagesUrl[getRandomInt(3)];
-
-
-				img.onload = () => {
-					img.classList.add('loaded');
-				}
-			}
-		</script>
-		<div class="top-line header " style="@@styles">
+		<div class="top-line header " style="background: #EEF0E8;">
     <div class="top-line__body container" >
         <button class="top-line__burger" data-action="open-menu">
             <picture>
@@ -309,193 +246,44 @@ defer
 		<!-- == // TOP LINE ================== -->
 		<!-- data-padding-top-header-size -->
 
-		<main class="_page home-page">
-			<section class="promo-header" data-promo-header>
-    <div class="swiper" data-mobile="false">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <button class="promo-header__btn" data-action="slide-prev">
-                    <span>Previous</span>
-                </button>
-                <a href="#" class="promo-header-card not-hover" data-promo-header-card >
-                    <div class="promo-header-card__inner">
-                        <div class="promo-header-card__layer-1">
-                            <div class="promo-header-card__label">
-                                <div class="promo-header-card__label-main">Irrepressible, 2021</div>
-                                <div class="promo-header-card__label-hover">Seria</div>
-                                
-                            </div>
-                            <div class="promo-header-card__img">
-                                <img src="img/photo/promo-header-card-img-1.jpg" alt="">
-                            </div>
-                            <div class="promo-header-card__bottom">
-                                <div class="promo-header-card__bottom-main">Unconscious </div>
-                                <div class="promo-header-card__bottom-hover">See all works</div>
-                
-                            </div>
-                        </div>
-                        <div class="promo-header-card__title">
-                            Unconscious
-                        </div>
-                    </div>
-                </a>
-                <button class="promo-header__btn" data-action="slide-next">
-                    <span>Next</span>
-                </button>
-            </div>
-            <div class="swiper-slide">
-                <button class="promo-header__btn" data-action="slide-prev">
-                    <span>Previous</span>
-                </button>
-                <a href="#" class="promo-header-card not-hover" data-promo-header-card >
-                    <div class="promo-header-card__inner">
-                        <div class="promo-header-card__layer-1">
-                            <div class="promo-header-card__label">
-                                <div class="promo-header-card__label-main">Resistance, 20?</div>
-                                <div class="promo-header-card__label-hover">Seria</div>
-                                
-                            </div>
-                            <div class="promo-header-card__img">
-                                <img src="img/photo/promo-header-card-img-2.jpg" alt="">
-                            </div>
-                            <div class="promo-header-card__bottom">
-                                <div class="promo-header-card__bottom-main">Feeling of Seasons</div>
-                                <div class="promo-header-card__bottom-hover">See all works</div>
-                
-                            </div>
-                        </div>
-                        <div class="promo-header-card__title" style="color: #390A0A;">
-                            Feeling of Seasons 
-                        </div>
-                    </div>
-                </a>
-                <button class="promo-header__btn" data-action="slide-next">
-                    <span>Next</span>
-                </button>
-            </div>
-            <div class="swiper-slide">
-                <button class="promo-header__btn" data-action="slide-prev">
-                    <span>Previous</span>
-                </button>
-                <a href="#" class="promo-header-card not-hover" data-promo-header-card >
-                    <div class="promo-header-card__inner">
-                        <div class="promo-header-card__layer-1">
-                            <div class="promo-header-card__label">
-                                <div class="promo-header-card__label-main">The Last One, 20?</div>
-                                <div class="promo-header-card__label-hover">Seria</div>
-                                
-                            </div>
-                            <div class="promo-header-card__img">
-                                <img src="img/photo/promo-header-card-img-3.jpg" alt="">
-                            </div>
-                            <div class="promo-header-card__bottom">
-                                <div class="promo-header-card__bottom-main">Concrete Jungles</div>
-                                <div class="promo-header-card__bottom-hover">See all works</div>
-                
-                            </div>
-                        </div>
-                        <div class="promo-header-card__title" style="color: #911A1A;">
-                            Concrete Jungles
-                        </div>
-                    </div>
-                </a>
-                <button class="promo-header__btn" data-action="slide-next">
-                    <span>Next</span>
-                </button>
-            </div>
-            <div class="swiper-slide">
-                <button class="promo-header__btn" data-action="slide-prev">
-                    <span>Previous</span>
-                </button>
-                <a href="#" class="promo-header-card not-hover" data-promo-header-card >
-                    <div class="promo-header-card__inner">
-                        <div class="promo-header-card__layer-1">
-                            <div class="promo-header-card__label">
-                                <div class="promo-header-card__label-main">the sun hid behind the mountain? , 20?</div>
-                                <div class="promo-header-card__label-hover">Seria</div>
-                                
-                            </div>
-                            <div class="promo-header-card__img">
-                                <img src="img/photo/promo-header-card-img-4.jpg" alt="">
-                            </div>
-                            <div class="promo-header-card__bottom">
-                                <div class="promo-header-card__bottom-main">Nature Breeze</div>
-                                <div class="promo-header-card__bottom-hover">See all works</div>
-                
-                            </div>
-                        </div>
-                        <div class="promo-header-card__title">
-                            Nature Breeze 
-                        </div>
-                    </div>
-                </a>
-                <button class="promo-header__btn" data-action="slide-next">
-                    <span>Next</span>
-                </button>
-            </div>
-            <div class="swiper-slide">
-                <button class="promo-header__btn" data-action="slide-prev">
-                    <span>Previous</span>
-                </button>
-                <a href="#" class="promo-header-card not-hover" data-promo-header-card >
-                    <div class="promo-header-card__inner">
-                        <div class="promo-header-card__layer-1">
-                            <div class="promo-header-card__label">
-                                <div class="promo-header-card__label-main">Colours of Freedom, 2022</div>
-                                <div class="promo-header-card__label-hover">Seria</div>
-                                
-                            </div>
-                            <div class="promo-header-card__img">
-                                <img src="img/photo/promo-header-card-img-5.jpg" alt="">
-                            </div>
-                            <div class="promo-header-card__bottom">
-                                <div class="promo-header-card__bottom-main">The War</div>
-                                <div class="promo-header-card__bottom-hover">See all works</div>
-                
-                            </div>
-                        </div>
-                        <div class="promo-header-card__title" style="color: #050D1E;">
-                            The War
-                        </div>
-                    </div>
-                </a>
-                <button class="promo-header__btn" data-action="slide-next">
-                    <span>Next</span>
-                </button>
-            </div>
-            <div class="swiper-slide">
-                <button class="promo-header__btn" data-action="slide-prev">
-                    <span>Previous</span>
-                </button>
-                <a href="#" class="promo-header-card not-hover" data-promo-header-card >
-                    <div class="promo-header-card__inner">
-                        <div class="promo-header-card__layer-1">
-                            <div class="promo-header-card__label">
-                                <div class="promo-header-card__label-main">#6,  20?</div>
-                                <div class="promo-header-card__label-hover">Seria</div>
-                                
-                            </div>
-                            <div class="promo-header-card__img">
-                                <img src="img/photo/promo-header-card-img-6.jpg" alt="">
-                            </div>
-                            <div class="promo-header-card__bottom">
-                                <div class="promo-header-card__bottom-main">Metallic Shapes</div>
-                                <div class="promo-header-card__bottom-hover">See all works</div>
-                
-                            </div>
-                        </div>
-                        <div class="promo-header-card__title">
-                            Metallic Shapes 
-                        </div>
-                    </div>
-                </a>
-                <button class="promo-header__btn" data-action="slide-next">
-                    <span>Next</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
+		<main class="_page seria-page" >
+            <div data-padding-top-header-size ></div>
+			<section class="seria">
+                <div class="container-sm">
+                    <h1 class="seria__title"></h1>
+                    <div class="seria__text"></div>
+
+                    <ul class="seria__list">
+                        <li class="f-width-100">
+                            <img src="img/photo/seria-img-1.jpg" alt="">
+                        </li>
+                        <li class="f-width-25 x-align-center">
+                            <img src="img/photo/seria-img-2.jpg" alt="">
+                        </li>
+                        <li class="f-width-75">
+                            <img src="img/photo/seria-img-3.jpg" alt="">
+                        </li>
+                        <li class="f-width-50"> 
+                            <img src="img/photo/seria-img-1.jpg" alt="">
+                        </li>
+                        <li class="f-width-25 y-align-center">
+                            <img src="img/photo/seria-img-2.jpg" alt="">
+                        </li>
+                        <li class="f-width-75 y-align-center">
+                            <img src="img/photo/seria-img-3.jpg" alt="">
+                        </li>
+                        <li class="f-width-auto"> 
+                            <img src="img/photo/seria-img-1.jpg" alt="">
+                        </li>
+                        <li class="f-width-auto x-align-bottom">
+                            <img src="img/photo/seria-img-2.jpg" alt="">
+                        </li>
+                        <li class="f-width-auto">
+                            <img src="img/photo/seria-img-3.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </section>
 		</main>
 
 		<!-- == FOOTER ================== -->
