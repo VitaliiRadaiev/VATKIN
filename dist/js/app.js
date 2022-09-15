@@ -337,18 +337,19 @@ class App {
 	init() {
 		window.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.add('page-is-load');
-		
+
 
 			if (this.utils.isMobile()) {
 				document.body.classList.add('mobile');
 			}
-	
+
 			if (this.utils.iOS()) {
 				document.body.classList.add('mobile-ios');
 			}
 
 			this.utils.replaceToInlineSvg('.img-svg');
 			this.dynamicAdapt.init();
+			this.cursorhandler();
 			this.headerHandler();
 			this.popupHandler();
 			this.initSmoothScroll();
@@ -358,7 +359,7 @@ class App {
 			this.spollerInit();
 			this.componentsBeforeLoad();
 		});
-		
+
 
 
 		window.addEventListener('load', () => {
@@ -372,16 +373,46 @@ class App {
 
 	}
 
+	cursorhandler() {
+		let mouseCursor = document.querySelector('[data-cursor]');
+		let links = document.querySelectorAll('a, button, [data-cursor-hover]');
+
+		window.addEventListener('mousemove', cursor);
+
+		function cursor(e) {
+			gsap.to(mouseCursor, 0.2, {
+				x: e.clientX,
+				y: e.clientY
+			});
+		}
+
+		links.forEach(link => {
+			link.addEventListener("mouseleave", () => {
+				mouseCursor.classList.remove("hover");
+				gsap.to(mouseCursor, 0.2, {
+					scale: 1,
+					background: "#1B3128",
+				});
+			});
+
+			link.addEventListener("mouseover", () => {
+				mouseCursor.classList.add("hover");
+				gsap.to(mouseCursor, 0.2, {
+					scale: 2,
+					background: "transparent",
+				});
+			});
+		});
+	}
+
 	headerHandler() {
 		{
     let menu = document.querySelector('[data-menu]');
     if(menu) {
-        console.log(menu);
         let buttonsOpenMenu = document.querySelectorAll('[data-action="open-menu"]');
         let buttonsCloseMenu = document.querySelectorAll('[data-action="close-menu"]');
 
         buttonsOpenMenu.forEach(btn => {
-            console.log(btn);
             btn.addEventListener('click', () => {
                 menu.classList.add('menu--open');
                 document.documentElement.classList.add('overflow-hidden');
@@ -597,6 +628,48 @@ window.popup = {
         })
     }
 };
+		{
+    let seriesCards = document.querySelectorAll('[data-series-card]');
+    if(seriesCards.length) {
+        seriesCards.forEach(card => {
+            let sliderData = new Swiper(card.querySelector('.swiper'), {
+                autoplay: {
+                    delay: 1000,
+                    disableOnInteraction: false,
+                },
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 10,
+                speed: 300,
+                watchSlidesProgress: true,
+                loop: true,
+                preloadImages: false,
+                lazy: {
+                	loadPrevNext: true,
+                },
+
+                on: {
+                    init: (swiper) => {
+                        swiper.autoplay.stop();
+                    }
+                }
+            });
+
+            card.addEventListener('mouseenter', () => {
+                if (!this.utils.isMobile()) {
+                    sliderData.autoplay.start();
+                    sliderData.slideNext();
+                }
+            })
+            card.addEventListener('mouseleave', () => {
+                if (!this.utils.isMobile()) {
+                    sliderData.autoplay.stop();
+                }
+            })
+        })
+    }
+};
 	}
 
 
@@ -616,7 +689,7 @@ window.popup = {
 				if (triggerItems.length && contentItems.length) {
 					// init
 					let activeItem = tabsContainer.querySelector('.tab-active[data-tab-trigger]');
-					if(activeItem) {
+					if (activeItem) {
 						activeItem.classList.add('tab-active');
 						getContentItem(activeItem.dataset.tabTrigger).classList.add('tab-active');
 					} else {
@@ -647,12 +720,12 @@ window.popup = {
 					})
 				}
 
-				if(select) {
+				if (select) {
 					select.addEventListener('change', (e) => {
 						getContentItem(e.target.value).classList.add('tab-active');
 
 						contentItems.forEach(item => {
-							if(getContentItem(e.target.value) === item) return;
+							if (getContentItem(e.target.value) === item) return;
 
 							item.classList.remove('tab-active');
 						})
@@ -674,7 +747,7 @@ window.popup = {
 						let content = trigger.nextElementSibling;
 
 						// init
-						if(trigger.classList.contains('active')) {
+						if (trigger.classList.contains('active')) {
 							content.style.display = 'block';
 							parent.classList.add('active');
 						}
@@ -1095,9 +1168,9 @@ window.popup = {
             })
         }
 
-        // slidesWrapper.addEventListener('scroll', () => {
+        // slidesWrapper.addEventListener('scroll', (e) => {
         //     if((slidesWrapper.scrollTop + slidesWrapper.clientHeight) > (slidesWrapper.scrollHeight - 5)) {
-        //         //slidesWrapper.classList.add('last-slide');
+        //         slidesWrapper.classList.add('last-slide');
         //     } else {
         //         slidesWrapper.classList.remove('last-slide');
         //     }
@@ -1113,67 +1186,69 @@ window.popup = {
             }
         })
 
-    }
-    let cards = document.querySelectorAll('[data-promo-header-card]');
-    if (cards.length) {
-        cards.forEach(card => {
-            let myPanel = card;
-            let subpanel = card.querySelector('.promo-header-card__inner');
-            let parent = card.closest('.swiper-slide');
-
-            myPanel.onmousemove = transformPanel;
-            myPanel.onmouseenter = handleMouseEnter;
-            myPanel.onmouseleave = handleMouseLeave;
-
-            let mouseX, mouseY;
-
-            let transformAmount = 2;
-
-            function transformPanel(mouseEvent) {
-                mouseX = mouseEvent.pageX;
-                mouseY = mouseEvent.pageY;
-
-                const centerX = myPanel.offsetLeft + myPanel.clientWidth / 2;
-                const centerY = myPanel.offsetTop + myPanel.clientHeight / 2;
-
-                const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
-                const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
-
-                subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
-            }
-
-            function handleMouseEnter() {
-                parent.classList.add('hover');
-
-                setTimeout(() => {
-                    subpanel.style.transition = "";
-                }, 100);
-                subpanel.style.transition = "transform 0.1s";
-            }
-
-            function handleMouseLeave() {
-                parent.classList.remove('hover');
-                subpanel.style.transition = "transform 0.1s";
-                setTimeout(() => {
-                    subpanel.style.transition = "";
-                }, 100);
-
-                subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
-            }
-        })
-    }
-
-    const setHeight = () => {
-        if (document.documentElement.clientWidth < 768) {
-            promoHeader.style.height = document.documentElement.clientHeight + 'px';
-        } else {
-            promoHeader.removeAttribute('style');
+        let cards = document.querySelectorAll('[data-promo-header-card]');
+        if (cards.length) {
+            cards.forEach(card => {
+                let myPanel = card;
+                let subpanel = card.querySelector('.promo-header-card__inner');
+                let parent = card.closest('.swiper-slide');
+    
+                myPanel.onmousemove = transformPanel;
+                myPanel.onmouseenter = handleMouseEnter;
+                myPanel.onmouseleave = handleMouseLeave;
+    
+                let mouseX, mouseY;
+    
+                let transformAmount = 2;
+    
+                function transformPanel(mouseEvent) {
+                    mouseX = mouseEvent.pageX;
+                    mouseY = mouseEvent.pageY;
+    
+                    const centerX = myPanel.offsetLeft + myPanel.clientWidth / 2;
+                    const centerY = myPanel.offsetTop + myPanel.clientHeight / 2;
+    
+                    const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
+                    const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
+    
+                    subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
+                }
+    
+                function handleMouseEnter() {
+                    parent.classList.add('hover');
+    
+                    setTimeout(() => {
+                        subpanel.style.transition = "";
+                    }, 100);
+                    subpanel.style.transition = "transform 0.1s";
+                }
+    
+                function handleMouseLeave() {
+                    parent.classList.remove('hover');
+                    subpanel.style.transition = "transform 0.1s";
+                    setTimeout(() => {
+                        subpanel.style.transition = "";
+                    }, 100);
+    
+                    subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
+                }
+            })
         }
+    
+        const setHeight = () => {
+            if (document.documentElement.clientWidth < 768) {
+                promoHeader.style.height = document.documentElement.clientHeight + 'px';
+            } else {
+                promoHeader.removeAttribute('style');
+            }
+        }
+    
+        setHeight();
+    
+        window.addEventListener('resize', setHeight);
+
     }
 
-    setHeight();
-
-    window.addEventListener('resize', setHeight);
 };
 	}
 

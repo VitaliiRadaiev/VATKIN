@@ -63,9 +63,9 @@
             })
         }
 
-        // slidesWrapper.addEventListener('scroll', () => {
+        // slidesWrapper.addEventListener('scroll', (e) => {
         //     if((slidesWrapper.scrollTop + slidesWrapper.clientHeight) > (slidesWrapper.scrollHeight - 5)) {
-        //         //slidesWrapper.classList.add('last-slide');
+        //         slidesWrapper.classList.add('last-slide');
         //     } else {
         //         slidesWrapper.classList.remove('last-slide');
         //     }
@@ -81,65 +81,67 @@
             }
         })
 
-    }
-    let cards = document.querySelectorAll('[data-promo-header-card]');
-    if (cards.length) {
-        cards.forEach(card => {
-            let myPanel = card;
-            let subpanel = card.querySelector('.promo-header-card__inner');
-            let parent = card.closest('.swiper-slide');
-
-            myPanel.onmousemove = transformPanel;
-            myPanel.onmouseenter = handleMouseEnter;
-            myPanel.onmouseleave = handleMouseLeave;
-
-            let mouseX, mouseY;
-
-            let transformAmount = 2;
-
-            function transformPanel(mouseEvent) {
-                mouseX = mouseEvent.pageX;
-                mouseY = mouseEvent.pageY;
-
-                const centerX = myPanel.offsetLeft + myPanel.clientWidth / 2;
-                const centerY = myPanel.offsetTop + myPanel.clientHeight / 2;
-
-                const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
-                const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
-
-                subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
-            }
-
-            function handleMouseEnter() {
-                parent.classList.add('hover');
-
-                setTimeout(() => {
-                    subpanel.style.transition = "";
-                }, 100);
-                subpanel.style.transition = "transform 0.1s";
-            }
-
-            function handleMouseLeave() {
-                parent.classList.remove('hover');
-                subpanel.style.transition = "transform 0.1s";
-                setTimeout(() => {
-                    subpanel.style.transition = "";
-                }, 100);
-
-                subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
-            }
-        })
-    }
-
-    const setHeight = () => {
-        if (document.documentElement.clientWidth < 768) {
-            promoHeader.style.height = document.documentElement.clientHeight + 'px';
-        } else {
-            promoHeader.removeAttribute('style');
+        let cards = document.querySelectorAll('[data-promo-header-card]');
+        if (cards.length) {
+            cards.forEach(card => {
+                let myPanel = card;
+                let subpanel = card.querySelector('.promo-header-card__inner');
+                let parent = card.closest('.swiper-slide');
+    
+                myPanel.onmousemove = transformPanel;
+                myPanel.onmouseenter = handleMouseEnter;
+                myPanel.onmouseleave = handleMouseLeave;
+    
+                let mouseX, mouseY;
+    
+                let transformAmount = 2;
+    
+                function transformPanel(mouseEvent) {
+                    mouseX = mouseEvent.pageX;
+                    mouseY = mouseEvent.pageY;
+    
+                    const centerX = myPanel.offsetLeft + myPanel.clientWidth / 2;
+                    const centerY = myPanel.offsetTop + myPanel.clientHeight / 2;
+    
+                    const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
+                    const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
+    
+                    subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
+                }
+    
+                function handleMouseEnter() {
+                    parent.classList.add('hover');
+    
+                    setTimeout(() => {
+                        subpanel.style.transition = "";
+                    }, 100);
+                    subpanel.style.transition = "transform 0.1s";
+                }
+    
+                function handleMouseLeave() {
+                    parent.classList.remove('hover');
+                    subpanel.style.transition = "transform 0.1s";
+                    setTimeout(() => {
+                        subpanel.style.transition = "";
+                    }, 100);
+    
+                    subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
+                }
+            })
         }
+    
+        const setHeight = () => {
+            if (document.documentElement.clientWidth < 768) {
+                promoHeader.style.height = document.documentElement.clientHeight + 'px';
+            } else {
+                promoHeader.removeAttribute('style');
+            }
+        }
+    
+        setHeight();
+    
+        window.addEventListener('resize', setHeight);
+
     }
 
-    setHeight();
-
-    window.addEventListener('resize', setHeight);
 }

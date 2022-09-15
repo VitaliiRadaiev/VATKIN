@@ -10,18 +10,19 @@ class App {
 	init() {
 		window.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.add('page-is-load');
-		
+
 
 			if (this.utils.isMobile()) {
 				document.body.classList.add('mobile');
 			}
-	
+
 			if (this.utils.iOS()) {
 				document.body.classList.add('mobile-ios');
 			}
 
 			this.utils.replaceToInlineSvg('.img-svg');
 			this.dynamicAdapt.init();
+			this.cursorhandler();
 			this.headerHandler();
 			this.popupHandler();
 			this.initSmoothScroll();
@@ -31,7 +32,7 @@ class App {
 			this.spollerInit();
 			this.componentsBeforeLoad();
 		});
-		
+
 
 
 		window.addEventListener('load', () => {
@@ -45,6 +46,38 @@ class App {
 
 	}
 
+	cursorhandler() {
+		let mouseCursor = document.querySelector('[data-cursor]');
+		let links = document.querySelectorAll('a, button, [data-cursor-hover]');
+
+		window.addEventListener('mousemove', cursor);
+
+		function cursor(e) {
+			gsap.to(mouseCursor, 0.2, {
+				x: e.clientX,
+				y: e.clientY
+			});
+		}
+
+		links.forEach(link => {
+			link.addEventListener("mouseleave", () => {
+				mouseCursor.classList.remove("hover");
+				gsap.to(mouseCursor, 0.2, {
+					scale: 1,
+					background: "#1B3128",
+				});
+			});
+
+			link.addEventListener("mouseover", () => {
+				mouseCursor.classList.add("hover");
+				gsap.to(mouseCursor, 0.2, {
+					scale: 2,
+					background: "transparent",
+				});
+			});
+		});
+	}
+
 	headerHandler() {
 		@@include('../common/header/header.js');
 	}
@@ -55,6 +88,7 @@ class App {
 
 	slidersInit() {
 		@@include('../common/carousel/carousel.js');
+		@@include('../common/series/series.js');
 	}
 
 
@@ -74,7 +108,7 @@ class App {
 				if (triggerItems.length && contentItems.length) {
 					// init
 					let activeItem = tabsContainer.querySelector('.tab-active[data-tab-trigger]');
-					if(activeItem) {
+					if (activeItem) {
 						activeItem.classList.add('tab-active');
 						getContentItem(activeItem.dataset.tabTrigger).classList.add('tab-active');
 					} else {
@@ -105,12 +139,12 @@ class App {
 					})
 				}
 
-				if(select) {
+				if (select) {
 					select.addEventListener('change', (e) => {
 						getContentItem(e.target.value).classList.add('tab-active');
 
 						contentItems.forEach(item => {
-							if(getContentItem(e.target.value) === item) return;
+							if (getContentItem(e.target.value) === item) return;
 
 							item.classList.remove('tab-active');
 						})
@@ -132,7 +166,7 @@ class App {
 						let content = trigger.nextElementSibling;
 
 						// init
-						if(trigger.classList.contains('active')) {
+						if (trigger.classList.contains('active')) {
 							content.style.display = 'block';
 							parent.classList.add('active');
 						}

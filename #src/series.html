@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<style>
+	.cursor {
+		background-color: #1B3128;
+		border: 1px solid #1B3128;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		z-index: 999;
+		position: fixed;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+	}
+</style>
+
+<div class="cursor" data-cursor></div>
+
+<body>
+    <div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+	<div class="main-wrapper">
+		@@include('common/header/_header.html',{
+		"mod": ""
+		})
+		<!-- == // TOP LINE ================== -->
+		<!-- data-padding-top-header-size -->
+
+		<main class="_page series-page" >
+            <div data-padding-top-header-size ></div>
+			@@include('common/series/_series.html')
+		</main>
+
+		<!-- == FOOTER ================== -->
+		@@include('common/footer/_footer.html',{})
+		<!-- == // FOOTER ================== -->
+	</div>
+	@@include('_js-bottom.html',{})
+</body>
+
+</html>

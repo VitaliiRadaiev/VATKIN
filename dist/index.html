@@ -10,7 +10,8 @@
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 		body.page-is-load ._preload-body {
@@ -79,7 +80,25 @@
 				transform: translate(-50%, -50%) rotate(360deg);
 			}
 		}
+
+		.cursor {
+			background-color: #1B3128;
+			border: 1px solid #1B3128;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			z-index: 999;
+			position: fixed;
+			pointer-events: none;
+			transform: translate(-50%, -50%);
+
+		}
+
+		.mobile .cursor {
+			display: none;
+		}
 	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 	
 <script src="js/vendors.js"></script>
 <script src="js/app.js"></script>
@@ -94,6 +113,7 @@ defer
 		min-height: auto;
 		height: 100%;
 		overflow: hidden;
+		display: block !important;
 	}
 
 	body.page-is-full-load {
@@ -145,6 +165,8 @@ defer
 	}
 </style>
 
+<div class="cursor" data-cursor></div>
+
 <body>
 	<!-- == TOP LINE ================== -->
 	<div class="main-wrapper">
@@ -169,7 +191,7 @@ defer
 				}
 			}
 		</script>
-		<div class="top-line ">
+		<div class="top-line header ">
     <div class="top-line__body container">
         <button class="top-line__burger" data-action="open-menu">
             <picture>

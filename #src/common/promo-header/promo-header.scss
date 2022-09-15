@@ -286,5 +286,9 @@
         overflow-wrap: break-word;
         opacity: 0;
         width: 100vw;
+
+        @media (max-width: $md2+px) {
+            display: none;
+        }
     }
 }

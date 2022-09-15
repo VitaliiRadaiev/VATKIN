@@ -107,6 +107,7 @@
         font-size: 1.2rem;
         line-height: 1.25em;
         text-transform: uppercase;
+        flex: 0 0 auto;
 
         @media (max-width: $md3+px) {
             font-weight: 300;

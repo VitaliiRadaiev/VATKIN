@@ -8,7 +8,8 @@
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 		body.page-is-load ._preload-body {
@@ -77,6 +78,24 @@
 				transform: translate(-50%, -50%) rotate(360deg);
 			}
 		}
+
+		.cursor {
+			background-color: #1B3128;
+			border: 1px solid #1B3128;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			z-index: 999;
+			position: fixed;
+			pointer-events: none;
+			transform: translate(-50%, -50%);
+
+		}
+
+		.mobile .cursor {
+			display: none;
+		}
 	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
 	@@include('_js.html',{})
 </head>
