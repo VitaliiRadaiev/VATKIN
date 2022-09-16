@@ -1,0 +1,188 @@
+.portfolio {
+    padding-top: 28.2rem;
+    padding-bottom: 12rem;
+
+    @media (max-width: $md3+px) {
+        padding: 60px 0;
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 6rem;
+
+        @media (max-width: $md3+px) {
+            display: block;
+        }
+
+        & > li {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 13rem;
+
+                @media (max-width: $md3+px) {
+                    margin-bottom: 75px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                &:nth-child(10n + 1) {
+                    width: 85.6%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                &:nth-child(10n + 2) {
+                    width: 345 / 1446 * 100%;
+                    margin-right: auto;
+                    align-self: center;
+                }
+                &:nth-child(10n + 3) {
+                    width: 953 / 1446 * 100%;
+                }
+
+                &:nth-child(10n + 4) {
+                    width: 466 / 1446 * 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &:nth-child(10n + 5) {
+                    width: 710 / 1446 * 100%;
+                    margin-bottom: 1rem;
+                    margin-top: 32rem;
+                }
+
+                &:nth-child(10n + 6) {
+                    width: 466 / 1446 * 100%;
+                    margin-left: 7%;
+                    margin-bottom: 8.4rem;
+                }
+
+                &:nth-child(10n + 7) {
+                    width: 85.6%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &:nth-child(10n + 8) {
+                    width: 710 / 1446 * 100%;
+                    margin-bottom: 23.1rem;
+                    margin-top: 34rem;
+                }
+                &:nth-child(10n + 9) {
+                    width: 466 / 1446 * 100%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &:nth-child(10n + 10) {
+                    width: 85.6%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            @media (max-width: $md3+px) {
+                &:nth-child(10n + 1) {
+                }
+
+                &:nth-child(10n + 2) {
+                    width: 73.43%;
+                    margin-left: auto;
+                }
+                &:nth-child(10n + 3) {
+                }
+
+                &:nth-child(10n + 4) {
+                    width: 73.43%;
+                }
+                &:nth-child(10n + 5) {
+                }
+
+                &:nth-child(10n + 6) {
+                    width: 73.43%;
+                }
+
+                &:nth-child(10n + 7) {
+                    width: 73.43%;
+                    margin-left: auto;
+                }
+                &:nth-child(10n + 8) {
+                }
+                &:nth-child(10n + 9) {
+                    width: 73.43%;
+                }
+                &:nth-child(10n + 10) {
+                }
+            }
+        }
+    }
+}
+
+.portfolio-card {
+    &__img {
+        margin-bottom: 2rem;
+        display: block;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                & img {
+                    transform: scale(0.8);
+                }
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: all 0.6s ease;
+        }
+    }
+
+    &__bottom {
+        font-family: $titleFontFamily;
+        max-width: 44.6rem;
+
+        & > *:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 1.33em;
+
+        @media (max-width: $md3+px) {
+            font-size: 18px;
+        }
+    }
+
+    &__size {
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 1.33em;
+        margin-bottom: 1rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 1.33em;
+        @media (max-width: $md3+px) {
+            font-weight: 300;
+            font-size: 14px;
+        }
+    }
+}

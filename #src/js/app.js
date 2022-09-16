@@ -31,13 +31,14 @@ class App {
 			this.selectInit();
 			this.spollerInit();
 			this.componentsBeforeLoad();
+
 		});
 
 
 
 		window.addEventListener('load', () => {
 			document.body.classList.add('page-is-full-load');
-
+			this.initLocomotiveScroll();
 			//this.setPaddingTopHeaderSize();
 			this.slidersInit();
 			this.componentsAfterLoad();
@@ -299,6 +300,17 @@ class App {
 
 	}
 
+	initLocomotiveScroll() {
+		if(LocomotiveScroll) {
+			const scroll = new LocomotiveScroll({
+				el: document.querySelector('[data-scroll-container]'),
+				smooth: true,
+				repeat:true,
+				direction:'vertical',
+				reloadOnContextChange:true
+			});
+		}
+	}
 }
 
 let app = new App();
