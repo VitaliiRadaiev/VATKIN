@@ -20,6 +20,14 @@ header,
 section {
 	display: block;
 }
+html.has-scroll-smooth {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;  
+}
 html {
 	height: 100%;
 	font-size: 10px;

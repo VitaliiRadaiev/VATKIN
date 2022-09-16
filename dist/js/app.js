@@ -1264,7 +1264,10 @@ window.popup = {
 				smooth: true,
 				repeat:true,
 				direction:'vertical',
-				reloadOnContextChange:true
+				reloadOnContextChange:true,
+				gestureDirection: 'both',
+				multiplier: 0.7,
+				lerp: 0.05,
 			});
 		}
 	}
