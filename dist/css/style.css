@@ -4093,6 +4093,10 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
     font-size: 1.4rem;
     min-height: auto;
   }
+
+  .about-hero__bg {
+    display: none;
+  }
 }
 
 @media (max-width: 767.98px) {
