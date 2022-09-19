@@ -5,6 +5,7 @@
     width: 100%;
     z-index: 47;
     background-color: #fff;
+    transition: all .6s ease;
 
     &__body {
         display: flex;
@@ -24,25 +25,57 @@
         background-color: transparent;
         border-radius: 0;
         outline: none;
+        position: relative;
 
         @media (max-width: $md2+px) {
             width: 2.8rem;
             padding: 1rem 0;
         }
 
-        & picture {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        & img {
+        & img, & svg {
             width: 100%;
             height: auto;
         }
+
+        &-desk {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @media (max-width: $md3+px) {
+                display: none;
+            }
+        }
+        &-mob {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
     }
+
+    &.header--dark:not(.header--is-scroll) {
+        background-color: transparent !important;
+        
+        & .top-line__burger-desk rect {
+            fill: #fff;
+        }
+        & .top-line__burger-mob path {
+            stroke: #fff;
+        }
+    }
+
+    
 }
 
+body.logo-white:not(.header-is-scroll) {
+    & .main-logo path {
+        fill: #fff;
+    }
+}
 .main-logo {
     top: 3rem;
     position: fixed;

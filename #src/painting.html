@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<div class="cursor" data-cursor>
+	<svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path class="circle" fill-rule="evenodd" clip-rule="evenodd"
+			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
+			fill="currentColor" />
+		<g class="arrow">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
+				fill="currentColor" />
+			<path fill-rule="evenodd" clip-rule="evenodd"
+				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
+				fill="currentColor" />
+		</g>
+	</svg>
+</div>
+
+<body>
+	<div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+	<div class="main-wrapper">
+		@@include('common/header/_header.html',{
+		"mod": "",
+		"styles": ""
+		})
+		<!-- == // TOP LINE ================== -->
+		<!-- data-padding-top-header-size -->
+
+		<main class="_page painting-page">
+			<div data-padding-top-header-size></div>
+
+			<div class="painting-preview">
+				<a href="#info" class="painting-preview__wrap container not-hover anchor">
+					<div class="painting-preview__body">
+						<div class="painting-preview__title-mob">
+							Colours of Freedom
+						</div>
+						<div class="painting-preview__img">
+							<img src="img/photo/promo-header-card-img-5.jpg" alt="">
+						</div>
+						<div class="painting-preview__title">The War</div>
+						<div class="painting-preview__subtitle">
+							See all works
+						</div>
+					</div>
+					<div class="painting-preview__meta">
+						<div class="painting-preview__meta-item">
+							acrylic on canvas
+						</div>
+						<div class="painting-preview__meta-item">
+							90 x 120 cm
+						</div>
+						<div class="painting-preview__meta-item">
+							2022
+						</div>
+					</div>
+					<div class="painting-preview__bottom">
+						<img class="img-svg" src="img/icons/circle-arrow-down.svg" alt="">
+					</div>
+				</a>
+			</div>
+
+			<div class="zoom cursor-hidden" data-zoom>
+				<div class="zoom__cursor">
+					<div class="zoom__cursor-1">
+						<img class="img-svg" src="img/icons/magnifying-glass.svg" alt="">
+					</div>
+					<div class="zoom__cursor-2">
+						<img class="img-svg" src="img/icons/arrows-alt-solid.svg" alt="">
+					</div>
+				</div>
+				<div class="zoom__img">
+					<div style="background-image: url(../img/photo/painting-img-full.jpg);" data-zoom-zone></div>
+					<img src="img/photo/painting-img-full.jpg" data-zoom-img="img/photo/painting-img-full.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="painting-info" id="info">
+				<div class="container-sm">
+					<div class="painting-info__body">
+						<div class="painting-info__col-1">
+							<div class="painting-info__slider" data-slider="painting-info-slider">
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="img/photo/promo-header-card-img-5.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="img/photo/promo-header-card-img-6.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="img/photo/promo-header-card-img-1.jpg" alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="img/photo/promo-header-card-img-2.jpg" alt="">
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+						<div class="painting-info__col-2">
+							<div class="painting-info__title">
+								Colours of Freedom
+							</div>
+							<div class="painting-info__subtitle">
+								War
+							</div>
+							<div class="painting-info__meta">
+								<div>90 x 120 cm</div>
+								<div>acrylic on canvas</div>
+								<div>2022</div>
+							</div>
+							<div class="painting-info__status status status--dot-red">
+								<!-- status--dot-green -->
+								in private collection
+							</div>
+							<div class="painting-info__text text-content">
+								<p>
+									In 2022, Ukraine finds itself at the center of historical events, defending freedom,
+									independence, and the value of a democratic society. Warrior heroes defend blue
+									skies and yellow fields every day, giving their lives for freedom and the right to
+									their existence.
+								</p>
+								<p>
+									Not without reason, Pantone has defined the Ukrainian flag as the color of freedom
+									in 2022, where blue means freedom and yellow means a thirst for life.
+								</p>
+							</div>
+							<a href="#" class="painting-info__link link">
+								Shop designs
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="others-works" data-slider="others-works">
+				<div class="container-sm">
+					<div class="others-works__buttons">
+						<button class="others-works__btn prev">Previous WORK</button>
+						<button class="others-works__btn next">NEXT WORK</button>
+					</div>
+					<div class="others-works__slider swiper">
+						<div class="swiper-wrapper">
+							<a href="#" class="swiper-slide not-hover">
+								<div class="others-works__img">
+									<img src="img/photo/promo-header-card-img-5.jpg" alt="">
+								</div>
+								<div class="others-works__title">
+									Funnel Death
+								</div>
+							</a>
+							<a href="#" class="swiper-slide not-hover">
+								<div class="others-works__img">
+									<img src="img/photo/promo-header-card-img-1.jpg" alt="">
+								</div>
+								<div class="others-works__title">
+									Destroyed Childhood
+								</div>
+							</a>
+							<a href="#" class="swiper-slide not-hover">
+								<div class="others-works__img">
+									<img src="img/photo/promo-header-card-img-2.jpg" alt="">
+								</div>
+								<div class="others-works__title">
+									Feeling of Seasons
+								</div>
+							</a>
+							<a href="#" class="swiper-slide not-hover">
+								<div class="others-works__img">
+									<img src="img/photo/promo-header-card-img-3.jpg" alt="">
+								</div>
+								<div class="others-works__title">
+									Nature Breeze
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- == FOOTER ================== -->
+		@@include('common/footer/_footer.html',{})
+		<!-- == // FOOTER ================== -->
+	</div>
+	@@include('_js-bottom.html',{})
+</body>
+
+</html>

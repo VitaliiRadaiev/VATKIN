@@ -64,13 +64,17 @@ body {
 	-webkit-text-size-adjust: 100%;
 	color: $textColor;
 	font-weight: 300;
-	font-size: 2.2rem;
-	line-height: 1.5em;
+	font-size: 1.8rem;
+	line-height: 1.33em;
 	transition: opacity 0.8s ease;
 	position: relative;
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: $md3+px) {
+		font-size: 14px;
+	}
 
 	&:not(.mobile) {
 		& a:not(.not-hover):hover {
@@ -192,7 +196,7 @@ p,
 ul,
 ol,
 figure {
-	margin-bottom: 1.5em;
+	margin-bottom: 1rem;
 }
 
 ._page {
@@ -275,11 +279,47 @@ figure {
 	fill: currentColor;
 }
 
+.circle-arrow {
+    & .arrow {
+        animation: upDown 2s ease infinite;
+    }
+}
+
+.link {
+	padding-right: 3.6rem;
+	position: relative;
+
+	&:before {
+		position: absolute;
+		font-family: 'icomoon' !important;
+		content: "\e903";
+		top: 53%;
+		right: 0;
+		transform: translateY(-50%);
+		transition: all .3s ease;
+		font-size: 0.8em;
+	}
+
+	@media (min-width: 992px) {
+		&:hover {
+			&:before {
+				transform: translateY(-50%) translateX(20%);
+			}
+		}
+	}
+}
+
+@keyframes upDown {
+    0% {transform: translateY(-10%);}
+    50% {transform: translateY(10%);}
+    100% {transform: translateY(-10%);}
+}
+
 [data-padding-top-header-size] {
-	padding-top: 10rem;
+	padding-top: 11.8rem;
 
 	@media (max-width: $md2+px) {
-		padding-top: 60px;
+		padding-top: 7rem;
 	}
 }
 
@@ -411,14 +451,14 @@ figure {
 	& h5,
 	& h6 {
 		color: $textColorSecondary;
-		margin-bottom: 0.7em;
+		margin-bottom: 1rem;
 	}
 
 	& p,
 	& ul,
 	& ol,
 	& figure {
-		margin-bottom: 1.5em;
+		margin-bottom: 1rem;
 	}
 
 	& a {

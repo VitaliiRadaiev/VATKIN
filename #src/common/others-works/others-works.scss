@@ -1,0 +1,165 @@
+.others-works {
+    padding-bottom: 22.6rem;
+
+    @media (max-width: $md3+px) {
+        padding-bottom: 10.8rem;
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: '';
+            left: 50%;
+            bottom: 0;
+            width: 100vw;
+            height: 1px;
+            transform: translateX(-50%);
+            background-color: #CACACA;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 7rem;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__btn {
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 1.33em;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        text-transform: uppercase;
+
+        @media (max-width: $md3+px) {
+            font-size: 12px;
+            gap: 10px;
+        }
+
+        &.prev {
+            @media (min-width: 992px) {
+                &:hover {
+                    &::before {
+                        transform: translateX(-20%);
+                    }
+                }
+            }
+            &::before {
+                font-family: "icomoon" !important;
+                content: "\e902";
+                font-size: 0.8em;
+                transition: all 0.3s ease;
+            }
+        }
+        &.next {
+            @media (min-width: 992px) {
+                &:hover {
+                    &::after {
+                        transform: translateX(20%);
+                    }
+                }
+            }
+            &::after {
+                font-family: "icomoon" !important;
+                content: "\e903";
+                font-size: 0.8em;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    &__slider {
+        & .swiper-slide {
+            display: block;
+            width: auto;
+            position: relative;
+
+            @media (min-width: 992px) {
+                min-width: 70rem;
+                &:hover {
+                    & .others-works__img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__img {
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+
+        @media (min-width: 992px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        @media (max-width: $md2+px) {
+            position: relative;
+            height: 0;
+            padding-bottom: 75.47%;
+            margin-bottom: 0.5rem;
+        }
+
+        & img {
+            height: 100%;
+            width: auto;
+
+            @media (max-width: $md2+px) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__title {
+        min-height: 24rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        font-weight: 600;
+        font-size: 7rem;
+        line-height: 1.33em;
+        font-family: $titleFontFamily;
+
+        @media (max-width: $md2+px) {
+            font-weight: 400;
+            font-size: 1.4rem;
+            min-height: auto;
+        }
+        @media (max-width: $md3+px) {
+            font-size: 1.2rem;
+        }
+    }
+}
+.prev {
+}
+.next {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

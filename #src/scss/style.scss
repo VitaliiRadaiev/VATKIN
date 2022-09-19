@@ -16,7 +16,6 @@
 
 // ==== PLUGINS ===========================================================================================
 @import "plugins/swiper-bundle";
-@import "plugins/fancybox";
 // ==== // PLUGINS ===========================================================================================
 
 // ==== VARS ===========================================================================================
@@ -36,6 +35,10 @@
 @import "../common/promo-header/promo-header";
 @import "../common/card/card";
 @import "../common/series/series";
+@import "../common/zoom/zoom";
+@import "../common/painting-info/painting-info";
+@import "../common/others-works/others-works";
+@import "../common/about-hero/about-hero";
 // ==== // COMMON BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -43,5 +46,7 @@
 @import "pages/series";
 @import "pages/seria";
 @import "pages/portfolio";
+@import "pages/painting";
+@import "pages/about";
 // ==== AND PAGES =====================================================
 

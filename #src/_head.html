@@ -8,7 +8,7 @@
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
@@ -79,9 +79,14 @@
 			}
 		}
 
+		.mobile .cursor {
+			display: none;
+		}
+
 		.cursor {
-			background-color: #1B3128;
-			border: 1px solid #1B3128;
+			color: #1B3128;
+			background-color: currentColor;
+			border: 1px solid currentColor;
 			width: 28px;
 			height: 28px;
 			border-radius: 50%;
@@ -89,11 +94,32 @@
 			position: fixed;
 			pointer-events: none;
 			transform: translate(-50%, -50%);
-
 		}
 
-		.mobile .cursor {
-			display: none;
+		.cursor svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: auto;
+			transition: all .3s ease;
+			opacity: 0;
+		}
+
+		.cursor .circle {
+			opacity: 0;
+		}
+
+		.cursor.show-arrow svg {
+			opacity: 1
+		}
+
+		.cursor.hidden {
+			opacity: 0 !important;
+		}
+		.cursor.cursor-light {
+			color: #fff;
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>

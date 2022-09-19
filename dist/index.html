@@ -10,7 +10,7 @@
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
@@ -81,9 +81,14 @@
 			}
 		}
 
+		.mobile .cursor {
+			display: none;
+		}
+
 		.cursor {
-			background-color: #1B3128;
-			border: 1px solid #1B3128;
+			color: #1B3128;
+			background-color: currentColor;
+			border: 1px solid currentColor;
 			width: 28px;
 			height: 28px;
 			border-radius: 50%;
@@ -91,11 +96,32 @@
 			position: fixed;
 			pointer-events: none;
 			transform: translate(-50%, -50%);
-
 		}
 
-		.mobile .cursor {
-			display: none;
+		.cursor svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: auto;
+			transition: all .3s ease;
+			opacity: 0;
+		}
+
+		.cursor .circle {
+			opacity: 0;
+		}
+
+		.cursor.show-arrow svg {
+			opacity: 1
+		}
+
+		.cursor.hidden {
+			opacity: 0 !important;
+		}
+		.cursor.cursor-light {
+			color: #fff;
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
@@ -165,7 +191,19 @@ defer
 	}
 </style>
 
-<div class="cursor" data-cursor></div>
+<div class="cursor" data-cursor>
+	<svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path class="circle" fill-rule="evenodd" clip-rule="evenodd"
+			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
+			fill="currentColor" />
+		<g class="arrow">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z" fill="currentColor" />
+			<path fill-rule="evenodd" clip-rule="evenodd"
+				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
+				fill="currentColor" />
+		</g>
+	</svg>
+</div>
 
 <body>
 	<!-- == TOP LINE ================== -->
@@ -191,13 +229,15 @@ defer
 				}
 			}
 		</script>
-		<div class="top-line header " style="">
+		<div class="top-line header " style="" data-header>
     <div class="top-line__body container" >
         <button class="top-line__burger" data-action="open-menu">
-            <picture>
-                <source srcset="img/icons/burger.svg" media="(min-width: 992px)">
-                <img src="img/icons/burger-mob.svg" alt="img">
-            </picture>
+            <div class="top-line__burger-desk">
+                <img class="img-svg" src="img/icons/burger.svg" alt="img">
+            </div>
+            <div class="top-line__burger-mob">
+                <img class="img-svg" src="img/icons/burger-mob.svg" alt="img">
+            </div>
         </button>
     </div>
 </div>

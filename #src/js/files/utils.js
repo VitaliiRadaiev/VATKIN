@@ -190,6 +190,21 @@ class Utils {
 			}
 		}
 	}
+
+	setFullHeaghtSize() {
+		let elments = document.querySelectorAll('[data-full-min-height]');
+		if(elments.length) {
+			elments.forEach(el => {
+				const setSize = () => {
+					el.style.minHeight = document.documentElement.clientHeight + 'px';
+				}
+
+				setSize();
+
+				window.addEventListener('resize', setSize);
+			})
+		}
+	}
 }
 
 
