@@ -1526,6 +1526,16 @@ body::-webkit-scrollbar-track {
           box-shadow: inset 0px 0px 0px 0px #fff;
 }
 
+body.logo-is-hide .main-logo {
+  -webkit-transform: translateY(-200%) translateX(-50%);
+      -ms-transform: translateY(-200%) translateX(-50%);
+          transform: translateY(-200%) translateX(-50%);
+}
+
+body.logo-white:not(.header-is-scroll) .main-logo path {
+  fill: #fff;
+}
+
 .c-scrollbar {
   display: none;
 }
@@ -2159,19 +2169,21 @@ i {
   stroke: #fff;
 }
 
-body.logo-white:not(.header-is-scroll) .main-logo path {
-  fill: #fff;
+.top-line.header--hide {
+  -webkit-transform: translateY(-102%);
+      -ms-transform: translateY(-102%);
+          transform: translateY(-102%);
 }
 
 .main-logo {
-  top: 3rem;
+  top: 4rem;
   position: fixed;
   left: 51%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
-  max-width: 26.2rem;
+  max-width: 18.34rem;
   z-index: 50;
   -webkit-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
@@ -2243,7 +2255,7 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   overflow-y: auto;
-  padding: 7rem 6rem;
+  padding: 11.8rem 6rem 7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2337,7 +2349,7 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 3rem 0;
+  padding: 0rem 0 3rem;
 }
 
 .menu__lists-wrap {
@@ -2371,16 +2383,34 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
   margin-bottom: 2rem;
 }
 
+.menu__language {
+  margin-left: auto;
+}
+
+.menu__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
 .menu__social {
   padding-left: 0;
   margin-bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 5rem;
+  gap: 3rem;
   font-weight: 300;
   font-size: 1.8rem;
   line-height: 1.78em;
+}
+
+.menu__social a {
+  white-space: nowrap;
 }
 
 .menu__side-img {
@@ -3508,6 +3538,69 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
   text-transform: uppercase;
 }
 
+.cookies-message {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1B3128;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 47;
+  -webkit-transform: translateY(102%);
+      -ms-transform: translateY(102%);
+          transform: translateY(102%);
+}
+
+.cookies-message.show {
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.cookies-message__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 14rem;
+  padding: 4.2rem 0 4.6rem;
+  gap: 5rem;
+}
+
+.cookies-message__text {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.3em;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  max-width: 119.7rem;
+}
+
+.cookies-message__text a {
+  text-decoration: underline;
+}
+
+.cookies-message__agree {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.3em;
+  letter-spacing: 0.04em;
+  color: #fff;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .seria {
   padding: 10rem 0;
 }
@@ -3935,6 +4028,11 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
 }
 
 @media (min-width: 992px) {
+  body.menu-is-open .main-logo {
+    opacity: 0;
+    visibility: hidden;
+  }
+
   .link:hover:after {
     -webkit-transform: translateY(-50%) translateX(20%);
         -ms-transform: translateY(-50%) translateX(20%);
@@ -4042,6 +4140,18 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
     text-shadow: 0px 0px 2px #000000;
   }
 
+  .cookies-message__text a {
+    color: #000;
+  }
+
+  .cookies-message__text a:hover {
+    color: #ffffff;
+  }
+
+  .cookies-message__agree:hover {
+    opacity: 0.7;
+  }
+
   .portfolio-card__img:hover img {
     -webkit-transform: scale(0.8);
         -ms-transform: scale(0.8);
@@ -4100,6 +4210,12 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
 @media (max-width: 991.98px) {
   html {
     font-size: 8px;
+  }
+
+  body.logo-is-hide .main-logo {
+    -webkit-transform: translateY(-200%) translateX(0%);
+        -ms-transform: translateY(-200%) translateX(0%);
+            transform: translateY(-200%) translateX(0%);
   }
 
   .container {
@@ -4177,7 +4293,7 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
 
   .menu__col-1 {
     overflow: initial;
-    padding: 7rem 2rem 0;
+    padding: 7rem 2rem 0 !important;
     display: block;
   }
 
@@ -4214,7 +4330,7 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
   }
 
   .menu__list {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   .menu__list > li:not(:last-child) {
@@ -4810,6 +4926,30 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
             transform: translate(0);
   }
 
+  .cookies-message__body {
+    min-height: 7rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0 30px;
+    gap: 20px;
+  }
+
+  .cookies-message__text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .cookies-message__agree {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
   .portfolio {
     padding: 60px 0;
   }
@@ -4930,5 +5070,23 @@ body.logo-white:not(.header-is-scroll) .main-logo path {
   .about__bottom {
     width: calc(100% - 4rem);
     margin-left: auto;
+  }
+}
+
+@media (max-height: 670px) {
+  .menu__col-1 {
+    padding-bottom: 3rem;
+  }
+
+  .menu__title {
+    font-size: 3.4rem;
+    line-height: 1.33em;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-height: 720px) {
+  .menu__list {
+    font-size: 2rem;
   }
 }

@@ -343,6 +343,7 @@ class App {
 		@@include('../common/zoom/zoom.js');
 		@@include('../common/about-hero/about-hero.js');
 		@@include('../common/exhibition/exhibition.js');
+		@@include('../common/cookies-message/cookies-message.js');
 	}
 
 	componentsAfterLoad() {

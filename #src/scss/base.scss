@@ -98,6 +98,31 @@ body {
 		border-radius: 10px;
 		box-shadow: inset 0px 0px 0px 0px #fff;
 	}
+
+	&.menu-is-open {
+		& .main-logo {
+			@media (min-width: 992px) {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+
+	&.logo-is-hide {
+		& .main-logo {
+			transform: translateY(-200%) translateX(-50%);
+
+			@media (max-width: $md2+px) {
+				transform: translateY(-200%) translateX(0%);
+			}
+		}
+	}
+}
+
+body.logo-white:not(.header-is-scroll) {
+    & .main-logo path {
+        fill: #fff;
+    }
 }
 
 .c-scrollbar {
