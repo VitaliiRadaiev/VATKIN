@@ -1529,6 +1529,8 @@ if ($cookieEl) {
 
 	initLocomotiveScroll() {
 		if (window.LocomotiveScroll) {
+			let header = document.querySelector('[data-header]')
+
 			const scroll = new LocomotiveScroll({
 				el: document.querySelector('[data-scroll-container]'),
 				smooth: true,
@@ -1539,6 +1541,22 @@ if ($cookieEl) {
 				multiplier: 0.7,
 				lerp: 0.05,
 			});
+
+			let isScroll = 0;
+
+			scroll.on('scroll', (e) => {
+				if(e.scroll.y > 50) {
+					if(e.scroll.y > isScroll) {
+						header.classList.add('header--hide');
+						document.body.classList.add('logo-is-hide');
+					} else if(e.scroll.y < isScroll) {
+						header.classList.remove('header--hide');
+						document.body.classList.remove('logo-is-hide');
+					}
+				}
+	
+				isScroll = e.scroll.y;
+			})
 		}
 	}
 }
