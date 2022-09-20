@@ -300,7 +300,7 @@ class App {
 						}
 
 						window.scrollTo({
-							top: top - 20,
+							top: top,
 							behavior: 'smooth',
 						})
 					} else {
@@ -342,6 +342,7 @@ class App {
 		@@include('../common/promo-header/promo-header.js');
 		@@include('../common/zoom/zoom.js');
 		@@include('../common/about-hero/about-hero.js');
+		@@include('../common/exhibition/exhibition.js');
 	}
 
 	componentsAfterLoad() {

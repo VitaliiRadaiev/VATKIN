@@ -5,32 +5,32 @@
 })
 
 <div class="cursor" data-cursor>
-	<svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path class="circle" fill-rule="evenodd" clip-rule="evenodd"
-			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
-			fill="currentColor" />
-		<g class="arrow">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
-				fill="currentColor" />
-			<path fill-rule="evenodd" clip-rule="evenodd"
-				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
-				fill="currentColor" />
-		</g>
-	</svg>
+    <svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="circle" fill-rule="evenodd" clip-rule="evenodd"
+            d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
+            fill="currentColor" />
+        <g class="arrow">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
+                fill="currentColor" />
+        </g>
+    </svg>
 </div>
 
 <body>
-	<div class="_preload-body"></div>
-	<!-- == TOP LINE ================== -->
-	<div class="main-wrapper">
-		@@include('common/header/_header.html',{
-		"mod": "header--dark cursor-light",
-		"styles": ""
-		})
-		<!-- == // TOP LINE ================== -->
-		<!-- data-padding-top-header-size -->
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": "header--dark cursor-light",
+        "styles": ""
+        })
+        <!-- == // TOP LINE ================== -->
+        <!-- data-padding-top-header-size -->
 
-		<main class="_page about-page">
+        <main class="_page about-page">
             <section class="about-hero cursor-light" data-about-hero>
                 <div class="about-hero__body container">
                     <div class="about-hero__bg">
@@ -122,19 +122,213 @@
                     </div>
                     <div class="about-hero__content" data-full-min-height>
                         <h1 class="about-hero__title">
-                            “ I work with the theme of delving into my <strong><i>subconscious</i></strong> and trying to <strong><i>reveal unconscious</i></strong> feelings and thoughts in my works”
+                            “ I work with the theme of delving into my <strong><i>subconscious</i></strong> and trying
+                            to <strong><i>reveal unconscious</i></strong> feelings and thoughts in my works”
                         </h1>
                     </div>
-                    <a href="#about" class="about-hero__anchor anchor not-hover">About</a>
+                    <a href="#about" class="about-hero__anchor anchor not-hover">
+                        About
+                        <img class="img-svg" src="img/icons/circle-arrow-down.svg" alt="">
+                    </a>
                 </div>
             </section>
-		</main>
 
-		<!-- == FOOTER ================== -->
-		@@include('common/footer/_footer.html',{})
-		<!-- == // FOOTER ================== -->
-	</div>
-	@@include('_js-bottom.html',{})
+            <div class="padding-wrap-md" id="about">
+                <div class="container-sm">
+                    <div class="about">
+                        <div class="about__intro">
+                            <div class="about__text text-content text-sm last">
+                                <h2 class="title-with-arrow">Yuriy Vatkin</h2>
+                                <p>
+                                    Yurii Vatkin was born in 1975 in Dnipropetrovsk, and in 1977 his family moved to
+                                    Kharkiv. At a young age, the artist developed an interest in art, which led to the
+                                    creation of several children's drawings. At 14, Yurii met the Kharkiv graphic artist
+                                    and excellent teacher Oleksandr Bragin, from whom the artist took private lessons.
+                                </p>
+                                <p>
+                                    Two years later (at 16), Vatkin became a student at the Kharkiv Art and Industrial
+                                    Institute. Yuriy Vatkin belongs to those artists who are guided by emotions and
+                                    intuition in their work. He does not follow fashion and does not oppose himself to
+                                    society. He likes to materialize his thoughts in results, stimulating the viewer's
+                                    visual attention.
+                                </p>
+                            </div>
+                            <div class="about__img">
+                                <img src="img/photo/author.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="about__bottom text-content">
+                            <div class="quote text-md last">
+                                <p>
+                                    My paintings convey my state at the time of their creation. <i>The paintings are
+                                        full of colors, emotions, and lines.</i> What should fall freezes on the canvas,
+                                    and what should not move at all comes to life and unfolds in the space of light,
+                                    strokes, and proportions.
+                                </p>
+                                <p>
+                                    I work with the theme of delving into my subconscious and trying to reveal
+                                    unconscious feelings and thoughts in my works. <i>I use visually dimensional
+                                        brushstrokes to convey the work's underlying emotional color and mood.</i> This
+                                    creative approach is characteristic of a range of my works.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="exhibition" data-exhibition>
+                <div class="container-sm">
+                    <h2 class="exhibition__title">
+                        exhibition
+                    </h2>
+                    <div class="exhibition__content">
+                        <div class="exhibition__row text-content text-sm">
+                            <h4 class="title-with-arrow">Collective project</h4>
+
+                            <ul class="exhibition__list">
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-1.jpg">
+                                        <div class="exhibition__list-year">
+                                            2018
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            exhibition space "Oil painting", Kharkiv, Ukraine
+                                            "Color II", VOVATANYA gallery, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-2.jpg">
+                                        <div class="exhibition__list-year">
+                                            2017
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            "ARTSTAQ Exchange", Prague, Czech Republic
+                                            "Color. Mood", VOVATANYA gallery, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-3.jpg">
+                                        <div class="exhibition__list-year">
+                                            2016
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            "ARTSTAQ Exchange", London, Great Britain
+                                            "Rider: 7+1", KyivArtWeek, Kyiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-4.jpg">
+                                        <div class="exhibition__list-year">
+                                            2014
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            "Botany", ART Kyiv Contemporary, Art Arsenal, Kyiv, Ukraine
+                                            "Headset. Hope", Municipal Gallery, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-5.jpg">
+                                        <div class="exhibition__list-year">
+                                            2013
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            "Harnitur.Nadia", ART Kyiv Contemporary, Mystetskyi Arsenal, Kyiv, Ukraine
+                                            "Through the smell II", Municipal Gallery, Kharkiv, Ukraine
+                                            "Through the smell", Shcherbenko Art Center, Kyiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-6.jpg">
+                                        <div class="exhibition__list-year">
+                                            2012
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            "Color and emotions", gallery VOVATANYA, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-1.jpg">
+                                        <div class="exhibition__list-year">
+                                            2011
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            "On Earth", ART Kyiv Contemporary, Art Arsenal, Kyiv, Ukraine
+                                            "Manifestation", Municipal Gallery, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-2.jpg">
+                                        <div class="exhibition__list-year">
+                                            2010
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            collective project of the Union of Artists, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-3.jpg">
+                                        <div class="exhibition__list-year">
+                                            2009
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            collective project of the Union of Artists, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="exhibition__preview-img">
+                              
+                            </div>
+                        </div>
+                        <div class="exhibition__row text-content text-sm">
+                            <h4 class="title-with-arrow">Personal exhibition</h4>
+
+                            <ul class="exhibition__list">
+                                <li>
+                                    <a href="#" class="exhibition__list-item"
+                                        data-exhibition-img="img/photo/promo-header-card-img-1.jpg">
+                                        <div class="exhibition__list-year">
+                                            2010
+                                        </div>
+                                        <div class="exhibition__list-text">
+                                            Kharkiv Art Museum, Kharkiv, Ukraine
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="exhibition__preview-img"></div>
+                        </div>
+                    </div>
+                    <div class="exhibition__bottom">
+                        <a href="#" class="exhibition__download link">Download CV</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
 </body>
 
 </html>

@@ -21,12 +21,12 @@ section {
 	display: block;
 }
 html.has-scroll-smooth {
-    overflow: hidden;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;  
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 html {
 	height: 100%;
@@ -81,7 +81,6 @@ body {
 			opacity: 0.7;
 		}
 	}
-	
 
 	&::-webkit-scrollbar {
 		width: 4px;
@@ -170,24 +169,56 @@ button {
 	background-color: transparent;
 }
 
-h2.title-2 {
-	font-weight: 700;
-	font-size: 4.8rem;
-	line-height: 1.21em;
+h1,
+.title-1 {
+	font-family: $titleFontFamily;
+	font-weight: 600;
+	font-size: 4.2rem;
+	line-height: 1.33em;
+
+	@media (max-width: $md3+px) {
+		font-size: 36px;
+	}
 }
 
-h3.title-3 {
-	font-weight: 700;
+h2,
+.title-2 {
+	font-family: $titleFontFamily;
+	color: $titlceColor;
+	font-weight: 600;
+	font-size: 3.4rem;
+	line-height: 1.33em;
+
+	@media (max-width: $md3+px) {
+		font-size: 28px;
+	}
+}
+
+h3,
+.title-3 {
+	font-family: $titleFontFamily;
+	color: $titlceColor;
+	font-weight: 600;
 	font-size: 3.2rem;
 	line-height: 1.25em;
 }
-h4.title-4 {
-	font-weight: 700;
+h4,
+.title-4 {
+	font-family: $titleFontFamily;
+	color: $titlceColor;
+	font-weight: 600;
 	font-size: 2.4rem;
 	line-height: 1.33em;
+
+	@media (max-width: $md3+px) {
+		font-size: 18px;
+	}
 }
-h5.title-5 {
-	font-weight: 700;
+h5,
+.title-5 {
+	font-family: $titleFontFamily;
+	color: $titlceColor;
+	font-weight: 600;
 	font-size: 2rem;
 	line-height: 1.1em;
 }
@@ -200,7 +231,6 @@ figure {
 }
 
 ._page {
-	
 }
 
 .main-wrapper {
@@ -258,6 +288,13 @@ figure {
 		padding: 36px 0;
 	}
 }
+.padding-wrap-md {
+	padding: 13rem 0;
+
+	@media (max-width: $md3+px) {
+		padding: 36px 0;
+	}
+}
 
 .ibg {
 	position: relative;
@@ -280,29 +317,29 @@ figure {
 }
 
 .circle-arrow {
-    & .arrow {
-        animation: upDown 2s ease infinite;
-    }
+	& .arrow {
+		animation: upDown 2s ease infinite;
+	}
 }
 
 .link {
 	padding-right: 3.6rem;
 	position: relative;
 
-	&:before {
+	&:after {
 		position: absolute;
-		font-family: 'icomoon' !important;
+		font-family: "icomoon" !important;
 		content: "\e903";
 		top: 53%;
 		right: 0;
 		transform: translateY(-50%);
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		font-size: 0.8em;
 	}
 
 	@media (min-width: 992px) {
 		&:hover {
-			&:before {
+			&:after {
 				transform: translateY(-50%) translateX(20%);
 			}
 		}
@@ -310,9 +347,15 @@ figure {
 }
 
 @keyframes upDown {
-    0% {transform: translateY(-10%);}
-    50% {transform: translateY(10%);}
-    100% {transform: translateY(-10%);}
+	0% {
+		transform: translateY(-10%);
+	}
+	50% {
+		transform: translateY(10%);
+	}
+	100% {
+		transform: translateY(-10%);
+	}
 }
 
 [data-padding-top-header-size] {
@@ -426,20 +469,42 @@ figure {
 }
 
 .text-md {
-	font-weight: 400;
-	font-size: 1.8rem;
+	font-weight: 300;
+	font-size: 28px;
 	line-height: 1.5em;
+
+	@media (max-width: $md3+px) {
+		font-size: 14px;
+	}
 }
 
 .text-sm {
-	font-weight: 400;
-	font-size: 1.6rem;
+	font-weight: 300;
+	font-size: 2.2rem;
 	line-height: 1.5em;
+
+	@media (max-width: $md3+px) {
+		font-size: 14px;
+	}
 }
 .text {
-	font-weight: 400;
-	font-size: 1.4rem;
-	line-height: 1.5em;
+	font-weight: 300;
+	font-size: 1.8rem;
+	line-height: 1.33em;
+
+	@media (max-width: $md3+px) {
+		font-size: 14px;
+	}
+}
+
+.last {
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+i {
+	font-weight: inherit;
 }
 
 // === TEXT CONTETN BLOCK ========================================================================
@@ -450,25 +515,18 @@ figure {
 	& h4,
 	& h5,
 	& h6 {
-		color: $textColorSecondary;
-		margin-bottom: 1rem;
+		margin-bottom: 3rem;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 1rem;
+		}
 	}
 
 	& p,
 	& ul,
 	& ol,
 	& figure {
-		margin-bottom: 1rem;
-	}
-
-	& a {
-		text-decoration: underline;
-
-		@media (min-width: 992px) {
-			&:hover {
-				color: $mainColor;
-			}
-		}
+		margin-bottom: 0.9em;
 	}
 
 	& ul {
@@ -607,6 +665,59 @@ figure {
 		& ~ h5,
 		& ~ h6 {
 			margin-top: 1.4em;
+		}
+	}
+}
+.quote {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 94.2rem;
+	position: relative;
+
+	@media (max-width: $md2+px) {
+		max-width: none;
+		padding-left: 11rem;
+	}
+
+	@media (max-width: $md3+px) {
+		padding-left: 49px;
+	}
+
+	&:before {
+		position: absolute;
+		content: "“";
+		font-family: $mainFontFamily;
+		font-size: 30rem;
+		line-height: 1em;
+		left: 0;
+		top: 0;
+		transform: translate(-111%, -26%);
+		font-weight: 400;
+
+		@media (max-width: $md2+px) {
+			transform: translate(0%, -28%);
+		}
+
+		@media (max-width: $md3+px) {
+			font-size: 120px;
+		}
+	}
+}
+.title-with-arrow {
+	@media (min-width: 992px) {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			content: "\e901";
+			font-family: "icomoon" !important;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 2.3rem;
+			line-height: 1em;
+			right: calc(100% + 7.6rem);
+			font-weight: 300;
 		}
 	}
 }

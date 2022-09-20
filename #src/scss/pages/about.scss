@@ -1,0 +1,51 @@
+.about {
+
+    &__intro {
+        margin-bottom: 17.9rem;
+        display: flex;
+        gap: 0.6rem;
+
+        @media (max-width: $md3+px) {
+            display: block;
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__text {
+        flex: 1 1 auto;
+        padding: 5.8rem 13.5rem 0;
+
+        @media (max-width: $md2+px) {
+            padding-left: 0;
+            padding-right: 3rem;
+            padding-top: 0;
+        }
+
+        @media (max-width: $md3+px) {
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__img {
+        flex: 0 0 auto;
+        width: 47rem;
+
+        @media (max-width: $md3+px) {
+            width: 157px;
+            margin-left: auto;
+        }
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__bottom {
+        @media (max-width: $md3+px) {
+            width: calc(100% - 4rem);
+            margin-left: auto;
+        }
+    }
+}
