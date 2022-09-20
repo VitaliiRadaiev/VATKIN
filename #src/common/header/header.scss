@@ -339,6 +339,15 @@
                 }
             }
         }
+
+        & a {
+            opacity: 1 !important;
+            @media (min-width: 992px) {
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+        }
     }
 
     &__language {
