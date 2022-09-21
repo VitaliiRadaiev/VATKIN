@@ -33,14 +33,14 @@ class App {
 			this.selectInit();
 			this.spollerInit();
 			this.componentsBeforeLoad();
-
+			this.initScrollParallax();
 		});
 
 
 
 		window.addEventListener('load', () => {
 			document.body.classList.add('page-is-full-load');
-			this.initLocomotiveScroll();
+			//this.initLocomotiveScroll();
 			//this.setPaddingTopHeaderSize();
 			this.componentsAfterLoad();
 			//this.setFontSize();
@@ -83,7 +83,7 @@ class App {
 			});
 		}
 
-		if(anchors.length) {
+		if (anchors.length) {
 			anchors.forEach(anchor => {
 				anchor.addEventListener("mouseleave", () => {
 					mouseCursor.classList.remove("show-arrow");
@@ -95,7 +95,7 @@ class App {
 			})
 		}
 
-		if(cursorHidden.length) {
+		if (cursorHidden.length) {
 			cursorHidden.forEach(el => {
 				el.addEventListener("mouseleave", () => {
 					mouseCursor.classList.remove("hidden");
@@ -106,16 +106,16 @@ class App {
 				});
 			})
 		}
-		if(cursorLight.length) {
+		if (cursorLight.length) {
 			cursorLight.forEach(el => {
 				el.addEventListener("mouseleave", () => {
-					if(el.classList.contains("cursor-light")) {
+					if (el.classList.contains("cursor-light")) {
 						mouseCursor.classList.remove("cursor-light");
 					}
 				});
 
 				el.addEventListener("mouseover", () => {
-					if(el.classList.contains("cursor-light")) {
+					if (el.classList.contains("cursor-light")) {
 						mouseCursor.classList.add("cursor-light");
 					}
 				});
@@ -344,6 +344,7 @@ class App {
 		@@include('../common/about-hero/about-hero.js');
 		@@include('../common/exhibition/exhibition.js');
 		@@include('../common/cookies-message/cookies-message.js');
+		@@include('../common/portfolio-list/portfolio-list.js');
 	}
 
 	componentsAfterLoad() {
@@ -364,22 +365,68 @@ class App {
 				lerp: 0.05,
 			});
 
+			let id = setInterval(() => {
+				scroll.update();
+			}, 200);
+			setTimeout(() => {
+				clearInterval(id);
+			}, 1000)
+
 			let isScroll = 0;
+			let scrollUpdate = true;
 
 			scroll.on('scroll', (e) => {
-				if(e.scroll.y > 50) {
-					if(e.scroll.y > isScroll) {
+				if(e.scroll.y > (e.limit.y - 300)) {
+					if(scrollUpdate) {
+						scroll.update();
+						scrollUpdate = false;
+					}
+				}
+				if (e.scroll.y > 50) {
+					if (e.scroll.y > isScroll) {
 						header.classList.add('header--hide');
 						document.body.classList.add('logo-is-hide');
-					} else if(e.scroll.y < isScroll) {
+					} else if (e.scroll.y < isScroll) {
 						header.classList.remove('header--hide');
 						document.body.classList.remove('logo-is-hide');
 					}
 				}
-	
+
 				isScroll = e.scroll.y;
 			})
+
+			scroll.on("call", (func, state, event) => {
+				switch (func) {
+					case "lazyLoad":
+						if (state === "enter") {
+							event.el.src = event.el.dataset.src;
+						} else {
+							
+						}
+						break;
+				}
+			});
 		}
+	}
+
+	initScrollParallax() {
+		let elements = document.querySelectorAll('[data-scroll-speed]');
+
+		window.addEventListener('scroll', (e) => {
+			elements.forEach(el => {
+				if(document.documentElement.clientWidth >= 768) {
+					if ((el.getBoundingClientRect().top <= window.innerHeight && el.getBoundingClientRect().bottom >= 0)) {
+						let value = (el.getBoundingClientRect().top - (window.innerHeight / 2)) * 0.5;
+						let speed = el.dataset.scrollSpeed;
+						el.style.transform = `translateY(${value * speed}px)`;
+					}
+				} else {
+					if(el.hasAttribute('style')) {
+						el.removeAttribute('style');
+					}
+				}
+			})
+		})
 	}
 }
 

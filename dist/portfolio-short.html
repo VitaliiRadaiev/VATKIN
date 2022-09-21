@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vatkin</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+
+		.mobile .cursor {
+			display: none;
+		}
+
+		.cursor {
+			color: #1B3128;
+			background-color: currentColor;
+			border: 1px solid currentColor;
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			z-index: 999;
+			position: fixed;
+			pointer-events: none;
+			transform: translate(-50%, -50%);
+		}
+
+		.cursor svg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: auto;
+			transition: all .3s ease;
+			opacity: 0;
+		}
+
+		.cursor .circle {
+			opacity: 0;
+		}
+
+		.cursor.show-arrow svg {
+			opacity: 1
+		}
+
+		.cursor.hidden {
+			opacity: 0 !important;
+		}
+
+		.cursor.cursor-light {
+			color: #fff;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+<div class="cursor" data-cursor>
+	<svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path class="circle" fill-rule="evenodd" clip-rule="evenodd"
+			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
+			fill="currentColor" />
+		<g class="arrow">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z" fill="currentColor" />
+			<path fill-rule="evenodd" clip-rule="evenodd"
+				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
+				fill="currentColor" />
+		</g>
+	</svg>
+</div>
+
+<body style="background-color: #EEF0E8;">
+    <div class="_preload-body"></div>
+    <div class="main-wrapper">
+	<!-- == TOP LINE ================== -->
+
+		<div class="top-line header " style="background-color: #EEF0E8;" data-header>
+    <div class="top-line__body container" >
+        <button class="top-line__burger" data-action="open-menu">
+            <div class="top-line__burger-desk">
+                <img class="img-svg" src="img/icons/burger.svg" alt="img">
+            </div>
+            <div class="top-line__burger-mob">
+                <img class="img-svg" src="img/icons/burger-mob.svg" alt="img">
+            </div>
+        </button>
+    </div>
+</div>
+
+<div class="main-logo">
+    <a href="#">
+        <svg width="262" height="68" viewBox="0 0 262 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M257.24 52.6652C256.609 53.1398 255.979 53.6037 255.332 54.0568C255.186 54.1647 255.03 54.2619 254.879 54.3644C254.405 54.6952 253.925 55.0188 253.44 55.3352C251.925 56.3331 250.378 57.2825 248.793 58.1401C248.448 58.3235 248.098 58.4961 247.753 58.6795L247.419 58.852C245.612 59.7671 243.748 60.5654 241.839 61.2416C239.482 62.0941 237.052 62.7261 234.578 63.1294C229.663 63.8949 224.649 63.7394 219.792 62.6709C214.905 61.5677 210.168 59.8797 205.684 57.6436C204.18 56.9209 202.698 56.1442 201.226 55.3405C198.24 53.7223 195.297 51.9316 192.386 50.1139L191.626 49.634V0.0107982H183.001V44.0622L179.362 41.6781C170.656 35.9661 161.799 30.2053 152.328 25.3563C151.329 24.8421 150.324 24.3404 149.315 23.8514C158.791 19.0616 169.858 10.5126 177.47 0.0107982H176.128C168.43 10.3616 157.395 18.7219 148.096 23.2635C147.202 22.832 146.296 22.4166 145.401 22.0067V0H136.776V18.4415C132.106 16.6861 127.333 15.2145 122.486 14.0348C119.176 13.2365 115.85 12.5836 112.486 12.0982V0.900727H132.291L132.065 0H84.0882L83.8618 0.900727H103.883V11.3323C99.4432 11.2136 95.0055 11.6283 90.6648 12.5675C88.0452 13.1403 85.4721 13.9082 82.967 14.8652C80.8276 15.6925 78.741 16.651 76.7193 17.7348L70.2505 0H61.0865L63.0541 5.39383C62.2078 7.59451 61.3992 9.74656 60.6337 11.78L53.9763 29.7793C50.1382 39.8442 45.7287 50.3026 43.6155 55.3513H44.8014C45.2597 54.1808 45.8795 52.7408 46.4994 51.4571C47.2956 49.8809 48.1849 48.3536 49.1625 46.8831C50.5641 44.6932 52.0483 42.5607 53.6152 40.4858C56.7293 36.343 60.2448 32.5182 64.1107 29.0672C65.9611 27.4192 67.9049 25.8795 69.9325 24.4555L81.2528 55.3513H90.4169L77.4794 19.968C79.5268 18.9544 81.637 18.0733 83.7972 17.3303C90.2353 15.1403 97.0455 14.2582 103.829 14.7358V55.3513H112.454V15.9118C112.923 16.0143 113.392 16.1111 113.855 16.2244C116.346 16.8231 118.82 17.4866 121.246 18.3011C126.569 20.0746 131.75 22.2512 136.744 24.8116V55.3352H145.369V29.4933C146.544 30.1729 147.719 30.8581 148.883 31.5539C157.702 36.8291 166.317 42.5625 175.163 48.1721C177.154 49.4234 179.159 50.6659 181.179 51.8993C181.782 52.2607 182.386 52.6274 182.99 52.978C184.327 53.7763 185.674 54.5602 187.033 55.3297C188.391 56.0992 189.782 56.8616 191.205 57.6168L191.615 57.8325C195.389 59.8309 199.265 61.6313 203.226 63.2263C208.274 65.2908 213.551 66.7396 218.945 67.5414C221.67 67.918 224.423 68.0553 227.171 67.9514C229.915 67.8421 232.641 67.4644 235.311 66.824C237.959 66.1855 240.542 65.3007 243.025 64.181C244.642 63.431 246.216 62.5938 247.742 61.673C248.179 61.4141 248.61 61.1336 249.036 60.8747L249.623 60.497C249.763 60.4053 249.909 60.3191 250.044 60.222C252.267 58.7376 254.385 57.1012 256.383 55.3244L257.229 54.5585C258.89 53.0375 260.464 51.4463 261.984 49.8065L261.472 49.2671C260.092 50.4484 258.679 51.581 257.24 52.6652ZM62.957 27.7835C59.1644 31.4514 55.7245 35.4678 52.6826 39.7795C51.2163 41.8435 49.8308 43.9633 48.5263 46.1388C49.6044 43.5282 63.5069 6.82314 63.5069 6.82314L69.2263 22.4652C67.0275 24.1051 64.9336 25.8813 62.957 27.7835ZM200.542 0H211.571L246.68 44.073V0.00526741H247.758V55.3352H244.626L205.323 5.99774V55.3297H204.245V4.65481L200.542 0ZM27.2334 55.3352H23.7781L0 0H9.38514L29.546 46.8992C35.756 32.201 49.2271 0 49.2271 0H50.6664L27.2334 55.3352Z"
+                fill="currentColor" />
+        </svg>
+    </a>
+</div>
+
+<div class="menu" data-menu>
+    <button class="menu__close" data-action="close-menu"><span></span></button>
+    <div class="menu__scroll-wrap">
+        <div class="menu__col-1">
+            <div class="menu__inner">
+                <div class="menu__lists-wrap">
+                    <div class="menu__col">
+                        <a href="#" class="menu__title">Gallery</a>
+                        <ul class="menu__list">
+                            <li>
+                                <a href="#">Unconscious</a>
+                            </li>
+                            <li>
+                                <a href="#">Feeling of Seasons</a>
+                            </li>
+                            <li>
+                                <a href="#">Concrete Jungles </a>
+                            </li>
+                            <li>
+                                <a href="#">Nature Breeze</a>
+                            </li>
+                            <li>
+                                <a href="#">The War</a>
+                            </li>
+                            <li>
+                                <a href="#">Metallic Shapes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu__col">
+                        <a href="#" class="menu__title">About</a>
+                        <ul class="menu__list">
+                            <li>
+                                <a href="#">Press</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu__col">
+                        <a href="#" class="menu__title">Shop</a>
+                        <ul class="menu__list">
+                            <li>
+                                <a href="#">Shop all</a>
+                            </li>
+                            <li>
+                                <a href="#">Books</a>
+                            </li>
+                            <li>
+                                <a href="#">Artworks</a>
+                            </li>
+                            <li>
+                                <a href="#">Merch</a>
+                            </li>
+                            <li>
+                                <a href="#">Print</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__bottom">
+                <ul class="menu__social">
+                    <li>
+                        <a href="#">E-mail</a>
+                    </li>
+                    <li>
+                        <a href="#">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#">Behance</a>
+                    </li>
+                    <li>
+                        <a href="#">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="#">Pinterest</a>
+                    </li>
+                </ul>
+                <div class="menu__language " data-cursor-hover>
+                    <div class="dropdown">
+                        <div class="dropdown__title">ENG</div>
+                        <ul class="dropdown__list">
+                            <li>
+                                <a href="#">UA</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu__currency" data-cursor-hover>
+                    <div class="dropdown">
+                        <div class="dropdown__title">USD</div>
+                        <ul class="dropdown__list">
+                            <li>
+                                <a href="#">EUR</a>
+                            </li>
+                            <li>
+                                <a href="#">UAH</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu__col-2">
+            <div class="menu__side-img ibg">
+                <a href="#" class="not-hover">
+                    <img src="img/photo/menu-img.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+		<!-- == // TOP LINE ================== -->
+		<!-- data-padding-top-header-size -->
+
+		<main class="_page portfolio-page">
+            <div data-padding-top-header-size ></div>
+
+			<section class="portfolio portfolio--second portfolio--short">
+
+                <div class="container-sm">
+                    <h1 class="portfolio__title">Nature Breeze</h1>
+                    <div class="portfolio__subtitle-wrap">
+                        <div class="portfolio__subtitle">
+                            The series of landscapes of rural and urban areas brings together works from different years. They depict nature and cities at different times of the year. The cold winter, fascinating shades of blue and white, and the hot summer, saturated with reds and greens.
+                        </div>
+                    </div>
+                    <ul class="portfolio__list" data-portfolio-list="short">
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-1.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-9.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-3.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-11.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-12.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-6.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-13.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-14.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-15.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-16.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-17.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="portfolio-card" >
+                                <a href="#" class="portfolio-card__img not-hover">
+                                    <img loading="lazy" src="img/photo/portfolio-img-18.jpg" alt="">
+                                </a>
+                                <div class="portfolio-card__bottom">
+                                    <div class="portfolio-card__title">
+                                        Title of painting
+                                    </div>
+                                    <div class="portfolio-card__size">
+                                        acrylic on canvas |  90 x 120 | 2022
+                                    </div>
+                                    <div class="portfolio-card__text">
+                                        Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+		</main>
+
+		<!-- == FOOTER ================== -->
+
+         <footer class="footer">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__copy">
+                Vatkin. All rights reserved 2022
+            </div>
+            <ul class="footer__social">
+                <li>
+                    <a href="#">E-mail</a>
+                </li>
+                <li>
+                    <a href="#">Instagram</a>
+                </li>
+                <li>
+                    <a href="#">Facebook</a>
+                </li>
+                <li>
+                    <a href="#">Behance</a>
+                </li>
+                <li>
+                    <a href="#">Linkedin</a>
+                </li>
+                <li>
+                    <a href="#">Pinterest</a>
+                </li>
+            </ul>
+            <div class="footer__language " data-cursor-hover>
+                <div class="dropdown">
+                    <div class="dropdown__title">ENG</div>
+                    <ul class="dropdown__list">
+                        <li>
+                            <a href="#">UA</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__currency" data-cursor-hover>
+                <div class="dropdown">
+                    <div class="dropdown__title">USD</div>
+                    <ul class="dropdown__list">
+                        <li>
+                            <a href="#">EUR</a>
+                        </li>
+                        <li>
+                            <a href="#">UAH</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__logo">
+                <div class="footer__logo-label">Powered by</div>
+                <div class="footer__logo-img">
+                    <img src="img/logo/spacespire.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+		<!-- == // FOOTER ================== -->
+    </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+</body>
+
+</html>

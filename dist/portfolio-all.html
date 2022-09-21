@@ -135,28 +135,27 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGP
 defer
 ></script> -->
 </head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
 <div class="cursor" data-cursor>
-	<svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path class="circle" fill-rule="evenodd" clip-rule="evenodd"
-			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
-			fill="currentColor" />
-		<g class="arrow">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z" fill="currentColor" />
-			<path fill-rule="evenodd" clip-rule="evenodd"
-				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
-				fill="currentColor" />
-		</g>
-	</svg>
+    <svg class="circle-arrow" width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="circle" fill-rule="evenodd" clip-rule="evenodd"
+            d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
+            fill="currentColor" />
+        <g class="arrow">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
+                fill="currentColor" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
+                fill="currentColor" />
+        </g>
+    </svg>
 </div>
 
-<body data-scroll-container>
+<body>
     <div class="_preload-body"></div>
-	<!-- == TOP LINE ================== -->
-
-		<div class="top-line header " style="" data-header>
+    <div class="main-wrapper">
+        <!-- == TOP LINE ================== -->
+        <div class="top-line header " style="" data-header>
     <div class="top-line__body container" >
         <button class="top-line__burger" data-action="open-menu">
             <div class="top-line__burger-desk">
@@ -296,162 +295,162 @@ defer
         </div>
     </div>
 </div>
-		<!-- == // TOP LINE ================== -->
-		<!-- data-padding-top-header-size -->
+        <!-- == // TOP LINE ================== -->
+        <!-- data-padding-top-header-size -->
 
-		<main class="_page portfolio-page" data-scroll-section data-scroll-section-inview>
-            <div data-padding-top-header-size ></div>
+        <main class="_page portfolio-page">
+            <div data-padding-top-header-size></div>
 
-			<section class="portfolio">
+            <section class="portfolio">
 
                 <div class="container-sm">
-                    <ul class="portfolio__list" >
-                        <li data-scroll data-scroll-mobile data-scroll-speed="0" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                    <ul class="portfolio__list" data-portfolio-list="all">
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-1.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-1.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="1.25" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-2.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-2.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="0" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-3.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-3.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="1.25" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-4.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-4.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="0" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-5.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-5.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="1.25" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-6.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-6.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="0.75" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-7.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-7.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="1.25" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-8.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-8.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="0" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-9.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-9.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li data-scroll data-scroll-mobile data-scroll-speed="0.25" data-scroll-offset="-100%,0">
-                            <div class="portfolio-card" >
+                        <li>
+                            <div class="portfolio-card">
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img src="img/photo/portfolio-img-10.jpg" alt="">
+                                    <img loading="lazy" src="img/photo/portfolio-img-10.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
                                     <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
+                                        acrylic on canvas | 90 x 120 | 2022
                                     </div>
                                 </div>
                             </div>
@@ -459,11 +458,11 @@ defer
                     </ul>
                 </div>
             </section>
-		</main>
+        </main>
 
-		<!-- == FOOTER ================== -->
-        <div data-scroll-section>
-            <footer class="footer">
+        <!-- == FOOTER ================== -->
+
+        <footer class="footer">
     <div class="container">
         <div class="footer__body">
             <div class="footer__copy">
@@ -521,10 +520,10 @@ defer
         </div>
     </div>
 </footer>
-        </div>
-		<!-- == // FOOTER ================== -->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- == // FOOTER ================== -->
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/jQueryScripts.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
 </body>
