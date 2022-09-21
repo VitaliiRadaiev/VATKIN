@@ -3127,6 +3127,7 @@ i {
           align-items: center;
   gap: 2rem;
   text-transform: uppercase;
+  color: #000;
 }
 
 .others-works__btn.prev::before {
