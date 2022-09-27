@@ -2663,6 +2663,8 @@ i {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   height: 100%;
+  -webkit-transform: perspective(400);
+          transform: perspective(400);
 }
 
 .promo-header-card__layer-1 {
@@ -3997,6 +3999,11 @@ i {
   .promo-header .swiper-slide {
     height: 100vh;
     overflow: hidden;
+    pointer-events: none;
+  }
+
+  .promo-header .swiper-slide.is-hover {
+    pointer-events: auto;
   }
 
   .promo-header__btn[data-action=slide-prev] {

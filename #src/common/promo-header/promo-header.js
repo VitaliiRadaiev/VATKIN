@@ -6,22 +6,38 @@
 
         if (slider) {
             let sliderData;
-
             function mobileSlider() {
                 if (document.documentElement.clientWidth > 767 && slider.dataset.mobile == 'false') {
                     sliderData = new Swiper(slider, {
                         // autoplay: {
-                        //     delay: 3000,
-                        //     disableOnInteraction: false,
+                        //     delay: 10000,
+                        //     disableOnInteraction: true,
                         // },
+                        initialSlide: window.startHomePageSlide,
                         observer: true,
                         observeParents: true,
-                        speed: 600,
+                        speed: 1500,
                         watchSlidesProgress: true,
                         preloadImages: false,
                         slidesPerView: 1,
                         spaceBetween: 0,
                         loop: true,
+                        on: {
+                            slideChange: (e) => {
+                                let prevSlide = slider.querySelector('.swiper-slide.is-hover');
+                                if(prevSlide) {
+                                    console.log(prevSlide);
+                                    prevSlide.classList.remove('is-hover');
+                                }
+                                setTimeout(() => {
+                                    let activeSlide = slider.querySelector('.swiper-slide.swiper-slide-active');
+                                    if(activeSlide) {
+                                        console.log(activeSlide);
+                                        activeSlide.classList.add('is-hover');
+                                    }
+                                }, 1500)
+                            }
+                        }
                     });
 
                     let buttonsPrev = promoHeader.querySelectorAll('[data-action="slide-prev"]');
@@ -106,7 +122,12 @@
                     const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
                     const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
     
-                    subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
+                    //subpanel.style.transform = "perspective(400px) rotateY(" + percentX * transformAmount + "deg) rotateX(" + percentY * transformAmount + "deg)";
+                    gsap.to(subpanel, 1, {
+						transformPerspective: 400,
+						rotateY: percentX * transformAmount,
+                        rotateX: percentY * transformAmount,
+					});
                 }
     
                 function handleMouseEnter() {
@@ -115,17 +136,22 @@
                     setTimeout(() => {
                         subpanel.style.transition = "";
                     }, 100);
-                    subpanel.style.transition = "transform 0.1s";
+                    //subpanel.style.transition = "transform 0.1s";
                 }
     
                 function handleMouseLeave() {
                     parent.classList.remove('hover');
-                    subpanel.style.transition = "transform 0.1s";
+                    //subpanel.style.transition = "transform 0.1s";
                     setTimeout(() => {
                         subpanel.style.transition = "";
                     }, 100);
     
-                    subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
+                    //subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
+                    gsap.to(subpanel, 1, {
+                        transformPerspective: 400,
+						rotateY: 0,
+                        rotateX: 0,
+					});
                 }
             })
         }

@@ -39,7 +39,9 @@ class App {
 
 
 		window.addEventListener('load', () => {
-			document.body.classList.add('page-is-full-load');
+			setTimeout(() => {
+				document.body.classList.add('page-is-full-load');
+			}, 3000);
 			//this.initLocomotiveScroll();
 			//this.setPaddingTopHeaderSize();
 			this.componentsAfterLoad();
