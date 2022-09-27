@@ -25,6 +25,7 @@ class App {
 			this.dynamicAdapt.init();
 			this.slidersInit();
 			this.headerHandler();
+			this.componentsBeforeLoad();
 			this.cursorhandler();
 			this.popupHandler();
 			this.initSmoothScroll();
@@ -32,7 +33,6 @@ class App {
 			this.tabsInit();
 			this.selectInit();
 			this.spollerInit();
-			this.componentsBeforeLoad();
 			this.initScrollParallax();
 		});
 
@@ -295,9 +295,9 @@ class App {
 						e.preventDefault();
 						let top = Math.abs(document.body.getBoundingClientRect().top) + el.getBoundingClientRect().top;
 
-						if (header) {
-							top = top - header.clientHeight;
-						}
+						// if (header) {
+						// 	top = top - header.clientHeight;
+						// }
 
 						window.scrollTo({
 							top: top,
@@ -415,7 +415,7 @@ class App {
 		window.addEventListener('scroll', (e) => {
 			elements.forEach(el => {
 				if(document.documentElement.clientWidth >= 768) {
-					if ((el.getBoundingClientRect().top <= window.innerHeight && el.getBoundingClientRect().bottom >= 0)) {
+					if ((el.getBoundingClientRect().top <= (window.innerHeight * 1.5 ) && el.getBoundingClientRect().bottom >= (window.innerHeight * 0.5))) {
 						let value = (el.getBoundingClientRect().top - (window.innerHeight / 2)) * 0.5;
 						let speed = el.dataset.scrollSpeed;
 						el.style.transform = `translateY(${value * speed}px)`;

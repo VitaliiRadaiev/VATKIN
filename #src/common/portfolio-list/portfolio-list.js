@@ -8,9 +8,9 @@
             let count = 1;
 
             children.forEach((el, index) => {
-                // if(count === 1 || count === 3 || count === 4 || count === 7 || count === 9) {
-                //     el.setAttribute('data-scroll-speed', '0');
-                // }
+                if(count == 1) {
+                    el.classList.add('one');
+                }
 
                 if(count === 2) {
                     el.setAttribute('data-scroll-speed', '0.25');
@@ -27,9 +27,18 @@
                     el.setAttribute('data-scroll-speed', '0.2');
                 }
 
-                count++;
+                el.classList.add(`item-${count++}`);
                 if(count > elementsNum) {
                     count = 1;
+                }
+            })
+
+            children.forEach(el => {
+                if(el.classList.contains('one')) {
+                    let li = document.createElement('li');
+                    li.className = 'list-br';
+    
+                    el.after(li);
                 }
             })
         }
@@ -83,9 +92,6 @@
                     el.setAttribute('data-scroll-speed', '0.15');
                 }
 
-                if(count === 1) {
-                    el.setAttribute('data-scroll-speed', '0.25');
-                }
 
                 if(count === 14 || count === 17 || count === 29 || count === 32) {
                     el.setAttribute('data-scroll-speed', '0.35');

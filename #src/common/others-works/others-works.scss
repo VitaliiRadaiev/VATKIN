@@ -81,8 +81,12 @@
             width: auto;
             position: relative;
 
+            // @media (min-width: 1440.2px) {
+            //     min-width: 70rem;
+            // }
+
             @media (min-width: 992px) {
-                min-width: 70rem;
+                // min-width: 60rem;
                 &:hover {
                     & .others-works__img {
                         opacity: 1;
@@ -143,11 +147,21 @@
         font-size: 7rem;
         line-height: 1.33em;
         font-family: $titleFontFamily;
+        padding: 0 1rem;
+
+        @media (max-width: 1440px) {
+            font-size: 6rem;
+        }
+
+        @media (max-width: $md1+px) {
+            font-size: 5rem;
+        }
 
         @media (max-width: $md2+px) {
             font-weight: 400;
             font-size: 1.4rem;
             min-height: auto;
+            padding: 0;
         }
         @media (max-width: $md3+px) {
             font-size: 1.2rem;

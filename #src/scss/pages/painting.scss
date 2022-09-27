@@ -1,4 +1,5 @@
 .painting-preview {
+    position: relative;
     @media (max-width: $md3+px) {
         border-bottom: 1px solid #cacaca;
     }
@@ -146,7 +147,17 @@
         }
 
         @media (min-width: 768px) {
-            display: none;
+            position: absolute;
+            bottom: 0rem;
+            left: 50%;
+            width: 100vw;
+            height: 20rem;
+            z-index: 5;
+            transform: translateX(-50%);
+
+            & img, & svg {
+                display: none;
+            }
         }
     }
 }

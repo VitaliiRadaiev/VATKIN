@@ -367,6 +367,7 @@ class App {
 			this.dynamicAdapt.init();
 			this.slidersInit();
 			this.headerHandler();
+			this.componentsBeforeLoad();
 			this.cursorhandler();
 			this.popupHandler();
 			this.initSmoothScroll();
@@ -374,7 +375,6 @@ class App {
 			this.tabsInit();
 			this.selectInit();
 			this.spollerInit();
-			this.componentsBeforeLoad();
 			this.initScrollParallax();
 		});
 
@@ -805,8 +805,8 @@ window.popup = {
                     spaceBetween: 20,
                 },
                 992: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
+                    slidesPerView: 2,
+                    spaceBetween: 0,
                 }
             },
         });
@@ -971,9 +971,9 @@ window.popup = {
 						e.preventDefault();
 						let top = Math.abs(document.body.getBoundingClientRect().top) + el.getBoundingClientRect().top;
 
-						if (header) {
-							top = top - header.clientHeight;
-						}
+						// if (header) {
+						// 	top = top - header.clientHeight;
+						// }
 
 						window.scrollTo({
 							top: top,
@@ -1532,9 +1532,9 @@ if ($cookieEl) {
             let count = 1;
 
             children.forEach((el, index) => {
-                // if(count === 1 || count === 3 || count === 4 || count === 7 || count === 9) {
-                //     el.setAttribute('data-scroll-speed', '0');
-                // }
+                if(count == 1) {
+                    el.classList.add('one');
+                }
 
                 if(count === 2) {
                     el.setAttribute('data-scroll-speed', '0.25');
@@ -1551,9 +1551,18 @@ if ($cookieEl) {
                     el.setAttribute('data-scroll-speed', '0.2');
                 }
 
-                count++;
+                el.classList.add(`item-${count++}`);
                 if(count > elementsNum) {
                     count = 1;
+                }
+            })
+
+            children.forEach(el => {
+                if(el.classList.contains('one')) {
+                    let li = document.createElement('li');
+                    li.className = 'list-br';
+    
+                    el.after(li);
                 }
             })
         }
@@ -1607,9 +1616,6 @@ if ($cookieEl) {
                     el.setAttribute('data-scroll-speed', '0.15');
                 }
 
-                if(count === 1) {
-                    el.setAttribute('data-scroll-speed', '0.25');
-                }
 
                 if(count === 14 || count === 17 || count === 29 || count === 32) {
                     el.setAttribute('data-scroll-speed', '0.35');
@@ -1706,7 +1712,7 @@ if ($cookieEl) {
 		window.addEventListener('scroll', (e) => {
 			elements.forEach(el => {
 				if(document.documentElement.clientWidth >= 768) {
-					if ((el.getBoundingClientRect().top <= window.innerHeight && el.getBoundingClientRect().bottom >= 0)) {
+					if ((el.getBoundingClientRect().top <= (window.innerHeight * 1.5 ) && el.getBoundingClientRect().bottom >= (window.innerHeight * 0.5))) {
 						let value = (el.getBoundingClientRect().top - (window.innerHeight / 2)) * 0.5;
 						let speed = el.dataset.scrollSpeed;
 						el.style.transform = `translateY(${value * speed}px)`;

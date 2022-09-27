@@ -89,7 +89,6 @@
 		.cursor {
 			color: #1B3128;
 			background-color: currentColor;
-			border: 1px solid currentColor;
 			width: 28px;
 			height: 28px;
 			border-radius: 50%;
@@ -97,6 +96,14 @@
 			position: fixed;
 			pointer-events: none;
 			transform: translate(-50%, -50%);
+		}
+
+		.cursor.hover svg {
+			opacity: 1;
+		}
+
+		.cursor.hover .circle {
+			opacity: 1;
 		}
 
 		.cursor svg {
@@ -107,14 +114,16 @@
 			width: 100%;
 			height: auto;
 			transition: all .3s ease;
-			opacity: 0;
 		}
 
 		.cursor .circle {
 			opacity: 0;
 		}
+		.cursor .arrow {
+			opacity: 0;
+		}
 
-		.cursor.show-arrow svg {
+		.cursor.show-arrow .arrow {
 			opacity: 1
 		}
 
@@ -134,6 +143,8 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
 defer
 ></script> -->
+
+
 </head>
 
 <div class="cursor" data-cursor>
@@ -149,6 +160,8 @@ defer
 		</g>
 	</svg>
 </div>
+
+
 
 <body style="background-color: #EEF0E8;">
     <div class="_preload-body"></div>
@@ -314,15 +327,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-1.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-1.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -332,15 +353,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-9.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-9.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -350,15 +379,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-3.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-3.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -368,15 +405,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-11.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-11.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -386,15 +431,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-12.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-12.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -404,15 +457,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-6.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-6.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -422,15 +483,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-13.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-13.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -440,15 +509,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-14.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-14.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -458,15 +535,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-15.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-15.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -476,15 +561,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-16.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-16.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -494,15 +587,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-17.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-17.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>
@@ -512,15 +613,23 @@ defer
                         <li >
                             <div class="portfolio-card" >
                                 <a href="#" class="portfolio-card__img not-hover">
-                                    <img loading="lazy" src="img/photo/portfolio-img-18.jpg" alt="">
+                                    <img  src="img/photo/portfolio-img-18.jpg" alt="">
                                 </a>
                                 <div class="portfolio-card__bottom">
                                     <div class="portfolio-card__title">
                                         Title of painting
                                     </div>
-                                    <div class="portfolio-card__size">
-                                        acrylic on canvas |  90 x 120 | 2022
-                                    </div>
+                                    <ul class="portfolio-card__list">
+                                        <li>
+                                            year | 2022
+                                        </li>
+                                        <li>
+                                            materials | material-1 | material-2
+                                        </li>
+                                        <li>
+                                            acrylic on canvas | 90 x 120 | 2022
+                                        </li>
+                                    </ul>
                                     <div class="portfolio-card__text">
                                         Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
                                     </div>

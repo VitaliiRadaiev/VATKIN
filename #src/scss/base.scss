@@ -105,6 +105,10 @@ body {
 				opacity: 0;
 				visibility: hidden;
 			}
+
+			& path {
+				fill: #000 !important;
+			}
 		}
 	}
 
@@ -384,7 +388,7 @@ figure {
 }
 
 [data-padding-top-header-size] {
-	padding-top: 11.8rem;
+	padding-top: 9.4rem;
 
 	@media (max-width: $md2+px) {
 		padding-top: 7rem;

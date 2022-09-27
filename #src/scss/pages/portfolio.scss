@@ -70,13 +70,13 @@
             }
 
             @media (min-width: 768px) {
-                &:nth-child(10n + 1) {
-                    width: 85.6%;
+                &.item-1 {
+                    width: 954 / 1446 * 100%;
                     margin-left: auto;
                     margin-right: auto;
                 }
 
-                &:nth-child(10n + 2) {
+                &.item-2 {
                     width: 345 / 1446 * 100%;
                     margin-right: auto;
                     align-self: center;
@@ -85,11 +85,11 @@
                         max-width: 34.5rem;
                     }
                 }
-                &:nth-child(10n + 3) {
+                &.item-3 {
                     width: 953 / 1446 * 100%;
                 }
 
-                &:nth-child(10n + 4) {
+                &.item-4 {
                     width: 466 / 1446 * 100%;
                     margin-left: auto;
                     margin-right: auto;
@@ -98,13 +98,13 @@
                         max-width: 34.5rem;
                     }
                 }
-                &:nth-child(10n + 5) {
+                &.item-5 {
                     width: 710 / 1446 * 100%;
                     margin-bottom: 1rem;
                     margin-top: 32rem;
                 }
 
-                &:nth-child(10n + 6) {
+                &.item-6 {
                     width: 466 / 1446 * 100%;
                     margin-left: 7%;
                     margin-bottom: 8.4rem;
@@ -114,17 +114,17 @@
                     }
                 }
 
-                &:nth-child(10n + 7) {
+                &.item-7 {
                     width: 85.6%;
                     margin-left: auto;
                     margin-right: auto;
                 }
-                &:nth-child(10n + 8) {
+                &.item-8 {
                     width: 710 / 1446 * 100%;
                     margin-bottom: 23.1rem;
                     margin-top: 34rem;
                 }
-                &:nth-child(10n + 9) {
+                &.item-9 {
                     width: 466 / 1446 * 100%;
                     margin-left: auto;
                     margin-right: auto;
@@ -133,7 +133,7 @@
                         max-width: 34.5rem;
                     }
                 }
-                &:nth-child(10n + 10) {
+                &.item-10 {
                     width: 85.6%;
                     margin-left: auto;
                     margin-right: auto;
@@ -351,6 +351,8 @@
                         margin-top: 0;
                         width: 1196 / 1446 * 100%;
                         margin-bottom: 18rem;
+                        margin-left: auto;
+                        margin-right: auto;
                     }
                     &.item-9 {
                         width: 710 / 1446 * 100%;
@@ -433,14 +435,14 @@
                     }
                     &.item-21 {
                         width: 588 / 1446 * 100%;
-                        margin-left: 0;
-                        margin-right: 8%;
+                        margin-left: 8%;
+                        margin-right: auto;
                         align-self: initial;
                         margin-top: 28rem;
                     }
                     &.item-22 {
                         width: 466 / 1446 * 100%;
-                        margin-left: 13%;
+                        margin-left: 10%;
                         margin-right: auto;
                         align-self: center;
                         margin-top: 0;
@@ -458,7 +460,7 @@
                     }
                     &.item-24 {
                         width: 466 / 1446 * 100%;
-                        margin-left: 13%;
+                        margin-left: 10%;
                         margin-right: auto;
                         margin-top: -5rem;
 
@@ -469,7 +471,7 @@
                     &.item-25 {
                         width: 1191 / 1446 * 100%;
                         margin-right: auto;
-                        margin-left: 13%;
+                        margin-left: 10%;
                         margin-top: 0;
                     }
                     &.item-26 {
@@ -627,11 +629,12 @@
         }
     }
 
-    &__size {
+    &__list {
         font-weight: 300;
         font-size: 1.6rem;
         line-height: 1.33em;
         margin-bottom: 1rem;
+        padding-left: 0;
 
         @media (max-width: $md3+px) {
             font-size: 14px;

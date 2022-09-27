@@ -89,7 +89,6 @@
 		.cursor {
 			color: #1B3128;
 			background-color: currentColor;
-			border: 1px solid currentColor;
 			width: 28px;
 			height: 28px;
 			border-radius: 50%;
@@ -97,6 +96,14 @@
 			position: fixed;
 			pointer-events: none;
 			transform: translate(-50%, -50%);
+		}
+
+		.cursor.hover svg {
+			opacity: 1;
+		}
+
+		.cursor.hover .circle {
+			opacity: 1;
 		}
 
 		.cursor svg {
@@ -107,14 +114,16 @@
 			width: 100%;
 			height: auto;
 			transition: all .3s ease;
-			opacity: 0;
 		}
 
 		.cursor .circle {
 			opacity: 0;
 		}
+		.cursor .arrow {
+			opacity: 0;
+		}
 
-		.cursor.show-arrow svg {
+		.cursor.show-arrow .arrow {
 			opacity: 1
 		}
 
@@ -134,6 +143,8 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
 defer
 ></script> -->
+
+
 </head>
 
 <div class="cursor" data-cursor>
@@ -142,8 +153,7 @@ defer
 			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
 			fill="currentColor" />
 		<g class="arrow">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
-				fill="currentColor" />
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z" fill="currentColor" />
 			<path fill-rule="evenodd" clip-rule="evenodd"
 				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
 				fill="currentColor" />
@@ -302,7 +312,7 @@ defer
 			<div data-padding-top-header-size></div>
 
 			<div class="painting-preview">
-				<a href="#info" class="painting-preview__wrap container not-hover anchor">
+				<div class="painting-preview__wrap container not-hover anchor">
 					<div class="painting-preview__body">
 						<div class="painting-preview__title-mob">
 							Colours of Freedom
@@ -311,9 +321,6 @@ defer
 							<img src="img/photo/promo-header-card-img-5.jpg" alt="">
 						</div>
 						<div class="painting-preview__title">The War</div>
-						<div class="painting-preview__subtitle">
-							See all works
-						</div>
 					</div>
 					<div class="painting-preview__meta">
 						<div class="painting-preview__meta-item">
@@ -326,19 +333,19 @@ defer
 							2022
 						</div>
 					</div>
-					<div class="painting-preview__bottom">
+					<a href="#zoom" class="painting-preview__bottom">
 						<img class="img-svg" src="img/icons/circle-arrow-down.svg" alt="">
-					</div>
-				</a>
+					</a>
+				</div>
 			</div>
 
-			<div class="zoom cursor-hidden" data-zoom>
+			<div id="zoom" class="zoom cursor-hidden" data-zoom>
 				<div class="zoom__cursor">
 					<div class="zoom__cursor-1">
-						<img class="img-svg" src="img/icons/magnifying-glass.svg" alt="">
+						<img class="img-svg" src="img/icons/magnifying-glass-plus.svg" alt="">
 					</div>
 					<div class="zoom__cursor-2">
-						<img class="img-svg" src="img/icons/arrows-alt-solid.svg" alt="">
+						<img class="img-svg" src="img/icons/magnifying-glass-minus.svg" alt="">
 					</div>
 				</div>
 				<div class="zoom__img">

@@ -5,12 +5,12 @@
     width: 100%;
     z-index: 47;
     background-color: #fff;
-    transition: all .6s ease;
+    transition: all 0.6s ease;
 
     &__body {
         display: flex;
         align-items: center;
-        min-height: 11.8rem;
+        min-height: 9.4rem;
 
         @media (max-width: $md2+px) {
             min-height: 7rem;
@@ -32,7 +32,8 @@
             padding: 1rem 0;
         }
 
-        & img, & svg {
+        & img,
+        & svg {
             width: 100%;
             height: auto;
         }
@@ -41,7 +42,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
             @media (max-width: $md3+px) {
                 display: none;
             }
@@ -50,7 +51,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
             @media (min-width: 768px) {
                 display: none;
             }
@@ -59,7 +60,7 @@
 
     &.header--dark:not(.header--is-scroll) {
         background-color: transparent !important;
-        
+
         & .top-line__burger-desk rect {
             fill: #fff;
         }
@@ -71,10 +72,7 @@
     &.header--hide {
         transform: translateY(-102%);
     }
-
-    
 }
-
 
 .main-logo {
     top: 4rem;
@@ -82,7 +80,7 @@
     left: 51%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 18.34rem;
+    max-width: 16.4rem;
     z-index: 50;
     transition: all 0.6s ease;
 
@@ -109,7 +107,7 @@
     z-index: 49;
     background-color: #fff;
     font-family: $titleFontFamily;
-    transition: all .6s ease;
+    transition: all 0.6s ease;
     opacity: 0;
     transform: translateX(-100%);
 
@@ -118,7 +116,7 @@
         transform: translateX(0);
 
         & .menu__side-img {
-            transition: all .6s ease .6s;
+            transition: all 0.6s ease 0.6s;
             opacity: 1;
             transform: translate(0);
             visibility: visible;
@@ -133,7 +131,7 @@
         width: 100%;
         z-index: 3;
         background-color: #fff;
-        height: 11.8rem;
+        height: 9.4rem;
 
         @media (max-width: $md2+px) {
             height: 7rem;
@@ -152,13 +150,12 @@
     &__col-1 {
         flex: 1 1 auto;
         overflow-y: auto;
-        padding: 11.8rem 6rem 7rem;
+        padding: 10rem 6rem 7rem;
         display: flex;
         flex-direction: column;
 
-        @media (max-width: $md1+px) {
-            padding: 7rem 4rem;
-
+        @media (max-width: 1440px) {
+            padding: 7rem 4rem 3rem;
         }
 
         @media (max-width: $md2+px) {
@@ -191,6 +188,11 @@
 
     &__col-2 {
         flex: 0 0 31.51%;
+
+        @media (max-width: 1440px) {
+            flex: 0 0 30.45%;
+        }
+
         @media (min-width: 992px) {
             position: relative;
             z-index: 4;
@@ -205,7 +207,7 @@
         left: 5rem;
         transition: all 0.3s ease;
 
-        @media (max-width: $md1+px) {
+        @media (max-width: 1440px) {
             left: 3rem;
         }
 
@@ -237,7 +239,7 @@
                 height: 100%;
                 background-color: $textColor;
 
-                @media (max-width: $md1+px) {
+                @media (max-width: 1440px) {
                     width: 1px;
                 }
             }
@@ -251,7 +253,7 @@
                 height: 2px;
                 background-color: $textColor;
 
-                @media (max-width: $md1+px) {
+                @media (max-width: 1440px) {
                     height: 1px;
                 }
             }
@@ -264,8 +266,16 @@
         align-items: center;
         padding: 0rem 0 3rem;
 
+        @media (max-width: 1440px) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 66.8rem;
+        }
+
         @media (max-width: $md2+px) {
             padding: 6rem 0;
+            max-width: none;
         }
     }
 
@@ -275,8 +285,9 @@
         gap: 12rem;
         width: 100%;
 
-        @media (max-width: 1439.98px) {
+        @media (max-width: 1440px) {
             gap: 6rem;
+            justify-content: space-between;
         }
 
         @media (max-width: $md2+px) {
@@ -303,6 +314,12 @@
         display: block;
         margin-bottom: 4.2rem;
 
+        @media (max-width: 1440px) {
+            font-size: 4rem;
+            line-height: 5.9rem;
+            margin-bottom: 2rem;
+        }
+
         @media (max-width: $md2+px) {
             font-size: 3.4rem;
             line-height: 1.33em;
@@ -323,6 +340,10 @@
         font-size: 2.6rem;
         line-height: 1.33em;
 
+        @media (max-width: 1440px) {
+            font-size: 1.8rem;
+        }
+
         @media (max-width: $md2+px) {
             font-size: 1.6rem !important;
         }
@@ -333,6 +354,10 @@
         & > li {
             &:not(:last-child) {
                 margin-bottom: 2rem;
+
+                @media (max-width: 1440px) {
+                    margin-bottom: 1.6rem;
+                }
 
                 @media (max-width: $md2+px) {
                     margin-bottom: 1.4rem;
@@ -354,10 +379,25 @@
         margin-left: auto;
     }
 
+    
+
     &__bottom {
         display: flex;
         align-items: center;
         gap: 2rem;
+
+        @media (max-width: 1440px) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 66.8rem;
+
+            & .dropdown {
+                font-size: 1.2rem;
+                line-height: 1.4rem;
+            }
+        }
+
         @media (max-width: $md2+px) {
             display: none;
         }
@@ -372,6 +412,11 @@
         font-size: 1.8rem;
         line-height: 1.78em;
 
+        @media (max-width: 1440px) {
+            font-size: 1.4rem;
+            line-height: 3.2rem;
+        }
+
         & a {
             white-space: nowrap;
         }
@@ -381,7 +426,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        transition: all .6s ease;
+        transition: all 0.6s ease;
         opacity: 0;
         transform: translateX(100%);
         visibility: hidden;

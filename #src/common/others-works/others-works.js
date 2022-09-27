@@ -20,8 +20,8 @@
                     spaceBetween: 20,
                 },
                 992: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 30,
+                    slidesPerView: 2,
+                    spaceBetween: 0,
                 }
             },
         });

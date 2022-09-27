@@ -89,7 +89,6 @@
 		.cursor {
 			color: #1B3128;
 			background-color: currentColor;
-			border: 1px solid currentColor;
 			width: 28px;
 			height: 28px;
 			border-radius: 50%;
@@ -97,6 +96,14 @@
 			position: fixed;
 			pointer-events: none;
 			transform: translate(-50%, -50%);
+		}
+
+		.cursor.hover svg {
+			opacity: 1;
+		}
+
+		.cursor.hover .circle {
+			opacity: 1;
 		}
 
 		.cursor svg {
@@ -107,14 +114,16 @@
 			width: 100%;
 			height: auto;
 			transition: all .3s ease;
-			opacity: 0;
 		}
 
 		.cursor .circle {
 			opacity: 0;
 		}
+		.cursor .arrow {
+			opacity: 0;
+		}
 
-		.cursor.show-arrow svg {
+		.cursor.show-arrow .arrow {
 			opacity: 1
 		}
 
@@ -134,6 +143,8 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
 defer
 ></script> -->
+
+
 </head>
 
 <div class="cursor" data-cursor>
@@ -149,6 +160,7 @@ defer
 		</g>
 	</svg>
 </div>
+
 
 <body>
     <div class="_preload-body"></div>

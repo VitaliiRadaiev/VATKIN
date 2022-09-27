@@ -144,7 +144,7 @@
 
     &__status {
         margin-bottom: 1.4rem;
-
+        align-self: flex-start;
         @media (max-width: $md3+px) {
             margin-bottom: 16px;
         }
