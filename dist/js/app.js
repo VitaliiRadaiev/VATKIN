@@ -1257,10 +1257,10 @@ window.popup = {
             function mobileSlider() {
                 if (document.documentElement.clientWidth > 767 && slider.dataset.mobile == 'false') {
                     sliderData = new Swiper(slider, {
-                        autoplay: {
-                            delay: 3000,
-                            disableOnInteraction: false,
-                        },
+                        // autoplay: {
+                        //     delay: 3000,
+                        //     disableOnInteraction: false,
+                        // },
                         observer: true,
                         observeParents: true,
                         speed: 600,
