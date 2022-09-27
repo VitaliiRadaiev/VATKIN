@@ -3250,6 +3250,7 @@ i {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  opacity: 0;
 }
 
 .about-hero__bg-item.hover {
