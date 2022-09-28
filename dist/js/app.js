@@ -734,7 +734,7 @@ window.popup = {
                 observeParents: true,
                 slidesPerView: 1,
                 spaceBetween: 10,
-                speed: 300,
+                speed: 1000,
                 watchSlidesProgress: true,
                 loop: true,
                 preloadImages: false,

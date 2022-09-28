@@ -4719,6 +4719,10 @@ i {
     opacity: 1;
   }
 
+  .series-card:hover .series-card__title {
+    text-decoration: underline;
+  }
+
   .others-works__btn.prev:hover::before {
     -webkit-transform: translateX(-20%);
         -ms-transform: translateX(-20%);
