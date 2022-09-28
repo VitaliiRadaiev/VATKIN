@@ -58,14 +58,14 @@
             if (buttonsPrev.length) {
                 buttonsPrev.forEach(btn => {
                     btn.addEventListener('click', () => {
-                        if(sliderData) sliderData.slidePrev();
+                        if (sliderData) sliderData.slidePrev();
                     })
                 })
             }
             if (buttonsNext.length) {
                 buttonsNext.forEach(btn => {
                     btn.addEventListener('click', () => {
-                        if(sliderData) sliderData.slideNext();
+                        if (sliderData) sliderData.slideNext();
                     })
                 })
             }
@@ -78,9 +78,9 @@
                     setInterval(() => {
                         this.currentTime++
 
-                        if(this.currentTime >= this.value) {
+                        if (this.currentTime >= this.value) {
                             this.currentTime = 0;
-                            if(sliderData) sliderData.slideNext();
+                            if (sliderData) sliderData.slideNext();
                         }
                     }, 1000)
                 },
@@ -97,12 +97,12 @@
             sliderAutoplay.init();
 
             document.addEventListener('keydown', (e) => {
-                if(e.code === 'ArrowLeft') {
-                    if(sliderData) sliderData.slidePrev();
+                if (e.code === 'ArrowLeft') {
+                    if (sliderData) sliderData.slidePrev();
                     sliderAutoplay.reset();
                 }
-                if(e.code === 'ArrowRight') {
-                    if(sliderData) sliderData.slideNext();
+                if (e.code === 'ArrowRight') {
+                    if (sliderData) sliderData.slideNext();
                     sliderAutoplay.reset();
                 }
             });
@@ -116,13 +116,9 @@
             })
         }
 
-        // slidesWrapper.addEventListener('scroll', (e) => {
-        //     if((slidesWrapper.scrollTop + slidesWrapper.clientHeight) > (slidesWrapper.scrollHeight - 5)) {
-        //         slidesWrapper.classList.add('last-slide');
-        //     } else {
-        //         slidesWrapper.classList.remove('last-slide');
-        //     }
-        // })
+
+        let isScroll = window.pageYOffset;
+
 
         window.addEventListener('scroll', () => {
             if (document.documentElement.clientWidth < 768) {
@@ -131,6 +127,16 @@
                 } else {
                     slidesWrapper.classList.add('last-slide');
                 }
+            }
+        })
+
+        let menu = document.querySelector('[data-menu]');
+
+        window.addEventListener('wheel', (onWeel) => {
+            if (onWeel.deltaY > 0) {
+                menu.classList.add('menu--open');
+                document.documentElement.classList.add('overflow-hidden');
+                document.body.classList.add('menu-is-open');
             }
         })
 

@@ -1536,6 +1536,10 @@ body.logo-is-hide .main-logo {
           transform: translateY(-200%) translateX(-50%);
 }
 
+body:not(.page-is-full-load) .main-logo {
+  pointer-events: none;
+}
+
 body.logo-white:not(.header-is-scroll) .main-logo path {
   fill: #fff;
 }
@@ -3456,6 +3460,7 @@ i {
           justify-content: center;
   font-family: "IvyMode", sans-serif;
   pointer-events: none;
+  min-height: 100vh;
 }
 
 .about-hero__title {
@@ -4677,7 +4682,7 @@ i {
   }
 
   .promo-header__btn:hover {
-    color: rgba(0, 0, 0, 0.7);
+    text-decoration: underline;
   }
 
   .promo-header-card:hover .promo-header-card__layer-1 {
@@ -4832,7 +4837,7 @@ i {
   }
 
   .promo-header-card__title {
-    font-size: 15rem;
+    font-size: 14rem;
   }
 
   .series > .container-sm {
@@ -4845,6 +4850,20 @@ i {
 
   .others-works__title {
     font-size: 6rem;
+  }
+
+  .cookies-message__body {
+    max-width: 89.2rem !important;
+  }
+
+  .cookies-message__text {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .cookies-message__agree {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
   }
 }
 

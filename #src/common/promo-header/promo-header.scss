@@ -129,7 +129,7 @@
 
         @media (min-width: 992px) {
             &:hover {
-                color: rgba(#000, 0.7);
+                text-decoration: underline;
             }
         }
 
@@ -333,7 +333,7 @@
         width: 100vw;
 
         @media (max-width: 1440px) {
-            font-size: 15rem;
+            font-size: 14rem;
         }
 
         @media (max-width: $md1+px) {

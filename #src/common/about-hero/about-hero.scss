@@ -247,6 +247,7 @@
         justify-content: center;
         font-family: $titleFontFamily;
         pointer-events: none;
+        min-height: 100vh;
 
         @media (max-width: $md2+px) {
             padding-bottom: 20rem;
