@@ -102,7 +102,7 @@
         font-weight: 300;
         font-size: 14px;
         line-height: 1.33em;
-        margin-bottom: 45px;
+        margin-bottom: 10px;
 
         @media (min-width: 768px) {
             display: none;
@@ -110,36 +110,11 @@
     }
 
     &__meta {
-        display: flex;
-        align-items: center;
         font-weight: 400;
         font-size: 1.8rem;
         line-height: 1.33em;
         color: #a2a2a2;
         margin-bottom: 1.4rem;
-
-        @media (max-width: $md3+px) {
-            display: none;
-        }
-
-        & > div {
-            &:not(:last-child) {
-                padding-right: 1.1rem;
-                margin-right: 1rem;
-                position: relative;
-
-                &:before {
-                    position: absolute;
-                    content: "";
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: 0;
-                    width: 1px;
-                    height: 1.8rem;
-                    background-color: currentColor;
-                }
-            }
-        }
     }
 
     &__status {

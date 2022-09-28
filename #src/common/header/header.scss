@@ -120,6 +120,7 @@
             opacity: 1;
             transform: translate(0);
             visibility: visible;
+            pointer-events: auto;
         }
     }
 
@@ -199,29 +200,39 @@
         }
     }
 
-    &__close {
-        padding: 1rem;
+    &__close-wrap {
         position: absolute;
-        z-index: 5;
-        top: 4rem;
-        left: 5rem;
-        transition: all 0.3s ease;
-
-        @media (max-width: 1440px) {
-            left: 3rem;
-        }
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        min-height: 9.4rem;
 
         @media (max-width: $md2+px) {
-            left: auto;
-            right: 1rem;
-            top: 1rem;
+            min-height: 7rem;
         }
 
-        @media (min-width: 992px) {
-            &:hover {
-                opacity: 0.7;
-            }
+        & > .container {
+            display: flex;
+            flex-direction: column;
         }
+    }
+
+    &__close {
+        padding: 1rem;
+        z-index: 5;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        margin-left: -1rem;
+
+        @media (max-width: $md2+px) {
+            margin-left: auto;
+            margin-right: -1rem;
+        }
+
 
         & span {
             position: relative;
@@ -240,7 +251,7 @@
                 background-color: $textColor;
 
                 @media (max-width: 1440px) {
-                    width: 1px;
+                    width: 2px;
                 }
             }
             &:after {
@@ -254,7 +265,7 @@
                 background-color: $textColor;
 
                 @media (max-width: 1440px) {
-                    height: 1px;
+                    height: 2px;
                 }
             }
         }
@@ -437,6 +448,7 @@
         opacity: 0;
         transform: translateX(100%);
         visibility: hidden;
+        pointer-events: none;
 
         @media (max-width: $md2+px) {
             transform: translate(0, 20%);

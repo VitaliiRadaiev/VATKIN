@@ -137,7 +137,7 @@
         align-items: center;
 
         @media (max-width: $md3+px) {
-            margin: auto 0;
+            display: none;
         }
 
         & img,
@@ -155,9 +155,28 @@
             z-index: 5;
             transform: translateX(-50%);
 
-            & img, & svg {
+            & img,
+            & svg {
                 display: none;
             }
+        }
+    }
+
+    &__bottom-mob {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: auto 0;
+
+        & img,
+        & svg {
+            width: 40px;
+            height: auto;
+        }
+
+        @media (min-width: 768px) {
+            display: none;
         }
     }
 }
