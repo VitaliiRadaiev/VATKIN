@@ -67,6 +67,15 @@
                 flex: 0 1 calc(50% - 0.5rem);
             }
         }
+
+        & a {
+            @media (min-width: 992px) {
+                &:hover {
+                    //font-weight: 600;
+                    color: $titlceColor;
+                }
+            }
+        }
     }
 
     &__language {
@@ -106,7 +115,6 @@
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.25em;
-        text-transform: uppercase;
         flex: 0 0 auto;
 
         @media (max-width: $md3+px) {
@@ -136,9 +144,9 @@
 .dropdown {
     position: relative;
     font-family: $titleFontFamily;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    line-height: 1.4em;
+    line-height: 1.78em;
     cursor: pointer;
     align-self: center;
     height: 100%;

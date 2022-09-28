@@ -1,0 +1,30 @@
+.messenger {
+    position: fixed;
+    z-index: 55;
+    right: 6rem;
+    bottom: 4rem;
+    color: $titlceColor;
+
+    @media (max-width: $md1+px) {
+        right: 4rem;
+        bottom: 4rem;
+    }
+    @media (max-width: $md2+px) {
+        right: 3rem;
+        bottom: 3rem;
+    }
+
+    @media (max-width: $md3+px) {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    &--white {
+        color: #fff;
+    }
+
+    & img, & svg {
+        width: 3.2rem;
+        height: auto;
+    }
+}

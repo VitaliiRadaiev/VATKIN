@@ -20,6 +20,7 @@
 
         --gap: 2rem;
         --width: calc(16.6666667% - (var(--gap) * 5 / 6));
+
         --bgItem-1: calc(19.5% - (var(--gap) * 5 / 4));
         --bgItem-2: calc(35.14% - (var(--gap) * 5 / 4));
         --bgItem-3: calc(19.5% - (var(--gap) * 5 / 4));
@@ -31,6 +32,50 @@
         --bgItem-8: calc(16.32% - (var(--gap) * 6 / 5));
         --bgItem-9: calc(23.61% - (var(--gap) * 6 / 5));
 
+        // column 1
+        --col-1-item-1: calc((200 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-1-item-2: calc((224 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-1-item-3: calc((140 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-1-item-4: calc((162 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-1-item-5: calc((134 / 860 * 100%) - (var(--gap) * 6 / 5));
+        // -// column 1
+
+        // column 2
+        --col-2-item-1: calc((152 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-2-item-2: calc((245 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-2-item-3: calc((235 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-2-item-4: calc((248 / 880 * 100%) - (var(--gap) * 5 / 4));
+        // -// column 2
+
+        // column 3
+        --col-3-item-1: calc((224 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-3-item-2: calc((285 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-3-item-3: calc((160 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-3-item-4: calc((211 / 880 * 100%) - (var(--gap) * 5 / 4));
+        // -// column 3
+
+        // column 4
+        --col-4-item-1: calc((134 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-4-item-2: calc((162 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-4-item-3: calc((140 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-4-item-4: calc((224 / 860 * 100%) - (var(--gap) * 6 / 5));
+        --col-4-item-5: calc((200 / 860 * 100%) - (var(--gap) * 6 / 5));
+        // -// column 4
+
+        // column 5
+        --col-5-item-1: calc((248 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-5-item-2: calc((152 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-5-item-3: calc((245 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-5-item-4: calc((235 / 880 * 100%) - (var(--gap) * 5 / 4));
+        // -// column 5
+
+        // column 6
+        --col-6-item-1: calc((211 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-6-item-2: calc((160 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-6-item-3: calc((285 / 880 * 100%) - (var(--gap) * 5 / 4));
+        --col-6-item-4: calc((224 / 880 * 100%) - (var(--gap) * 5 / 4));
+        // -// column 6
+
         &-item {
             width: var(--width);
             position: absolute;
@@ -41,152 +86,155 @@
                 opacity: 1;
             }
 
-            // ======= item 1
+            // column 1
             &:nth-child(1) {
                 top: calc(var(--gap) * 1);
-                height: var(--bgItem-1);
+                height: var(--col-1-item-1);
                 left: 0;
             }
             &:nth-child(2) {
-                top: calc(var(--bgItem-1) + (var(--gap) * 2));
-                height: var(--bgItem-2);
+                top: calc(var(--col-1-item-1) + (var(--gap) * 2));
+                height: var(--col-1-item-2);
                 left: 0;
             }
             &:nth-child(3) {
-                top: calc((var(--bgItem-1) + var(--bgItem-2)) + (var(--gap) * 3));
-                height: var(--bgItem-3);
+                top: calc((var(--col-1-item-1) + var(--col-1-item-2)) + (var(--gap) * 3));
+                height: var(--col-1-item-3);
                 left: 0;
             }
             &:nth-child(4) {
-                top: calc((var(--bgItem-1) + var(--bgItem-2) + var(--bgItem-3)) + (var(--gap) * 4));
-                height: var(--bgItem-4);
+                top: calc((var(--col-1-item-1) + var(--col-1-item-2) + var(--col-1-item-3)) + (var(--gap) * 4));
+                height: var(--col-1-item-4);
                 left: 0;
             }
 
             &:nth-child(5) {
-                top: calc(var(--gap) * 1);
-                height: var(--bgItem-5);
-                left: calc((var(--width) * 1) + (var(--gap) * 1));
+                top: calc((var(--col-1-item-1) + var(--col-1-item-2) + var(--col-1-item-3) + var(--col-1-item-4)) + (var(--gap) * 5));
+                height: var(--col-1-item-5);
+                left: 0;
             }
+            // -// column 1
+
+            // column 2
             &:nth-child(6) {
-                top: calc(var(--bgItem-5) + (var(--gap) * 2));
-                height: var(--bgItem-6);
+                top: calc(var(--gap) * 1);
+                height: var(--col-2-item-1);
                 left: calc((var(--width) * 1) + (var(--gap) * 1));
             }
             &:nth-child(7) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6)) + (var(--gap) * 3));
-                height: var(--bgItem-7);
+                top: calc(var(--col-2-item-1) + (var(--gap) * 2));
+                height: var(--col-2-item-2);
                 left: calc((var(--width) * 1) + (var(--gap) * 1));
             }
             &:nth-child(8) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6) + var(--bgItem-7)) + (var(--gap) * 4));
-                height: var(--bgItem-8);
+                top: calc((var(--col-2-item-1) + var(--col-2-item-2)) + (var(--gap) * 3));
+                height: var(--col-2-item-3);
                 left: calc((var(--width) * 1) + (var(--gap) * 1));
             }
             &:nth-child(9) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6) + var(--bgItem-7) + var(--bgItem-8)) + (var(--gap) * 5));
-                height: var(--bgItem-9);
+                top: calc((var(--col-2-item-1) + var(--col-2-item-2) + var(--col-2-item-3)) + (var(--gap) * 4));
+                height: var(--col-2-item-4);
                 left: calc((var(--width) * 1) + (var(--gap) * 1));
             }
-            // ======= item 1
+            // -// column 2
 
-            // ======= item 2
+            // column 3
             &:nth-child(10) {
                 top: calc(var(--gap) * 1);
-                height: var(--bgItem-1);
+                height: var(--col-3-item-1);
                 left: calc((var(--width) * 2) + (var(--gap) * 2));
             }
             &:nth-child(11) {
-                top: calc(var(--bgItem-1) + (var(--gap) * 2));
-                height: var(--bgItem-2);
+                top: calc(var(--col-3-item-1) + (var(--gap) * 2));
+                height: var(--col-3-item-2);
                 left: calc((var(--width) * 2) + (var(--gap) * 2));
             }
             &:nth-child(12) {
-                top: calc((var(--bgItem-1) + var(--bgItem-2)) + (var(--gap) * 3));
-                height: var(--bgItem-3);
+                top: calc((var(--col-3-item-1) + var(--col-3-item-2)) + (var(--gap) * 3));
+                height: var(--col-3-item-3);
                 left: calc((var(--width) * 2) + (var(--gap) * 2));
             }
             &:nth-child(13) {
-                top: calc((var(--bgItem-1) + var(--bgItem-2) + var(--bgItem-3)) + (var(--gap) * 4));
-                height: var(--bgItem-4);
+                top: calc((var(--col-3-item-1) + var(--col-3-item-2) + var(--col-3-item-3)) + (var(--gap) * 4));
+                height: var(--col-3-item-4);
                 left: calc((var(--width) * 2) + (var(--gap) * 2));
             }
+            // -// column 3
 
+            // column 4
             &:nth-child(14) {
                 top: calc(var(--gap) * 1);
-                height: var(--bgItem-5);
+                height: var(--col-4-item-1);
                 left: calc((var(--width) * 3) + (var(--gap) * 3));
             }
             &:nth-child(15) {
-                top: calc(var(--bgItem-5) + (var(--gap) * 2));
-                height: var(--bgItem-6);
+                top: calc(var(--col-4-item-1) + (var(--gap) * 2));
+                height: var(--col-4-item-2);
                 left: calc((var(--width) * 3) + (var(--gap) * 3));
             }
             &:nth-child(16) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6)) + (var(--gap) * 3));
-                height: var(--bgItem-7);
+                top: calc((var(--col-4-item-1) + var(--col-4-item-2)) + (var(--gap) * 3));
+                height: var(--col-4-item-3);
                 left: calc((var(--width) * 3) + (var(--gap) * 3));
             }
             &:nth-child(17) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6) + var(--bgItem-7)) + (var(--gap) * 4));
-                height: var(--bgItem-8);
+                top: calc((var(--col-4-item-1) + var(--col-4-item-2) + var(--col-4-item-3)) + (var(--gap) * 4));
+                height: var(--col-4-item-4);
                 left: calc((var(--width) * 3) + (var(--gap) * 3));
             }
-            &:nth-child(18) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6) + var(--bgItem-7) + var(--bgItem-8)) + (var(--gap) * 5));
-                height: var(--bgItem-9);
-                left: calc((var(--width) * 3) + (var(--gap) * 3));
-            }
-            // ======= item 2
 
-            // ======= item 3
+            &:nth-child(18) {
+                top: calc((var(--col-4-item-1) + var(--col-4-item-2) + var(--col-4-item-3) + var(--col-4-item-4)) + (var(--gap) * 5));
+                height: var(--col-4-item-5);
+                left: calc((var(--width) * 3) + (var(--gap) * 3));
+            }
+            // -// column 4
+
+            // column 5
             &:nth-child(19) {
                 top: calc(var(--gap) * 1);
-                height: var(--bgItem-1);
+                height: var(--col-5-item-1);
                 left: calc((var(--width) * 4) + (var(--gap) * 4));
             }
             &:nth-child(20) {
-                top: calc(var(--bgItem-1) + (var(--gap) * 2));
-                height: var(--bgItem-2);
+                top: calc(var(--col-5-item-1) + (var(--gap) * 2));
+                height: var(--col-5-item-2);
                 left: calc((var(--width) * 4) + (var(--gap) * 4));
             }
             &:nth-child(21) {
-                top: calc((var(--bgItem-1) + var(--bgItem-2)) + (var(--gap) * 3));
-                height: var(--bgItem-3);
+                top: calc((var(--col-5-item-1) + var(--col-5-item-2)) + (var(--gap) * 3));
+                height: var(--col-5-item-3);
                 left: calc((var(--width) * 4) + (var(--gap) * 4));
             }
             &:nth-child(22) {
-                top: calc((var(--bgItem-1) + var(--bgItem-2) + var(--bgItem-3)) + (var(--gap) * 4));
-                height: var(--bgItem-4);
+                top: calc((var(--col-5-item-1) + var(--col-5-item-2) + var(--col-5-item-3)) + (var(--gap) * 4));
+                height: var(--col-5-item-4);
                 left: calc((var(--width) * 4) + (var(--gap) * 4));
             }
+            // -// column 5
 
+            // column 6
             &:nth-child(23) {
                 top: calc(var(--gap) * 1);
-                height: var(--bgItem-5);
+                height: var(--col-6-item-1);
                 left: calc((var(--width) * 5) + (var(--gap) * 5));
             }
             &:nth-child(24) {
-                top: calc(var(--bgItem-5) + (var(--gap) * 2));
-                height: var(--bgItem-6);
+                top: calc(var(--col-6-item-1) + (var(--gap) * 2));
+                height: var(--col-6-item-2);
                 left: calc((var(--width) * 5) + (var(--gap) * 5));
             }
             &:nth-child(25) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6)) + (var(--gap) * 3));
-                height: var(--bgItem-7);
+                top: calc((var(--col-6-item-1) + var(--col-6-item-2)) + (var(--gap) * 3));
+                height: var(--col-6-item-3);
                 left: calc((var(--width) * 5) + (var(--gap) * 5));
             }
             &:nth-child(26) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6) + var(--bgItem-7)) + (var(--gap) * 4));
-                height: var(--bgItem-8);
+                top: calc((var(--col-6-item-1) + var(--col-6-item-2) + var(--col-6-item-3)) + (var(--gap) * 4));
+                height: var(--col-6-item-4);
                 left: calc((var(--width) * 5) + (var(--gap) * 5));
             }
-            &:nth-child(27) {
-                top: calc((var(--bgItem-5) + var(--bgItem-6) + var(--bgItem-7) + var(--bgItem-8)) + (var(--gap) * 5));
-                height: var(--bgItem-9);
-                left: calc((var(--width) * 5) + (var(--gap) * 5));
-            }
-            // ======= item 3
+            // -// column 6
         }
     }
 

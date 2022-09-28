@@ -347,6 +347,7 @@ class App {
 		@@include('../common/exhibition/exhibition.js');
 		@@include('../common/cookies-message/cookies-message.js');
 		@@include('../common/portfolio-list/portfolio-list.js');
+		@@include('../common/messenger/messenger.js');
 	}
 
 	componentsAfterLoad() {
