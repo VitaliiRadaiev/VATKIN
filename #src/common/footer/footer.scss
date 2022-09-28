@@ -69,12 +69,13 @@
         }
 
         & a {
-            @media (min-width: 992px) {
+            
                 &:hover {
-                    //font-weight: 600;
+                    opacity: 1 !important;
                     color: $titlceColor;
+                    text-decoration: underline;
                 }
-            }
+            
         }
     }
 

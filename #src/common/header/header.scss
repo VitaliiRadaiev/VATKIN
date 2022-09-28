@@ -370,6 +370,7 @@
             @media (min-width: 992px) {
                 &:hover {
                     font-weight: 600;
+                    text-decoration: underline;
                 }
             }
         }
@@ -419,6 +420,12 @@
 
         & a {
             white-space: nowrap;
+
+            &:hover {
+                opacity: 1 !important;
+                color: $titlceColor;
+                text-decoration: underline;
+            }
         }
     }
 
