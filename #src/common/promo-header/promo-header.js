@@ -30,6 +30,26 @@
                                         activeSlide.classList.add('is-hover');
                                     }
                                 }, 1500)
+                            },
+
+                            afterInit: () => {
+                                let buttonsPrev = promoHeader.querySelectorAll('[data-action="slide-prev"]');
+                                let buttonsNext = promoHeader.querySelectorAll('[data-action="slide-next"]');
+                    
+                                if (buttonsPrev.length) {
+                                    buttonsPrev.forEach(btn => {
+                                        btn.addEventListener('click', () => {
+                                            if (sliderData) sliderData.slidePrev();
+                                        })
+                                    })
+                                }
+                                if (buttonsNext.length) {
+                                    buttonsNext.forEach(btn => {
+                                        btn.addEventListener('click', () => {
+                                            if (sliderData) sliderData.slideNext();
+                                        })
+                                    })
+                                }
                             }
                         }
                     });
@@ -52,23 +72,7 @@
                 mobileSlider();
             })
 
-            let buttonsPrev = promoHeader.querySelectorAll('[data-action="slide-prev"]');
-            let buttonsNext = promoHeader.querySelectorAll('[data-action="slide-next"]');
 
-            if (buttonsPrev.length) {
-                buttonsPrev.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        if (sliderData) sliderData.slidePrev();
-                    })
-                })
-            }
-            if (buttonsNext.length) {
-                buttonsNext.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        if (sliderData) sliderData.slideNext();
-                    })
-                })
-            }
 
             const sliderAutoplay = {
                 value: 10,

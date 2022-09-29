@@ -2134,13 +2134,14 @@ i {
 }
 
 .top-line__burger {
-  width: 2.4rem;
+  width: 3rem;
   padding: 0;
   height: auto;
   background-color: transparent;
   border-radius: 0;
   outline: none;
   position: relative;
+  padding: 1rem 0;
 }
 
 .top-line__burger img,
@@ -2159,6 +2160,7 @@ i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 .top-line__burger-mob {
@@ -2336,13 +2338,12 @@ i {
 }
 
 .menu__close {
-  padding: 1rem;
+  padding: 0.6rem;
   z-index: 5;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   pointer-events: auto;
-  margin-left: -1rem;
 }
 
 .menu__close span {
@@ -2773,6 +2774,7 @@ i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .promo-header-card__img img {
@@ -4070,10 +4072,6 @@ i {
     max-width: 70% !important;
   }
 
-  .top-line__burger-mob {
-    display: none;
-  }
-
   .footer {
     border-top: 1px solid #000;
     padding-top: 0;
@@ -4127,6 +4125,22 @@ i {
 
   .promo-header-card__label {
     display: none;
+  }
+
+  .promo-header-card__img:before {
+    position: absolute;
+    content: "series";
+    top: calc(100% + 1.8rem);
+    left: 0;
+    width: 100%;
+    font-size: 2.4rem;
+    line-height: 1em;
+    font-family: "IvyMode", sans-serif;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
   }
 
   .promo-header-card__bottom {
@@ -4742,6 +4756,10 @@ i {
     opacity: 1;
   }
 
+  .promo-header-card:hover .promo-header-card__img::before {
+    opacity: 1;
+  }
+
   .promo-header-card:hover .promo-header-card__bottom-main {
     opacity: 0;
   }
@@ -4997,7 +5015,6 @@ i {
 
   .top-line__burger {
     width: 2.8rem;
-    padding: 1rem 0;
   }
 
   .main-logo {
@@ -5030,7 +5047,7 @@ i {
 
   .menu__close {
     margin-left: auto;
-    margin-right: -1rem;
+    margin-right: -2px;
   }
 
   .menu__inner {
@@ -5412,7 +5429,7 @@ i {
     -webkit-box-align: initial;
         -ms-flex-align: initial;
             align-items: initial;
-    border-bottom: 1px solid #D7D7D7;
+    border-bottom: 1px solid #d7d7d7;
   }
 
   .promo-header .swiper-slide:after {
