@@ -12,6 +12,7 @@
             slidesPerView: 1,
             spaceBetween: 0,
             speed: 600,
+            autoHeight: true,
             pagination: {
             	el: paintingInfoSlider.querySelector('.swiper-pagination'),
             	clickable: true,

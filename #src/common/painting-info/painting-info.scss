@@ -28,6 +28,7 @@
         flex: 1 1 auto;
 
         @media (min-width: 768px) {
+            max-width: 46.6rem;
             display: flex;
             flex-direction: column;
         }
@@ -36,9 +37,7 @@
     &__slider {
         position: relative;
         width: 100%;
-        height: 55rem;
-        padding: 5rem;
-        background: #f0f0f0;
+        height: auto;
         min-width: 0;
 
         & .swiper {
@@ -52,16 +51,21 @@
             justify-content: center;
             align-items: center;
             opacity: 0 !important;
+            height: 55rem;
+
+            &:first-child {
+                padding: 5rem;
+                background: #f0f0f0;
+            }
 
             &.swiper-slide-active {
                 opacity: 1 !important;
             }
 
             & img {
-                width: auto;
-                height: auto;
-                max-width: 100%;
-                max-height: 100%;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
                 box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.25);
             }
         }
@@ -77,9 +81,22 @@
                 height: 1.4rem;
                 width: 1.4rem;
                 margin: 0 1rem;
+                transition: all .3s ease;
 
                 &.swiper-pagination-bullet-active {
                     background-color: #a2a2a2;
+
+                    @media (min-width: 992px) {
+                        &:hover {
+                            background-color: $titlceColor;   
+                        }
+                    }
+                }
+
+                @media (min-width: 992px) {
+                    &:hover {
+                        border-color: $titlceColor;   
+                    }
                 }
             }
         }
@@ -128,6 +145,10 @@
     &__text {
         font-weight: 300;
         margin-bottom: 3rem;
+
+        @media (min-width: 768px) {
+            max-width: 37.5rem;
+        }
     }
 
     &__link {

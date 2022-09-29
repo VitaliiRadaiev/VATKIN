@@ -3011,9 +3011,7 @@ i {
 .painting-info__slider {
   position: relative;
   width: 100%;
-  height: 55rem;
-  padding: 5rem;
-  background: #f0f0f0;
+  height: auto;
   min-width: 0;
 }
 
@@ -3034,6 +3032,12 @@ i {
       -ms-flex-align: center;
           align-items: center;
   opacity: 0 !important;
+  height: 55rem;
+}
+
+.painting-info__slider .swiper-slide:first-child {
+  padding: 5rem;
+  background: #f0f0f0;
 }
 
 .painting-info__slider .swiper-slide.swiper-slide-active {
@@ -3041,10 +3045,10 @@ i {
 }
 
 .painting-info__slider .swiper-slide img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.25);
 }
@@ -3061,6 +3065,9 @@ i {
   height: 1.4rem;
   width: 1.4rem;
   margin: 0 1rem;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .painting-info__slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -4152,6 +4159,7 @@ i {
   }
 
   .painting-info__col-2 {
+    max-width: 46.6rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4163,6 +4171,10 @@ i {
 
   .painting-info__subtitle {
     display: none;
+  }
+
+  .painting-info__text {
+    max-width: 37.5rem;
   }
 
   .portfolio__list > li.item-1 {
@@ -4770,6 +4782,14 @@ i {
 
   .series-card:hover .series-card__title {
     text-decoration: underline;
+  }
+
+  .painting-info__slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:hover {
+    background-color: #1B3128;
+  }
+
+  .painting-info__slider .swiper-pagination .swiper-pagination-bullet:hover {
+    border-color: #1B3128;
   }
 
   .others-works__btn.prev:hover::before {

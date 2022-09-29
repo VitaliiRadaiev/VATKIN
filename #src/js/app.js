@@ -52,7 +52,7 @@ class App {
 
 	cursorhandler() {
 		let mouseCursor = document.querySelector('[data-cursor]');
-		let links = document.querySelectorAll('a, button, [data-cursor-hover]');
+		let links = document.querySelectorAll('a, button, [data-cursor-hover], .swiper-pagination-bullet');
 		let anchors = document.querySelectorAll('.anchor');
 		let cursorHidden = document.querySelectorAll('.cursor-hidden');
 		let cursorLight = document.querySelectorAll('.cursor-light');
