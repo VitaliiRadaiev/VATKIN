@@ -123,16 +123,16 @@ body {
 	}
 
 	&:not(.page-is-full-load) {
-		& .main-logo  {
+		& .main-logo {
 			pointer-events: none;
 		}
 	}
 }
 
 body.logo-white:not(.header-is-scroll) {
-    & .main-logo path {
-        fill: #fff;
-    }
+	& .main-logo path {
+		fill: #fff;
+	}
 }
 
 .c-scrollbar {
@@ -736,6 +736,18 @@ i {
 
 		@media (max-width: $md3+px) {
 			font-size: 120px;
+		}
+	}
+
+	&__author {
+		font-family: $titleFontFamily;
+		color: $titlceColor;
+		font-size: 3rem;
+		line-height: 1.33em;
+		font-weight: 400;
+
+		@media (max-width: $md3+px) {
+			font-size: 14px;
 		}
 	}
 }

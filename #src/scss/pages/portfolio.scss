@@ -62,7 +62,7 @@
             width: 100%;
 
             &:not(:last-child) {
-                margin-bottom: 13rem;
+                margin-bottom: 12rem;
 
                 @media (max-width: $md3+px) {
                     margin-bottom: 75px;
@@ -121,13 +121,14 @@
                 }
                 &.item-8 {
                     width: 710 / 1446 * 100%;
-                    margin-bottom: 23.1rem;
                     margin-top: 34rem;
+                    margin-bottom: 0rem;
                 }
                 &.item-9 {
                     width: 466 / 1446 * 100%;
                     margin-left: auto;
                     margin-right: auto;
+                    align-self: flex-start;
 
                     & .portfolio-card__bottom {
                         max-width: 34.5rem;

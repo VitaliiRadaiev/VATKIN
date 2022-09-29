@@ -2103,6 +2103,14 @@ i {
   font-weight: 400;
 }
 
+.quote__author {
+  font-family: "IvyMode", sans-serif;
+  color: #1B3128;
+  font-size: 3rem;
+  line-height: 1.33em;
+  font-weight: 400;
+}
+
 .top-line {
   position: fixed;
   top: 0;
@@ -3818,7 +3826,7 @@ i {
 }
 
 .portfolio__list > li:not(:last-child) {
-  margin-bottom: 13rem;
+  margin-bottom: 12rem;
 }
 
 .portfolio__list > li.list-br {
@@ -4199,14 +4207,16 @@ i {
 
   .portfolio__list > li.item-8 {
     width: 49.1009681881%;
-    margin-bottom: 23.1rem;
     margin-top: 34rem;
+    margin-bottom: 0rem;
   }
 
   .portfolio__list > li.item-9 {
     width: 32.2268326418%;
     margin-left: auto;
     margin-right: auto;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .portfolio__list > li.item-9 .portfolio-card__bottom {
@@ -5288,6 +5298,10 @@ i {
     font-size: 120px;
   }
 
+  .quote__author {
+    font-size: 14px;
+  }
+
   .top-line__burger-desk {
     display: none;
   }
@@ -5818,7 +5832,7 @@ i {
   }
 
   .about__img {
-    width: 157px;
+    width: 244px;
     margin-left: auto;
   }
 
