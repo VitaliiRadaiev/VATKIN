@@ -1,0 +1,49 @@
+.product {
+    padding-top: 10.5rem;
+    padding-bottom: 5rem;
+
+    @media (max-width: $md3+px) {
+        padding: 40px 0 0;
+    }
+
+    & .painting-info {
+        padding: 0;
+    }
+
+    & .painting-info__body {
+        @media (max-width: $md3+px) {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 4rem;
+        }
+    }
+
+    & .painting-info__col-1 {
+        @media (max-width: $md3+px) {
+            display: block;
+            margin-bottom: 3rem;
+        }
+    }
+
+    & .painting-info__col-2 {
+        max-width: none;
+    }
+
+    & .painting-info__text {
+        @media (min-width: 992px) {
+            max-width: 46.6rem;
+        }
+    }
+
+    & .painting-info__slider {
+        & .swiper-slide {
+            @media (max-width: $md3+px) {
+                height: 35rem;
+                
+                &:first-child {
+                    padding: 2.5rem;
+                }
+            }
+        }
+    }
+}

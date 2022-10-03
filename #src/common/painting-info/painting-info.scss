@@ -67,6 +67,15 @@
                 width: 100%;
                 object-fit: cover;
                 box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.25);
+
+                &[src$=".png"] {
+                    box-shadow: none;
+                    object-fit: contain;
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
             }
         }
 
@@ -81,21 +90,21 @@
                 height: 1.4rem;
                 width: 1.4rem;
                 margin: 0 1rem;
-                transition: all .3s ease;
+                transition: all 0.3s ease;
 
                 &.swiper-pagination-bullet-active {
                     background-color: #a2a2a2;
 
                     @media (min-width: 992px) {
                         &:hover {
-                            background-color: $titlceColor;   
+                            background-color: $titlceColor;
                         }
                     }
                 }
 
                 @media (min-width: 992px) {
                     &:hover {
-                        border-color: $titlceColor;   
+                        border-color: $titlceColor;
                     }
                 }
             }
@@ -111,6 +120,17 @@
         @media (max-width: $md3+px) {
             font-size: 20px;
             margin-bottom: 6px;
+        }
+    }
+
+    &__title-2 {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 1.33em;
+        margin-bottom: 1rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
         }
     }
 
@@ -144,10 +164,24 @@
 
     &__text {
         font-weight: 300;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
 
         @media (min-width: 768px) {
             max-width: 37.5rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 2rem;
+            }
         }
     }
 
@@ -160,6 +194,52 @@
         &::before {
             font-weight: 400;
         }
+    }
+
+    &__check-list {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 0.6rem;
+            }
+        }
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 2.6rem;
+        line-height: 1.33em;
+        margin-bottom: 2rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__bottom-buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem 2.4rem;
+
+        & .painting-info__link {
+            margin-top: 0;
+            text-transform: none;
+            font-weight: 300;
+            align-self: initial;
+
+            @media (min-width: 992px) {
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &__buy-now {
+
     }
 }
 
@@ -193,7 +273,6 @@
         @media (max-width: $md3+px) {
             left: 4px;
         }
-
     }
 
     &--dot-red {

@@ -12,9 +12,9 @@
         display: flex;
         align-items: center;
         gap: 2rem;
-        min-height: 5.9rem;
+        min-height: 6rem;
         font-family: $titleFontFamily;
-        padding: 1.5rem 0;
+        padding: 1rem 0;
 
         @media (max-width: $md2+px) {
             flex-wrap: wrap;

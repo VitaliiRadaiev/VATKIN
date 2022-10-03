@@ -221,11 +221,11 @@ h2,
 	font-family: $titleFontFamily;
 	color: $titlceColor;
 	font-weight: 600;
-	font-size: 3.4rem;
+	font-size: 3.6rem;
 	line-height: 1.33em;
 
 	@media (max-width: $md3+px) {
-		font-size: 28px;
+		font-size: 20px;
 	}
 }
 
@@ -328,6 +328,14 @@ figure {
 
 	@media (max-width: $md3+px) {
 		padding: 36px 0;
+	}
+}
+
+.p-120 {
+	padding-top: 12rem;
+
+	@media (max-width: $md3+px) {
+		padding-top: 72px;
 	}
 }
 

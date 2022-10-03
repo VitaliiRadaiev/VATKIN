@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": "",
+        "styles": ""
+        })
+        <!-- == // TOP LINE ================== -->
+        <!-- data-padding-top-header-size -->
+
+        <main class="_page contact-page">
+            <div data-padding-top-header-size></div>
+
+            <div class="container">
+                <div class="contact">
+                    <div class="contact__inner">
+                        <div class="contact__col-1">
+                            <div class="contact__info">
+                                <ul class="contact__list">
+                                    <li>
+                                        Address: <strong>Ukraine</strong>
+                                    </li>
+                                    <li>
+                                        Mail: <strong><a href="#">vatkin@vatkin.com</a></strong>
+                                    </li>
+                                </ul>
+                                <div class="contact__social">
+                                    <ul class="social">
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icons/instagram.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icons/facebook.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icons/be.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icons/linkedin.svg" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icons/pinterest.svg" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="contact__img" data-da=".contact,767.98,last">
+                                <a href="#">
+                                    <img src="img/photo/portfolio-long-img-13.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact__col-2">
+                            <form action="/">
+                                <div class="form">
+                                    <div class="form__items">
+                                        <div class="form__item">
+                                            <input class="input cursor-hover" type="text" placeholder="Your Name*"
+                                                required>
+                                        </div>
+                                        <div class="form__item">
+                                            <input class="input cursor-hover" type="text" placeholder="Your Email*"
+                                                required>
+                                        </div>
+                                        <div class="form__item">
+                                            <input class="input cursor-hover" type="text" placeholder="Subject">
+                                        </div>
+                                        <div class="form__item">
+                                            <textarea class="textarea cursor-hover" placeholder="Message"></textarea>
+                                        </div>
+                                        <div class="form__item">
+                                            <label class="checkbox-radio cursor-hover">
+                                                <input type="checkbox">
+                                                <div class="checkbox-radio__square"></div>
+                                                <div class="checkbox-radio__text">Receive occasional newslletter</div>
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form__bottom">
+                                        <button type="submit" class="form__submit link">send message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>
