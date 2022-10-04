@@ -15,12 +15,22 @@
         }
     }
 
-    &__item {
-        &:not(:last-child) {
-            margin-bottom: 2rem;
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
 
-            @media (max-width: $md4+px) {
-                margin-bottom: 16px;
+        @media (max-width: $md3+px) {
+            gap: 16px;
+        }
+    }
+
+    &__item {
+        flex: 0 1 100%;
+
+        &--half {
+            @media (min-width: 768px) {
+                flex: 0 1 calc(50% - 1rem);
             }
         }
 
@@ -63,6 +73,14 @@
     font-size: 1.6rem;
     line-height: 1.4em;
     font-weight: 300;
+    color: inherit;
+
+    &::placeholder {
+        font-size: 1.6rem;
+        line-height: 1.4em;
+        font-weight: 300;
+        color: inherit;
+    }
 }
 .textarea {
     display: flex;
@@ -79,6 +97,14 @@
     line-height: 1.4em;
     font-weight: 300;
     resize: none;
+    color: inherit;
+
+    &::placeholder {
+        font-size: 1.6rem;
+        line-height: 1.4em;
+        font-weight: 300;
+        color: inherit;
+    }
 
     @media (max-width: $md3+px) {
         height: 90px;
@@ -107,6 +133,15 @@
                 }
             }
         }
+
+        &.required ~ {
+            & .checkbox-radio__square {
+                border-color: $dangerColor;
+            }
+            & .checkbox-radio__circle {
+                border-color: $dangerColor;
+            }
+        }
     }
 
     &__square {
@@ -131,7 +166,7 @@
 
         &:before {
             position: absolute;
-            content: '';
+            content: "";
             top: 50%;
             left: 50%;
             width: 1rem;
@@ -148,4 +183,32 @@
         font-size: 1.2rem;
         line-height: 1.25em;
     }
+
+    &--md {
+        & .checkbox-radio__circle {
+            @media (min-width: 768px) {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        & .checkbox-radio__text {
+            font-size: 1.6rem;
+            line-height: 1.62em;
+
+            @media (max-width: $md3+px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.required {
+    color: #F86F6F;
+    border-color: #F86F6F;
 }

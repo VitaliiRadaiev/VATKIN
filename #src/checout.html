@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<body>
+	<div class="_preload-body"></div>
+	<!-- == TOP LINE ================== -->
+	<div class="main-wrapper">
+		@@include('common/header/_header.html',{
+		"mod": "",
+		"styles": ""
+		})
+		<!-- == // TOP LINE ================== -->
+		<!-- data-padding-top-header-size -->
+
+		<main class="_page checkout-page">
+			<div data-padding-top-header-size></div>
+
+            <div class="container-sm">
+                <form action="/">
+                    <div class="checkout">
+                        <div class="checkout__col-1">
+                            <div class="checkout__title title-4">Contact information</div>
+                            <div class="checkout__row">
+                                <div class="checkout__email">
+                                    <input type="text" class="input" placeholder="Your Email *" required>
+                                    <label class="checkbox-radio">
+                                        <input type="checkbox">
+                                        <div class="checkbox-radio__square"></div>
+                                        <div class="checkbox-radio__text">Receive occasional newslletter</div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="checkout__row">
+                                <div class="checkout__title-2 title-5"></div>
+                                <div class="form__items">
+                                    <div class="form__item form__item--half">
+                                        <input type="text" class="input" placeholder="First name *" required>
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <input type="text" class="input" placeholder="Last name *" required>
+                                    </div>
+                                    <div class="form__item">
+                                        <input type="text" class="input" placeholder="Address 1">
+                                    </div>
+                                    <div class="form__item">
+                                        <input type="text" class="input" placeholder="Address 2">
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <input type="text" class="input" placeholder="Postal code *" required>
+                                    </div>
+                                    <div class="form__item form__item--half">
+                                        <input type="text" class="input" placeholder="City *" required>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="select-wrap">
+                                            <select name="" class="_select">
+                                                <option value="" selected>Country *</option>
+                                            <option value="1">Kiev</option>
+                                            <option value="2">Lviv</option>
+                                            <option value="3">Odessa</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__item" data-mask="9{*}">
+                                        <input type="text" class="input" placeholder="Telephone number *" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__row">
+                                <div class="checkout__title-2 title-5">Shipping options</div>
+                                <ul class="checkout__checkbox-radio-list">
+                                    <li>
+                                        <label class="checkbox-radio checkbox-radio--md">
+                                            <input type="radio" name="delivery">
+                                            <div class="checkbox-radio__circle"></div>
+                                            <div class="checkbox-radio__text">Nova Poshta (Ukraine) – €30</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-radio checkbox-radio--md">
+                                            <input type="radio" name="delivery">
+                                            <div class="checkbox-radio__circle"></div>
+                                            <div class="checkbox-radio__text">EMS (America/Europe/Asia) – £300</div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="checkout__row">
+                                <div class="checkout__title-2 title-5">Payment options</div>
+                                <ul class="checkout__checkbox-radio-list">
+                                    <li>
+                                        <label class="checkbox-radio checkbox-radio--md">
+                                            <input type="radio" name="payment">
+                                            <div class="checkbox-radio__circle"></div>
+                                            <div class="checkbox-radio__text">Card</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-radio checkbox-radio--md">
+                                            <input type="radio" name="payment">
+                                            <div class="checkbox-radio__circle"></div>
+                                            <div class="checkbox-radio__text">Invoice</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-radio checkbox-radio--md">
+                                            <input type="radio" name="payment">
+                                            <div class="checkbox-radio__circle"></div>
+                                            <div class="checkbox-radio__text">USDT</div>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox-radio checkbox-radio--md">
+                                            <input type="radio" name="payment">
+                                            <div class="checkbox-radio__circle"></div>
+                                            <div class="checkbox-radio__text">Paypal</div>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="checkout__col-2">
+                            <div class="checkout__title title-4">Order Summary</div>
+                            <div class="busket">
+                                <div class="busket__list-head">
+                                    <div>Item</div>
+                                    <div>Quantity</div>
+                                    <div>Subtotal</div>
+                                </div>
+                                <ul class="busket__list">
+                                    <li>
+                                        <div class="busket-card busket-card--sm">
+                                            <div class="busket-card__col-1">
+                                                <a href="#">
+                                                    <div class="busket-card__img-wrap">
+                                                        <div class="busket-card__img">
+                                                            <img src="img/photo/card-img-1.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="busket-card__col-2">
+                                                <div class="busket-card__title">
+                                                    <a href="#">
+                                                        Title of painting
+                                                    </a>
+                                                </div>
+                                                <ul class="busket-card__info-list">
+                                                    <li>90 x 120</li>
+                                                </ul>
+                                                <div class="busket-card__text">
+                                                    Artwork certificate + provenance
+                                                </div>
+                                            </div>
+                                            <div class="busket-card__col-3">
+                                                <div class="busket-card__label">Quantity</div>
+                                                <div class="busket-card__quantity disabled">
+                                                    @@include('common/quantity/_quantity.html')
+                                                </div>
+                                            </div>
+                                            <div class="busket-card__col-4">
+                                                <div class="busket-card__label">Subtotal</div>
+                                                <div class="busket-card__price">€1,205</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="busket-card busket-card--sm">
+                                            <div class="busket-card__col-1">
+                                                <a href="#">
+                                                    <div class="busket-card__img-wrap">
+                                                        <div class="busket-card__img">
+                                                            <img src="img/photo/card-img-5.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="busket-card__col-2">
+                                                <div class="busket-card__title">
+                                                    <a href="#">
+                                                        Title of painting
+                                                    </a>
+                                                </div>
+                                                <ul class="busket-card__info-list">
+                                                    <li>90 x 120</li>
+                                                </ul>
+                                                <div class="busket-card__text">
+                                                    Artwork certificate + provenance
+                                                </div>
+                                            </div>
+                                            <div class="busket-card__col-3">
+                                                <div class="busket-card__label">Quantity</div>
+                                                <div class="busket-card__quantity disabled">
+                                                    @@include('common/quantity/_quantity.html')
+                                                </div>
+                                            </div>
+                                            <div class="busket-card__col-4">
+                                                <div class="busket-card__label">Subtotal</div>
+                                                <div class="busket-card__price">€1,205</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="busket__list-bottom d-block">
+                                    <div class="busket__list-bottom__row">
+                                        <ul class="busket__list-bottom-list">
+                                            <li>
+                                                <span>Subtotal </span>
+                                                <span>€1,200</span>
+                                            </li>
+                                            <li>
+                                                <span>Tax</span>
+                                                <span>€0</span>
+                                            </li>
+                                            <li>
+                                                <span>Shipping</span>
+                                                <span>€5</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="busket__list-bottom-total">
+                                        <div>Total:</div>
+                                        <div>€300</div>
+                                    </div>
+                                </div>
+                                <div class="busket__buttons">
+                                    <label class="checkbox-radio">
+                                        <input type="checkbox">
+                                        <div class="checkbox-radio__square"></div>
+                                        <div class="checkbox-radio__text">Confidentiality agreement and offer</div>
+                                    </label>
+                                    <a href="#" class="busket__btn btn-default">confirm order</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+		</main>
+
+		<!-- == FOOTER ================== -->
+		@@include('common/footer/_footer.html',{})
+		<!-- == // FOOTER ================== -->
+	</div>
+	@@include('_js-bottom.html',{})
+</body>
+
+</html>

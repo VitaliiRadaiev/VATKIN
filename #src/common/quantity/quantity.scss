@@ -1,19 +1,20 @@
 .quantity {
-	width: 9rem;
-	height: 3.7rem;
+	width: 10.2rem;
+	height: 3rem; 
 	display: flex;
-	padding-bottom: 0.8rem;
-	border-bottom: 1px solid $borderColor;
+	border: 1px solid $mainColor;
 
-	@media (max-width: $md3+px) {
-		height: 30px;
-		padding-bottom: 4px;
+	&.inactive {
+		pointer-events: none;
+		opacity: 0.5;
 	}
 
 	&__button {
-		flex: 0 0 30px;
+		flex: 0 0 3rem;
 		position: relative;
 		cursor: pointer;
+		transition: all .3s ease;
+
 		&::before,
 		&::after {
 			content: "";
@@ -22,26 +23,24 @@
 			left: 50%;
 			transition: all 0.3s ease 0s;
 			margin: 0px 0px 0px -4.5px;
-			background-color: #a6a6a6;
+			background-color: #000;
 			width: 9px;
 			height: 1px;
 		}
+
 		@media (min-width: $md2+px) {
 			&:hover {
-				&::before,
-				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
-				}
+				background-color: rgba(0, 0, 0, 0.1);
 			}
 		}
 		// .quantity__button_plus
 		&--minus {
-			margin-left: -0.9rem;
+			border-right: 1px solid #000;
 
 		}
 		// .quantity__button_minus
 		&--plus {
-			margin-right: -0.9rem;
+			border-left: 1px solid #000;
 
 			&::before {
 				transform: rotate(-90deg);
@@ -56,9 +55,8 @@
             background: transparent;
 			height: 100%;
 			color: $textColor;
-			font-size: 14px;
-			font-weight: 600;
-			font-family: $titleFontFamily;
+			font-size: 1.8rem;
+			font-weight: 400;
 			width: 100%;
 			text-align: center;
 			border: none;

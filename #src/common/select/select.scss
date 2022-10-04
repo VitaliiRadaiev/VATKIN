@@ -1,3 +1,5 @@
+
+
 .select {
 	&__item {
 		position: relative;
@@ -8,30 +10,28 @@
 	// .select__value
 	&__value {
 		padding-right: 2.5rem;
-		min-height: 6rem;
-		border-bottom: 2px solid $borderColor;
+		min-height: 3.2rem;
+		border-bottom: 1px solid $mainColor;
 		display: flex;
 		align-items: center;
+		padding: 0 0 0.6rem;
+
 		span {
-			font-weight: 400;
-			font-size: 2.4rem;
-			line-height: 150%;
+			font-size: 1.6rem;
+			line-height: 1.4em;
+			font-weight: 300;
+			color: #000;
 			font-family: $mainFontFamily;
-			color: $textColor;
 		}
 		&:before {
+			font-family: "icomoon" !important;
 			position: absolute;
-			content: "";
+			content: "\e910";
 			transition: all 0.3s ease 0s;
 			top: 50%;
 			right: 0;
 			transform: translateY(-50%);
-			background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI1IiB2aWV3Qm94PSIwIDAgOSA1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNC41IDVMOC4zOTcxMSAwLjVIMC42MDI4ODZMNC41IDVaIiBmaWxsPSIjMjIyMjIyIi8+Cjwvc3ZnPgo=");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: contain;
-			width: 9px;
-			height: 6px;
+			color: #000 !important;
 		}
 	}
 	&__input {
@@ -43,15 +43,15 @@
 	&__options {
 		display: none;
 		position: absolute;
-		top: calc(100% + 3px);
+		top: calc(100% + 0.3rem);
 		min-width: 100%;
 		left: 0;
-		background-color: $bg;
-		max-height: 315px;
+		background-color: #fff;
+		max-height: 31.5rem;
 		overflow-y: auto;
-		padding-top: 4px;
-		padding-bottom: 4px;
-		border: 2px solid $borderColor;
+		padding-top: 0.4rem;
+		padding-bottom: 0.4rem;
+		border: 1px solid $mainColor;
 	}
 	// .select__option
 	&__option {
@@ -62,13 +62,14 @@
 		display: flex;
 		align-items: center;
 		min-height: 3rem;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		padding: 0.8rem 1.4rem;
+		color: #000 !important;
 
 		@media (min-width: 992px) {
 			&:hover {
 				color: $hover;
-				background: $bgSecondary;
+				background: #fff;
 			}
 		}
 	}
@@ -82,5 +83,14 @@
 		.select__options {
 			display: block;
 		}
+	}
+}
+
+.required {
+	& .select__value {
+		border-color: $dangerColor;
+	}
+	& .select__value span {
+		color: $dangerColor;
 	}
 }

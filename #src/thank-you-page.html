@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": "",
+        "styles": ""
+        })
+        <!-- == // TOP LINE ================== -->
+        <!-- data-padding-top-header-size -->
+
+        <main class="_page thank-you-page">
+            <div data-padding-top-header-size></div>
+
+            <div class="container-sm">
+                <div class="thank-you">
+                    <h2 class="thank-you__title title2">
+                        Thank you for order!
+                    </h2>
+                    <ul class="thank-you__info-list">
+                        <li>
+                            Your order number: #12345.
+                        </li>
+                        <li>
+                            We'll contact you to clarify all details.
+                        </li>
+                    </ul>
+                    <div class="thank-you__img">
+                        <img src="img/photo/promo-header-card-img-3.jpg" alt="">
+                    </div>
+                    <a href="#" class="btn-default">back to shop</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

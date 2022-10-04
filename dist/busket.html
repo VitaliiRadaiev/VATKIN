@@ -180,7 +180,7 @@ defer
                         <img class="img-svg" src="img/icons/burger-mob.svg" alt="img">
                     </div>
                 </button>
-                <a href="#" class="top-line__basket">Card (1)</a>
+                <a href="#" class="top-line__basket">Card</a>
             </div>
         </div>
         
@@ -318,242 +318,149 @@ defer
         <!-- == // TOP LINE ================== -->
         <!-- data-padding-top-header-size -->
 
-        <main class="_page shop-page">
+        <main class="_page busket-page">
             <div data-padding-top-header-size></div>
             <div class="container-sm">
-                <div class="shop">
-                    <div class="shop__nav">
-                        <div class="shop__nav-label">Type:</div>
-                        <ul class="shop__nav-list">
-                            <li>
-                                <a href="#">All</a>
-                            </li>
-                            <li>
-                                <a class="active" href="#">Artworks</a>
-                            </li>
-                            <li>
-                                <a href="#">Print</a>
-                            </li>
-                            <li>
-                                <a href="#">Book</a>
-                            </li>
-                            <li>
-                                <a href="#">Merch</a>
-                            </li>
-                        </ul>
+                <div class="busket">
+                    <div class="busket__title">Shopping card</div>
+                    <div class="busket__list-head">
+                        <div>Item</div>
+                        <div>Quantity</div>
+                        <div>Subtotal</div>
                     </div>
-                    <div class="shop__content">
-                        <div class="products">
-                            <ul class="products__list">
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-1.jpg" alt="">
-            </div>
-        </a>
+                    <ul class="busket__list">
+                        <li>
+                            <div class="busket-card">
+                                <div class="busket-card__col-1">
+                                    <a href="#">
+                                        <div class="busket-card__img-wrap">
+                                            <div class="busket-card__img">
+                                                <img src="img/photo/card-img-1.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="busket-card__col-2">
+                                    <div class="busket-card__title">
+                                        <a href="#">
+                                            Title of painting
+                                        </a>
+                                    </div>
+                                    <ul class="busket-card__info-list">
+                                        <li>90 x 120</li>
+                                    </ul>
+                                    <div class="busket-card__text">
+                                        Artwork certificate + provenance
+                                    </div>
+                                </div>
+                                <div class="busket-card__col-3">
+                                    <div class="busket-card__label">Quantity</div>
+                                    <div class="busket-card__quantity disabled">
+                                        <div class="quantity" data-quantity>
+    <div class="quantity__button quantity__button--minus cursor-hover"></div>
+    <div class="quantity__input cursor-hover">
+        <input autocomplete="off" type="text" value="1">
     </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
+    <div class="quantity__button quantity__button--plus cursor-hover"></div>
 </div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-2.jpg" alt="">
-            </div>
-        </a>
+                                    </div>
+                                </div>
+                                <div class="busket-card__col-4">
+                                    <div class="busket-card__label">Subtotal</div>
+                                    <div class="busket-card__price">€5,000</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="busket-card">
+                                <div class="busket-card__col-1">
+                                    <a href="#">
+                                        <div class="busket-card__img-wrap">
+                                            <div class="busket-card__img">
+                                                <img src="img/photo/book.jpg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="busket-card__col-2">
+                                    <div class="busket-card__title">
+                                        <a href="#">
+                                            Title of painting
+                                        </a>
+                                    </div>
+                                    <ul class="busket-card__info-list">
+                                        <li>book</li>
+                                    </ul>
+                                </div>
+                                <div class="busket-card__col-3">
+                                    <div class="busket-card__label">Quantity</div>
+                                    <div class="busket-card__quantity">
+                                        <div class="quantity" data-quantity>
+    <div class="quantity__button quantity__button--minus cursor-hover"></div>
+    <div class="quantity__input cursor-hover">
+        <input autocomplete="off" type="text" value="1">
     </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
+    <div class="quantity__button quantity__button--plus cursor-hover"></div>
 </div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-3.jpg" alt="">
-            </div>
-        </a>
+                                    </div>
+                                </div>
+                                <div class="busket-card__col-4">
+                                    <div class="busket-card__label">Subtotal</div>
+                                    <div class="busket-card__price">€300</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="busket-card">
+                                <div class="busket-card__col-1">
+                                    <a href="#">
+                                        <div class="busket-card__img-wrap">
+                                            <div class="busket-card__img">
+                                                <img src="img/photo/card-img-5.png" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="busket-card__col-2">
+                                    <div class="busket-card__title">
+                                        <a href="#">
+                                            Title of painting
+                                        </a>
+                                    </div>
+                                    <ul class="busket-card__info-list">
+                                        <li>90 x 120</li>
+                                    </ul>
+                                    <div class="busket-card__text">
+                                        Artwork certificate + provenance
+                                    </div>
+                                </div>
+                                <div class="busket-card__col-3">
+                                    <div class="busket-card__label">Quantity</div>
+                                    <div class="busket-card__quantity disabled">
+                                        <div class="quantity" data-quantity>
+    <div class="quantity__button quantity__button--minus cursor-hover"></div>
+    <div class="quantity__input cursor-hover">
+        <input autocomplete="off" type="text" value="1">
     </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
+    <div class="quantity__button quantity__button--plus cursor-hover"></div>
 </div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-3.jpg" alt="">
-            </div>
-        </a>
-    </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
-</div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-1.jpg" alt="">
-            </div>
-        </a>
-    </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
-</div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-2.jpg" alt="">
-            </div>
-        </a>
-    </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
-</div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-1.jpg" alt="">
-            </div>
-        </a>
-    </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
-</div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-2.jpg" alt="">
-            </div>
-        </a>
-    </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
-</div>
-                                </li>
-                                <li>
-                                    <div class="card">
-    <div class="card__img">
-        <a href="#">
-            <div class="card__img-wrap">
-                <img src="img/photo/card-img-3.jpg" alt="">
-            </div>
-        </a>
-    </div>
-    <div class="card__title">
-        <a href="#">Title of painting</a>
-    </div>
-    <ul class="card__info-list">
-        <li>90 x 120 | 2022</li>
-    </ul>
-    <div class="card__price">€5,000</div>
-    <a href="#" class="card__btn link">
-        <span class="card__btn-add">Add to cart</span>
-        <span class="card__btn-added">Added to cart</span>
-    </a>
-    <!-- card__btn--added -->
-</div>
-                                </li>
-                            </ul>
-                        </div>
+                                    </div>
+                                </div>
+                                <div class="busket-card__col-4">
+                                    <div class="busket-card__label">Subtotal</div>
+                                    <div class="busket-card__price">€5,000</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="busket__list-bottom">
+                        <div></div>
+                        <div>Total:</div>
+                        <div>€300</div>
+                    </div>
+                    <div class="busket__buttons">
+                        <a href="#" class="busket__link">Continue shopping</a>
+                        <a href="#" class="busket__btn btn-default">check out</a>
                     </div>
                 </div>
             </div>

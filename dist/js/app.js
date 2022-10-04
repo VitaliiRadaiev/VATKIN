@@ -368,12 +368,12 @@ class App {
 			this.slidersInit();
 			this.headerHandler();
 			this.componentsBeforeLoad();
+			this.selectInit();
 			this.cursorhandler();
 			this.popupHandler();
 			this.initSmoothScroll();
 			this.inputMaskInit();
 			this.tabsInit();
-			this.selectInit();
 			this.spollerInit();
 			this.initScrollParallax();
 		});
@@ -394,7 +394,7 @@ class App {
 
 	cursorhandler() {
 		let mouseCursor = document.querySelector('[data-cursor]');
-		let links = document.querySelectorAll('a, button, .cursor-hover, [data-cursor-hover], .swiper-pagination-bullet');
+		let links = document.querySelectorAll('a, button, .cursor-hover, [data-cursor-hover], .swiper-pagination-bullet, input, label, textarea, .select__option, .select__title');
 		let anchors = document.querySelectorAll('.anchor');
 		let cursorHidden = document.querySelectorAll('.cursor-hidden');
 		let cursorLight = document.querySelectorAll('.cursor-light');
@@ -1757,6 +1757,33 @@ if ($cookieEl) {
 
     }
 };
+		{
+    let quantityAll = document.querySelectorAll('[data-quantity]');
+    if(quantityAll.length) {
+        quantityAll.forEach(quantity => {
+            let buttons = quantity.querySelectorAll('.quantity__button');
+            let input = quantity.querySelector('input');
+
+            if(buttons.length && input) {
+                buttons.forEach(button => {
+                    button.addEventListener("click", function (e) {
+                        let value = input.value;
+                        if (button.classList.contains('quantity__button--plus')) {
+                            value++;
+                        } else {
+                            value = value - 1;
+                            if (value < 1) {
+                                value = 1
+                            }
+                        }
+                        input.value = value;
+                    });
+                })
+            }
+        })
+    }
+}
+;
 	}
 
 	componentsAfterLoad() {

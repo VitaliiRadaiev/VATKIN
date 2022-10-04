@@ -239,23 +239,25 @@ h3,
 }
 h4,
 .title-4 {
-	font-family: $titleFontFamily;
 	color: $titlceColor;
 	font-weight: 600;
 	font-size: 2.4rem;
 	line-height: 1.33em;
 
 	@media (max-width: $md3+px) {
-		font-size: 18px;
+		font-size: 20px;
 	}
 }
 h5,
 .title-5 {
-	font-family: $titleFontFamily;
 	color: $titlceColor;
 	font-weight: 600;
-	font-size: 2rem;
-	line-height: 1.1em;
+	font-size: 1.8rem;
+	line-height: 1.25em;
+
+	@media (max-width: $md3+px) {
+		font-size: 16px;
+	}
 }
 
 p,

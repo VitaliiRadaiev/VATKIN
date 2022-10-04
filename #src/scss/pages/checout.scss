@@ -1,0 +1,99 @@
+.checkout {
+    padding-top: 10.5rem;
+    padding-bottom: 12rem;
+
+    @media (min-width: 992px) {
+        display: flex;
+    }
+
+    @media (max-width: $md3+px) {
+        padding: 40px 0;
+    }
+
+    &__col-1 {
+        flex: 1 1 auto;
+        margin-right: 14.2rem;
+
+        @media (max-width: $md2+px) {
+            margin-right: 0;
+            margin-bottom: 4rem;
+        }
+    }
+    &__col-2 {
+        flex: 0 0 48.63%;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__title-2 {
+        margin-bottom: 2rem;
+    }
+
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__email {
+        & .input {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__checkbox-radio-list {
+        padding-left: 0;
+        margin-bottom: 2rem;
+
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 0.7rem;
+            }
+        }
+    }
+
+    & .busket {
+        padding: 0;
+    }
+
+    & .busket__list-head {
+        & > * {
+            &:nth-child(1) {
+                flex: 1 1 auto;
+            }
+            &:nth-child(2) {
+                flex: 0 0 11rem;
+            }
+            &:nth-child(3) {
+                flex: 0 0 23.5rem;
+                text-align: right;
+            }
+        }
+    }
+
+    & .busket__list {
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    & .busket__buttons {
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    & .busket__btn {
+        &.btn-default {
+            min-width: 23rem;
+        }
+    }
+}

@@ -26,12 +26,12 @@ class App {
 			this.slidersInit();
 			this.headerHandler();
 			this.componentsBeforeLoad();
+			this.selectInit();
 			this.cursorhandler();
 			this.popupHandler();
 			this.initSmoothScroll();
 			this.inputMaskInit();
 			this.tabsInit();
-			this.selectInit();
 			this.spollerInit();
 			this.initScrollParallax();
 		});
@@ -52,7 +52,7 @@ class App {
 
 	cursorhandler() {
 		let mouseCursor = document.querySelector('[data-cursor]');
-		let links = document.querySelectorAll('a, button, .cursor-hover, [data-cursor-hover], .swiper-pagination-bullet');
+		let links = document.querySelectorAll('a, button, .cursor-hover, [data-cursor-hover], .swiper-pagination-bullet, input, label, textarea, .select__option, .select__title');
 		let anchors = document.querySelectorAll('.anchor');
 		let cursorHidden = document.querySelectorAll('.cursor-hidden');
 		let cursorLight = document.querySelectorAll('.cursor-light');
@@ -348,6 +348,7 @@ class App {
 		@@include('../common/cookies-message/cookies-message.js');
 		@@include('../common/portfolio-list/portfolio-list.js');
 		@@include('../common/messenger/messenger.js');
+		@@include('../common/quantity/quantity.js');
 	}
 
 	componentsAfterLoad() {
