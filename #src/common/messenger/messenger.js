@@ -1,6 +1,7 @@
 {
     let messenger = document.querySelector('[data-messenger]');
     if(messenger) {
+        let footer = document.querySelector('.footer');
 
         const toggleLightMode = () => {
             let x = messenger.offsetLeft;
@@ -33,6 +34,13 @@
 
         document.addEventListener('scroll', (e) => {
             toggleLightMode();
+            
+            let footerPositionY = footer.getBoundingClientRect().top - document.documentElement.clientHeight;
+            if(footerPositionY < 0) {
+                messenger.classList.add('messenger--hide');
+            } else {
+                messenger.classList.remove('messenger--hide');
+            }
         })
 
     }

@@ -4,6 +4,9 @@
     right: 6rem;
     bottom: 4rem;
     color: $titlceColor;
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
 
     @media (max-width: $md1+px) {
         right: 4rem;
@@ -23,7 +26,13 @@
         color: #fff;
     }
 
-    & img, & svg {
+    &--hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    & img,
+    & svg {
         width: 3.2rem;
         height: auto;
     }

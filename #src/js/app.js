@@ -349,6 +349,7 @@ class App {
 		@@include('../common/portfolio-list/portfolio-list.js');
 		@@include('../common/messenger/messenger.js');
 		@@include('../common/quantity/quantity.js');
+		@@include('../common/painting-preview/painting-preview.js');
 	}
 
 	componentsAfterLoad() {
