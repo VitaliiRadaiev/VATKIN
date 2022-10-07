@@ -207,8 +207,33 @@
     pointer-events: none;
     opacity: 0.3;
 }
+.wpcf7-not-valid,
+.required  {
+    color: #f86f6f;
+    border-color: #f86f6f;
+}
 
-.required {
-    color: #F86F6F;
-    border-color: #F86F6F;
+.wpcf7-not-valid-tip {
+    color: #f86f6f;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    padding-top: 0.2rem;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    margin: 1.6rem 0 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 1.6rem !important;
+    line-height: 1.8rem !important;
+
+    @media (max-width: $md3+px) {
+        font-size: 14px !important;
+        line-height: 16px !important;
+    }
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: #f86f6f;
 }

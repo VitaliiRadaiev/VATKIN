@@ -204,11 +204,12 @@
     }
 
     &__link {
+        display: inline-block;
         margin-top: auto;
         text-transform: uppercase;
         font-weight: 600;
         align-self: flex-start;
-
+        
         &::before {
             font-weight: 400;
         }
@@ -247,10 +248,20 @@
             text-transform: none;
             font-weight: 300;
             align-self: initial;
+            
+            &:last-child {
+                min-width: auto !important;
+                margin-right: 0 !important; 
+            }
+
+            @media (max-width: $md2+px) {
+                min-width: auto !important;
+                margin-right: 0 !important; 
+            }
 
             @media (min-width: 992px) {
                 &:hover {
-                    font-weight: 600;
+                    font-weight: 600;   
                 }
             }
         }

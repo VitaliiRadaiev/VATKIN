@@ -353,6 +353,19 @@ class App {
 	}
 
 	componentsAfterLoad() {
+		let linksHoverWeight = document.querySelectorAll('.painting-info__bottom-buttons .painting-info__link');
+		if(linksHoverWeight.length) {
+			linksHoverWeight.forEach(link => {
+				const setMinWidth = () => {
+					link.style.minWidth = `calc(${link.clientWidth}px + ${link.innerHTML.length * 0.19}px)`;
+					link.style.marginRight = `-${link.innerHTML.length * 0.19}px`;
+				}
+
+				setMinWidth();
+
+				window.addEventListener('resize', setMinWidth);
+			})
+		}
 	}
 
 	initLocomotiveScroll() {

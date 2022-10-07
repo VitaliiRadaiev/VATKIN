@@ -1531,9 +1531,9 @@ body.menu-is-open .main-logo path {
 }
 
 body.logo-is-hide .main-logo {
-  -webkit-transform: translateY(-200%) translateX(-50%);
-      -ms-transform: translateY(-200%) translateX(-50%);
-          transform: translateY(-200%) translateX(-50%);
+  -webkit-transform: translateY(-200%);
+      -ms-transform: translateY(-200%);
+          transform: translateY(-200%);
 }
 
 body.logo-white:not(.header-is-scroll) .main-logo path {
@@ -1745,6 +1745,7 @@ figure {
 .link {
   padding-right: 3.6rem;
   position: relative;
+  padding-left: 0;
 }
 
 .link:after {
@@ -2179,7 +2180,7 @@ i {
 
 .top-line__basket {
   font-weight: 400;
-  font-size: 2.6rem;
+  font-size: 1.8rem;
   line-height: 1.25em;
 }
 
@@ -3303,6 +3304,7 @@ i {
 }
 
 .painting-info__link {
+  display: inline-block;
   margin-top: auto;
   text-transform: uppercase;
   font-weight: 600;
@@ -3349,6 +3351,11 @@ i {
   -ms-flex-item-align: initial;
       -ms-grid-row-align: initial;
       align-self: initial;
+}
+
+.painting-info__bottom-buttons .painting-info__link:last-child {
+  min-width: auto !important;
+  margin-right: 0 !important;
 }
 
 .status {
@@ -4198,9 +4205,30 @@ i {
   opacity: 0.3;
 }
 
+.wpcf7-not-valid,
 .required {
-  color: #F86F6F;
-  border-color: #F86F6F;
+  color: #f86f6f;
+  border-color: #f86f6f;
+}
+
+.wpcf7-not-valid-tip {
+  color: #f86f6f;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  padding-top: 0.2rem;
+}
+
+.wpcf7 form .wpcf7-response-output {
+  margin: 1.6rem 0 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  font-size: 1.6rem !important;
+  line-height: 1.8rem !important;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+  color: #f86f6f;
 }
 
 .quantity {
@@ -6351,9 +6379,9 @@ i {
   }
 
   body.logo-is-hide .main-logo {
-    -webkit-transform: translateY(-200%) translateX(0%);
-        -ms-transform: translateY(-200%) translateX(0%);
-            transform: translateY(-200%) translateX(0%);
+    -webkit-transform: translateY(-200%);
+        -ms-transform: translateY(-200%);
+            transform: translateY(-200%);
   }
 
   .container {
@@ -6412,10 +6440,6 @@ i {
 
   .top-line__burger {
     width: 2.8rem;
-  }
-
-  .top-line__basket {
-    font-size: 2rem;
   }
 
   .menu:before {
@@ -6526,6 +6550,11 @@ i {
 
   .zoom {
     display: none;
+  }
+
+  .painting-info__bottom-buttons .painting-info__link {
+    min-width: auto !important;
+    margin-right: 0 !important;
   }
 
   .others-works__buttons {
@@ -6911,6 +6940,9 @@ i {
     -webkit-box-align: initial;
         -ms-flex-align: initial;
             align-items: initial;
+  }
+
+  .promo-header .swiper-slide:not(:last-child) {
     border-bottom: 1px solid #d7d7d7;
   }
 
@@ -7258,6 +7290,11 @@ i {
 
   .checkbox-radio--md .checkbox-radio__text {
     font-size: 14px;
+  }
+
+  .wpcf7 form .wpcf7-response-output {
+    font-size: 14px !important;
+    line-height: 16px !important;
   }
 
   .painting-preview__wrap {

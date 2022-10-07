@@ -114,10 +114,10 @@ body {
 
 	&.logo-is-hide {
 		& .main-logo {
-			transform: translateY(-200%) translateX(-50%);
+			transform: translateY(-200%);
 
 			@media (max-width: $md2+px) {
-				transform: translateY(-200%) translateX(0%);
+				transform: translateY(-200%);
 			}
 		}
 	}
@@ -364,6 +364,7 @@ figure {
 .link {
 	padding-right: 3.6rem;
 	position: relative;
+	padding-left: 0;
 
 	&:after {
 		position: absolute;
