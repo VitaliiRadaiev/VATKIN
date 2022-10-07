@@ -1,7 +1,7 @@
 .footer {
     position: relative;
     z-index: 30;
-    padding-top: 2rem;
+    padding-top: 6rem;
 
     @media (min-width: 768px) {
         border-top: 1px solid #000;
@@ -140,6 +140,12 @@
             height: auto;
         }
     }
+
+    &--mob {
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
 }
 
 .dropdown {
@@ -178,18 +184,12 @@
     &__list {
         position: absolute;
         bottom: 100%;
-        background-color: #fff;
         padding: 1rem;
         margin-bottom: 0;
         transition: all 0.3s ease;
         visibility: hidden;
         opacity: 0;
         transform: translateY(-2rem);
-
-        @media (max-width: $md3+px) {
-            bottom: auto;
-            top: 100%;
-        }
 
         & > li {
             &:not(:last-child) {

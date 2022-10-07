@@ -28,23 +28,30 @@
 			font-size: 10px;
 			height: 2em;
 			width: 2em;
+			-webkit-transition: background-color, height, width .3s ease, -webkit-transform;
+			transition: background-color, height, width .3s ease, -webkit-transform;
+			-o-transition: transform, background-color, height, width .3s ease;
 			transition: transform, background-color, height, width .3s ease;
+			transition: transform, background-color, height, width .3s ease, -webkit-transform;
 			position: absolute;
 			z-index: 99999;
 			border-radius: 50%;
 			background-color: #222222;
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			-ms-transform: translate(-50%, -50%) scale(1);
 			transform: translate(-50%, -50%) scale(1);
 			pointer-events: none;
 			left: -30px;
 			top: -30px;
+			-webkit-box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
 			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
 		}
 
 		.mouse-dot.hide {
+			-webkit-transform: translate(-50%, -50%) scale(0);
+			-ms-transform: translate(-50%, -50%) scale(0);
 			transform: translate(-50%, -50%) scale(0);
 		}
-
-		.mouse-dot.hover {}
 
 		._preload-body {
 			background-color: #fff;
@@ -54,6 +61,8 @@
 			width: 100%;
 			height: 100%;
 			z-index: 999;
+			-webkit-transition: all .6s ease .2s;
+			-o-transition: all .6s ease .2s;
 			transition: all .6s ease .2s;
 		}
 
@@ -68,16 +77,33 @@
 			border-radius: 50%;
 			border: 4px solid #6e6e6e;
 			border-right: 4px solid #fff;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
+			-webkit-animation: preloadBody 2s linear infinite;
 			animation: preloadBody 2s linear infinite;
 		}
 
-		@keyframes preloadBody {
+		@-webkit-keyframes preloadBody {
 			from {
+				-webkit-transform: translate(-50%, -50%) rotate(0);
 				transform: translate(-50%, -50%) rotate(0);
 			}
 
 			to {
+				-webkit-transform: translate(-50%, -50%) rotate(360deg);
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+
+		@keyframes preloadBody {
+			from {
+				-webkit-transform: translate(-50%, -50%) rotate(0);
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				-webkit-transform: translate(-50%, -50%) rotate(360deg);
 				transform: translate(-50%, -50%) rotate(360deg);
 			}
 		}
@@ -95,6 +121,8 @@
 			z-index: 999;
 			position: fixed;
 			pointer-events: none;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 		}
 
@@ -115,15 +143,20 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 			width: 100%;
 			height: auto;
+			-webkit-transition: all .3s ease;
+			-o-transition: all .3s ease;
 			transition: all .3s ease;
 		}
 
 		.cursor .circle {
 			opacity: 0;
 		}
+
 		.cursor .arrow {
 			opacity: 0;
 		}
@@ -138,6 +171,54 @@
 
 		.cursor.cursor-light {
 			color: #fff;
+		}
+
+		.main-logo {
+			top: 3rem;
+			left: 0;
+			position: fixed;
+			width: 100%;
+			z-index: 50;
+			-webkit-transition: all 0.6s ease;
+			-o-transition: all 0.6s ease;
+			transition: all 0.6s ease;
+			-webkit-transform: translate(0);
+			-ms-transform: translate(0);
+			transform: translate(0);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			pointer-events: none;
+		}
+
+		.main-logo a {
+			pointer-events: auto;
+		}
+
+		.main-logo svg,
+		.main-logo img {
+			width: 16.4rem;
+			max-width: 100%;
+			height: auto;
+			-webkit-transition: all 0.6s linear;
+			-o-transition: all 0.6s linear;
+			transition: all 0.6s linear;
+		}
+
+		@media (max-width: 991.98px) {
+			.main-logo {
+				justify-content: flex-start;
+				top: 2rem;
+				padding-left: 2rem;
+				-webkit-transform: translate3d(0);
+				-ms-transform: translate3d(0);
+				transform: translate3d(0);
+			}
+
+			.main-logo svg,
+			.main-logo img {
+				width: 11.5rem;
+			}
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
@@ -158,7 +239,8 @@ defer
 			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
 			fill="currentColor" />
 		<g class="arrow">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z" fill="currentColor" />
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
+				fill="currentColor" />
 			<path fill-rule="evenodd" clip-rule="evenodd"
 				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
 				fill="currentColor" />
@@ -178,21 +260,32 @@ defer
 		overflow: auto;
 	}
 
-	body:not(.page-is-full-load) .main-logo {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-		max-width: 108.7rem;
-		padding: 2rem;
-	}
+
 
 	body:not(.page-is-full-load) .main-logo {
+		top: 50%;
+		-webkit-transform: translate3d(0, -50%, 0);
+		-ms-transform: translate3d(0, -50%, 0);
+		transform: translate3d(0, -50%, 0);
+		padding: 2rem;
 		color: #fff;
+		justify-content: center;
+	}
+
+	body:not(.page-is-full-load) .main-logo svg {
+		max-width: 100%;
+		width: 108.7rem;
+		height: auto;
+	}
+
+	body:not(.page-is-full-load) .main-logo a {
+		pointer-events: none;
 	}
 
 	body:not(.page-is-full-load) .home-preload {
 		opacity: 1;
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
 		transform: scale(1);
 		visibility: visible;
 	}
@@ -208,37 +301,58 @@ defer
 		width: 100%;
 		height: 100%;
 		opacity: 0;
+		-webkit-transform: scale(0.6);
+		-ms-transform: scale(0.6);
 		transform: scale(0.6);
 		background-color: #000;
 		z-index: 49;
+		-webkit-transition: all .6s ease;
+		-o-transition: all .6s ease;
 		transition: all .6s ease;
 		visibility: hidden;
 	}
 
 	.home-preload:not(.preload-img-loaded)::before {
 		position: absolute;
-			content: '';
-			z-index: 999;
-			top: 50%;
-			left: 50%;
-			height: 50px;
-			width: 50px;
-			border-radius: 50%;
-			border: 4px solid #fff;
-			border-right: 4px solid #000;
-			transform: translate(-50%, -50%);
-			animation: preloadBody 2s linear infinite;
+		content: '';
+		z-index: 999;
+		top: 50%;
+		left: 50%;
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		border: 4px solid #fff;
+		border-right: 4px solid #000;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		-webkit-animation: preloadBody 2s linear infinite;
+		animation: preloadBody 2s linear infinite;
+	}
+
+	@-webkit-keyframes preloadBody {
+		from {
+			-webkit-transform: translate(-50%, -50%) rotate(0);
+			transform: translate(-50%, -50%) rotate(0);
+		}
+
+		to {
+			-webkit-transform: translate(-50%, -50%) rotate(360deg);
+			transform: translate(-50%, -50%) rotate(360deg);
+		}
 	}
 
 	@keyframes preloadBody {
-			from {
-				transform: translate(-50%, -50%) rotate(0);
-			}
-
-			to {
-				transform: translate(-50%, -50%) rotate(360deg);
-			}
+		from {
+			-webkit-transform: translate(-50%, -50%) rotate(0);
+			transform: translate(-50%, -50%) rotate(0);
 		}
+
+		to {
+			-webkit-transform: translate(-50%, -50%) rotate(360deg);
+			transform: translate(-50%, -50%) rotate(360deg);
+		}
+	}
 
 	.home-preload img {
 		position: absolute;
@@ -247,7 +361,10 @@ defer
 		width: 100%;
 		height: 100%;
 		z-index: 1;
+		-o-object-fit: cover;
 		object-fit: cover;
+		-webkit-transition: all .3s ease;
+		-o-transition: all .3s ease;
 		transition: all .3s ease;
 		opacity: 0;
 	}
@@ -261,7 +378,8 @@ defer
 	<!-- == TOP LINE ================== -->
 	<div class="main-wrapper">
 		<div class="home-preload"
-			data-images="img/photo/preload-img-3.jpg,img/photo/preload-img-2.jpg,img/photo/preload-img-1.jpg"></div>
+			data-images="img/photo/preload-img-3.jpg,null,null,img/photo/preload-img-2.jpg,null,img/photo/preload-img-1.jpg">
+		</div>
 		<script>
 			function getRandomInt(max) {
 				return Math.floor(Math.random() * max);
@@ -269,13 +387,13 @@ defer
 
 			let homePreload = document.querySelector('.home-preload');
 			if (homePreload) {
-
-				let imagesUrl = homePreload.dataset.images.split(',');
+				let array = homePreload.dataset.images.split(',');
+				let imagesUrl = array.filter(i => i !== 'null');
 				let img = document.createElement('img');
-				let startIndex = getRandomInt(3);
+				let startIndex = getRandomInt(imagesUrl.length);
 				homePreload.append(img);
 				img.src = imagesUrl[startIndex];
-				window.startHomePageSlide = startIndex == 0 ? 0 : startIndex == 1 ? 3 : startIndex == 2 ? 5 : startIndex;
+				window.startHomePageSlide = array.findIndex(i => i === imagesUrl[startIndex]);
 
 
 				img.onload = () => {
@@ -426,6 +544,64 @@ defer
                 </a>
             </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__body">
+                    <div class="footer__copy">
+                        Vatkin. All rights reserved 2022
+                    </div>
+                    <ul class="footer__social">
+                        <li>
+                            <a href="#">E-mail</a>
+                        </li>
+                        <li>
+                            <a href="#">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="#">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#">Behance</a>
+                        </li>
+                        <li>
+                            <a href="#">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="#">Pinterest</a>
+                        </li>
+                    </ul>
+                    <div class="footer__language " data-cursor-hover>
+                        <div class="dropdown">
+                            <div class="dropdown__title">ENG</div>
+                            <ul class="dropdown__list">
+                                <li>
+                                    <a href="#">UA</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__currency" data-cursor-hover>
+                        <div class="dropdown">
+                            <div class="dropdown__title">USD</div>
+                            <ul class="dropdown__list">
+                                <li>
+                                    <a href="#">EUR</a>
+                                </li>
+                                <li>
+                                    <a href="#">UAH</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__logo">
+                        <div class="footer__logo-label">Powered by</div>
+                        <div class="footer__logo-img">
+                            <img src="img/logo/spacespire.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </div>
 		<!-- == // TOP LINE ================== -->
@@ -619,6 +795,65 @@ defer
     </div>
 </section>
 		</main>
+
+		<footer class="footer footer--mob">
+			<div class="container">
+				<div class="footer__body">
+					<div class="footer__copy">
+						Vatkin. All rights reserved 2022
+					</div>
+					<ul class="footer__social">
+						<li>
+							<a href="#">E-mail</a>
+						</li>
+						<li>
+							<a href="#">Instagram</a>
+						</li>
+						<li>
+							<a href="#">Facebook</a>
+						</li>
+						<li>
+							<a href="#">Behance</a>
+						</li>
+						<li>
+							<a href="#">Linkedin</a>
+						</li>
+						<li>
+							<a href="#">Pinterest</a>
+						</li>
+					</ul>
+					<div class="footer__language " data-cursor-hover>
+						<div class="dropdown">
+							<div class="dropdown__title">ENG</div>
+							<ul class="dropdown__list">
+								<li>
+									<a href="#">UA</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__currency" data-cursor-hover>
+						<div class="dropdown">
+							<div class="dropdown__title">USD</div>
+							<ul class="dropdown__list">
+								<li>
+									<a href="#">EUR</a>
+								</li>
+								<li>
+									<a href="#">UAH</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__logo">
+						<div class="footer__logo-label">Powered by</div>
+						<div class="footer__logo-img">
+							<img src="img/logo/spacespire.svg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</div>
 
 	<div class="cookies-message cursor-light" id="cookieMessage">

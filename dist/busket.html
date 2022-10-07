@@ -28,23 +28,30 @@
 			font-size: 10px;
 			height: 2em;
 			width: 2em;
+			-webkit-transition: background-color, height, width .3s ease, -webkit-transform;
+			transition: background-color, height, width .3s ease, -webkit-transform;
+			-o-transition: transform, background-color, height, width .3s ease;
 			transition: transform, background-color, height, width .3s ease;
+			transition: transform, background-color, height, width .3s ease, -webkit-transform;
 			position: absolute;
 			z-index: 99999;
 			border-radius: 50%;
 			background-color: #222222;
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			-ms-transform: translate(-50%, -50%) scale(1);
 			transform: translate(-50%, -50%) scale(1);
 			pointer-events: none;
 			left: -30px;
 			top: -30px;
+			-webkit-box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
 			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
 		}
 
 		.mouse-dot.hide {
+			-webkit-transform: translate(-50%, -50%) scale(0);
+			-ms-transform: translate(-50%, -50%) scale(0);
 			transform: translate(-50%, -50%) scale(0);
 		}
-
-		.mouse-dot.hover {}
 
 		._preload-body {
 			background-color: #fff;
@@ -54,6 +61,8 @@
 			width: 100%;
 			height: 100%;
 			z-index: 999;
+			-webkit-transition: all .6s ease .2s;
+			-o-transition: all .6s ease .2s;
 			transition: all .6s ease .2s;
 		}
 
@@ -68,16 +77,33 @@
 			border-radius: 50%;
 			border: 4px solid #6e6e6e;
 			border-right: 4px solid #fff;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
+			-webkit-animation: preloadBody 2s linear infinite;
 			animation: preloadBody 2s linear infinite;
 		}
 
-		@keyframes preloadBody {
+		@-webkit-keyframes preloadBody {
 			from {
+				-webkit-transform: translate(-50%, -50%) rotate(0);
 				transform: translate(-50%, -50%) rotate(0);
 			}
 
 			to {
+				-webkit-transform: translate(-50%, -50%) rotate(360deg);
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+
+		@keyframes preloadBody {
+			from {
+				-webkit-transform: translate(-50%, -50%) rotate(0);
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				-webkit-transform: translate(-50%, -50%) rotate(360deg);
 				transform: translate(-50%, -50%) rotate(360deg);
 			}
 		}
@@ -95,6 +121,8 @@
 			z-index: 999;
 			position: fixed;
 			pointer-events: none;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 		}
 
@@ -115,15 +143,20 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 			width: 100%;
 			height: auto;
+			-webkit-transition: all .3s ease;
+			-o-transition: all .3s ease;
 			transition: all .3s ease;
 		}
 
 		.cursor .circle {
 			opacity: 0;
 		}
+
 		.cursor .arrow {
 			opacity: 0;
 		}
@@ -138,6 +171,54 @@
 
 		.cursor.cursor-light {
 			color: #fff;
+		}
+
+		.main-logo {
+			top: 3rem;
+			left: 0;
+			position: fixed;
+			width: 100%;
+			z-index: 50;
+			-webkit-transition: all 0.6s ease;
+			-o-transition: all 0.6s ease;
+			transition: all 0.6s ease;
+			-webkit-transform: translate(0);
+			-ms-transform: translate(0);
+			transform: translate(0);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			pointer-events: none;
+		}
+
+		.main-logo a {
+			pointer-events: auto;
+		}
+
+		.main-logo svg,
+		.main-logo img {
+			width: 16.4rem;
+			max-width: 100%;
+			height: auto;
+			-webkit-transition: all 0.6s linear;
+			-o-transition: all 0.6s linear;
+			transition: all 0.6s linear;
+		}
+
+		@media (max-width: 991.98px) {
+			.main-logo {
+				justify-content: flex-start;
+				top: 2rem;
+				padding-left: 2rem;
+				-webkit-transform: translate3d(0);
+				-ms-transform: translate3d(0);
+				transform: translate3d(0);
+			}
+
+			.main-logo svg,
+			.main-logo img {
+				width: 11.5rem;
+			}
 		}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
@@ -158,7 +239,8 @@ defer
 			d="M37 73C56.8823 73 73 56.8823 73 37C73 17.1177 56.8823 1 37 1C17.1177 1 1 17.1177 1 37C1 56.8823 17.1177 73 37 73ZM37 74C57.4345 74 74 57.4345 74 37C74 16.5655 57.4345 0 37 0C16.5655 0 0 16.5655 0 37C0 57.4345 16.5655 74 37 74Z"
 			fill="currentColor" />
 		<g class="arrow">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z" fill="currentColor" />
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M36.5 52L36.5 22L37.5 22L37.5 52L36.5 52Z"
+				fill="currentColor" />
 			<path fill-rule="evenodd" clip-rule="evenodd"
 				d="M29.6465 45.3536L30.3536 44.6465L37 51.2929L43.6465 44.6465L44.3536 45.3536L37 52.7071L29.6465 45.3536Z"
 				fill="currentColor" />

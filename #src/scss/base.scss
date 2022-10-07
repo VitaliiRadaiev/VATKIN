@@ -121,12 +121,6 @@ body {
 			}
 		}
 	}
-
-	&:not(.page-is-full-load) {
-		& .main-logo {
-			pointer-events: none;
-		}
-	}
 }
 
 body.logo-white:not(.header-is-scroll) {

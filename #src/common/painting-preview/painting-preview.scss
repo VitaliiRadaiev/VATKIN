@@ -1,8 +1,5 @@
 .painting-preview {
     position: relative;
-    @media (max-width: $md3+px) {
-        border-bottom: 1px solid #cacaca;
-    }
 
     &__wrap {
         padding: 10rem 0 11.5rem;
@@ -100,7 +97,6 @@
         font-weight: 300;
         font-size: 1.8rem;
         line-height: 1.33em;
-        font-family: $titleFontFamily;
 
         @media (max-width: $md3+px) {
             font-size: 14px;
