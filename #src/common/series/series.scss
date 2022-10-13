@@ -13,19 +13,28 @@
     }
 
     &__head {
-        margin-bottom: 6rem;
-
-        @media (min-width: 768px) {
-            display: none;
+        @media (max-width: $md3+px) {
+            margin-bottom: 6rem;
         }
     }
 
     &__title {
         text-align: center;
         font-weight: 600;
-        font-size: 16px;
-        line-height: 21px;
-        margin-bottom: 2rem;
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+        margin-bottom: 3rem;
+
+        @media (max-width: 1440px) {
+            font-size: 2.2rem;
+            line-height: 2.9rem;
+        }
+
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+            line-height: 21px;
+            margin-bottom: 2rem;
+        }
     }
 
     &__anchor {
@@ -33,7 +42,12 @@
         display: block;
         text-align: center;
 
-        & img, & svg {
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        & img,
+        & svg {
             width: 40px;
             height: auto;
         }

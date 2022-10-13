@@ -292,7 +292,7 @@ class App {
 
 				anchor.addEventListener('click', (e) => {
 					let el = document.querySelector(`#${id}`);
-
+					
 					if (el) {
 						e.preventDefault();
 						let top = Math.abs(document.body.getBoundingClientRect().top) + el.getBoundingClientRect().top;
@@ -305,18 +305,11 @@ class App {
 							top: top,
 							behavior: 'smooth',
 						})
-					} else {
-						e.preventDefault();
-						window.scrollTo({
-							top: 0,
-							behavior: 'smooth',
-						})
-					}
+					} 
 				})
 
 			})
 		}
-
 	}
 
 	selectInit() {

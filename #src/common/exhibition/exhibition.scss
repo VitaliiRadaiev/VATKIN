@@ -81,6 +81,13 @@
         display: flex;
         gap: 1.5rem;
         opacity: 1 !important;
+        position: relative;
+
+        &.show-img {
+            & .exhibition__preview-img {
+                display: block;
+            }
+        }
 
         @media (max-width: $md3+px) {
             gap: 0;
@@ -94,6 +101,24 @@
                 }
             }
         }
+
+        & .exhibition__preview-img {
+            position: absolute;
+            left: calc(100% + 8rem);
+            bottom: 50%;
+            transform: translateY(50%);
+            width: 22vw;
+
+            @media (max-width: $md1+px) {
+                left: calc(100% + 6rem);
+            }
+
+            @media (max-width: $md2+px) {
+                display: none !important;
+            }
+        }
+
+
     }
 
     &__list-year {
@@ -135,6 +160,7 @@
         right: 0;
         bottom: 0;
         width: 23.63%;
+        display: none;
 
         & img {
             width: 100%;

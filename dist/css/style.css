@@ -2326,18 +2326,18 @@ i {
 }
 
 .menu__close {
-  padding: 0.6rem;
   z-index: 5;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   pointer-events: auto;
+  padding: 0;
 }
 
 .menu__close span {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 3.6rem;
+  height: 3.6rem;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -2352,7 +2352,7 @@ i {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 2px;
+  width: 1px;
   height: 100%;
   background-color: #000000;
 }
@@ -2366,7 +2366,7 @@ i {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 100%;
-  height: 2px;
+  height: 1px;
   background-color: #000000;
 }
 
@@ -2989,16 +2989,12 @@ i {
   font-family: "IvyMode", sans-serif;
 }
 
-.series__head {
-  margin-bottom: 6rem;
-}
-
 .series__title {
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 21px;
-  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  margin-bottom: 3rem;
 }
 
 .series__anchor {
@@ -3823,6 +3819,21 @@ i {
   display: flex;
   gap: 1.5rem;
   opacity: 1 !important;
+  position: relative;
+}
+
+.exhibition__list-item.show-img .exhibition__preview-img {
+  display: block;
+}
+
+.exhibition__list-item .exhibition__preview-img {
+  position: absolute;
+  left: calc(100% + 8rem);
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
+  width: 22vw;
 }
 
 .exhibition__list-year {
@@ -3852,6 +3863,7 @@ i {
   right: 0;
   bottom: 0;
   width: 23.63%;
+  display: none;
 }
 
 .exhibition__preview-img img {
@@ -3928,7 +3940,7 @@ i {
 
 .messenger {
   position: fixed;
-  z-index: 55;
+  z-index: 48;
   right: 6rem;
   bottom: 4rem;
   color: #1B3128;
@@ -4837,6 +4849,18 @@ i {
       flex-wrap: wrap;
 }
 
+.social a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .social a:hover {
   opacity: 0.5 !important;
 }
@@ -5467,7 +5491,7 @@ i {
     display: none;
   }
 
-  .series__head {
+  .series__anchor {
     display: none;
   }
 
@@ -6262,14 +6286,6 @@ i {
             flex: 0 0 30.45%;
   }
 
-  .menu__close span:before {
-    width: 2px;
-  }
-
-  .menu__close span:after {
-    height: 2px;
-  }
-
   .menu__inner {
     margin-left: auto;
     margin-right: auto;
@@ -6323,6 +6339,11 @@ i {
     max-width: 100.6rem !important;
   }
 
+  .series__title {
+    font-size: 2.2rem;
+    line-height: 2.9rem;
+  }
+
   .series-card__images {
     margin-bottom: 1.6rem;
   }
@@ -6365,6 +6386,10 @@ i {
 
   .others-works__title {
     font-size: 5rem;
+  }
+
+  .exhibition__list-item .exhibition__preview-img {
+    left: calc(100% + 6rem);
   }
 
   .messenger {
@@ -6471,6 +6496,11 @@ i {
   .menu__close {
     margin-left: auto;
     margin-right: -2px;
+  }
+
+  .menu__close span {
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .menu__inner {
@@ -6618,6 +6648,10 @@ i {
 
   .exhibition__list {
     width: 100%;
+  }
+
+  .exhibition__list-item .exhibition__preview-img {
+    display: none !important;
   }
 
   .exhibition__text {
@@ -6832,6 +6866,7 @@ i {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 calc(50% - 0.5rem);
             flex: 0 1 calc(50% - 0.5rem);
+    margin-top: -6px;
   }
 
   .footer__body {
@@ -6942,10 +6977,6 @@ i {
             align-items: initial;
   }
 
-  .promo-header .swiper-slide:not(:last-child) {
-    border-bottom: 1px solid #d7d7d7;
-  }
-
   .promo-header .swiper-slide:after {
     position: absolute;
     content: "";
@@ -7045,6 +7076,16 @@ i {
 
   .series {
     padding: 3rem 0;
+  }
+
+  .series__head {
+    margin-bottom: 6rem;
+  }
+
+  .series__title {
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 2rem;
   }
 
   .series__list {
@@ -7722,6 +7763,7 @@ i {
   .thank-you__info-list {
     font-size: 16px;
     margin-bottom: 2rem;
+    margin-top: -6px;
   }
 
   .thank-you__img {
