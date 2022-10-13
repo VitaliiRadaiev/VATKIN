@@ -8,7 +8,7 @@
 
     &__title {
         margin-bottom: 4rem;
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         font-weight: 600;
         font-size: 14rem;
         line-height: 1.33em;
@@ -612,7 +612,7 @@
     }
 
     &__bottom {
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         max-width: 44.6rem;
 
         & > *:last-child {

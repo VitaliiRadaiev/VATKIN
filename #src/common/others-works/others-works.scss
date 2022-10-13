@@ -146,7 +146,7 @@
         font-weight: 600;
         font-size: 7rem;
         line-height: 1.33em;
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         padding: 0 1rem;
 
         @media (max-width: 1440px) {

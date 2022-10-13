@@ -7,7 +7,7 @@
     }
 
     &__title {
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         color: $titlceColor;
         font-weight: 600;
         font-size: 14rem;

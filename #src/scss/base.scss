@@ -50,7 +50,14 @@ html {
 	@media (max-width: $md3+px) {
 		font-size: 10px;
 	}
+
+	--titleFontFamily: 'IvyMode', sans-serif;
+
+	&[lang="uk"] {
+		--titleFontFamily: 'Noto Serif Display', serif;
+	}
 }
+
 html,
 body {
 	min-width: $minwidth;
@@ -200,7 +207,7 @@ button {
 
 h1,
 .title-1 {
-	font-family: $titleFontFamily;
+	font-family: var(--titleFontFamily);
 	font-weight: 600;
 	font-size: 4.2rem;
 	line-height: 1.33em;
@@ -212,7 +219,7 @@ h1,
 
 h2,
 .title-2 {
-	font-family: $titleFontFamily;
+	font-family: var(--titleFontFamily);
 	color: $titlceColor;
 	font-weight: 600;
 	font-size: 3.6rem;
@@ -225,7 +232,7 @@ h2,
 
 h3,
 .title-3 {
-	font-family: $titleFontFamily;
+	font-family: var(--titleFontFamily);
 	color: $titlceColor;
 	font-weight: 600;
 	font-size: 3.2rem;
@@ -745,7 +752,7 @@ i {
 	}
 
 	&__author {
-		font-family: $titleFontFamily;
+		font-family: var(--titleFontFamily);
 		color: $titlceColor;
 		font-size: 3rem;
 		line-height: 1.33em;

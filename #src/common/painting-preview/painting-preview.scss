@@ -16,7 +16,7 @@
     &__body {
         margin-bottom: 2rem;
         position: relative;
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         transform-style: preserve-3d;
         transform: perspective(400px);
 

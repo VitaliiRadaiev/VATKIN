@@ -1469,6 +1469,11 @@ html.has-scroll-smooth {
 html {
   height: 100%;
   font-size: 10px;
+  --titleFontFamily: "IvyMode", sans-serif;
+}
+
+html[lang=uk] {
+  --titleFontFamily: "Noto Serif Display", serif;
 }
 
 html,
@@ -1621,7 +1626,7 @@ button {
 
 h1,
 .title-1 {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   font-weight: 600;
   font-size: 4.2rem;
   line-height: 1.33em;
@@ -1629,7 +1634,7 @@ h1,
 
 h2,
 .title-2 {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   color: #1B3128;
   font-weight: 600;
   font-size: 3.6rem;
@@ -1638,7 +1643,7 @@ h2,
 
 h3,
 .title-3 {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   color: #1B3128;
   font-weight: 600;
   font-size: 3.2rem;
@@ -2103,7 +2108,7 @@ i {
 }
 
 .quote__author {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   color: #1B3128;
   font-size: 3rem;
   line-height: 1.33em;
@@ -2210,7 +2215,7 @@ i {
   height: 100%;
   z-index: 49;
   background-color: #fff;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   -webkit-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
@@ -2500,7 +2505,7 @@ i {
           align-items: center;
   gap: 2rem;
   min-height: 6rem;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   padding: 1rem 0;
 }
 
@@ -2586,7 +2591,7 @@ i {
 
 .dropdown {
   position: relative;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   font-size: 1.8rem;
   text-transform: uppercase;
   line-height: 1.78em;
@@ -2710,7 +2715,7 @@ i {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   font-weight: 400;
   font-size: 1.8rem;
   line-height: 1.33em;
@@ -2739,7 +2744,7 @@ i {
   display: block;
   text-align: center;
   color: #000000 !important;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   position: relative;
   height: 100%;
 }
@@ -2929,7 +2934,7 @@ i {
   font-size: 2rem;
   line-height: 1.33em;
   margin-bottom: 0.4rem;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
 }
 
 .card__info-list {
@@ -2986,7 +2991,7 @@ i {
 
 .series {
   padding: 7.2rem 0;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
 }
 
 .series__title {
@@ -3237,7 +3242,7 @@ i {
 }
 
 .painting-info__title {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   font-weight: 600;
   font-size: 3.6rem;
   line-height: 1.33em;
@@ -3252,7 +3257,7 @@ i {
 }
 
 .painting-info__subtitle {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   font-weight: 300;
   font-size: 14px;
   line-height: 1.33em;
@@ -3481,7 +3486,7 @@ i {
   font-weight: 600;
   font-size: 7rem;
   line-height: 1.33em;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   padding: 0 1rem;
 }
 
@@ -3723,7 +3728,7 @@ i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   pointer-events: none;
   min-height: 100vh;
 }
@@ -3734,7 +3739,11 @@ i {
   font-size: 7rem;
   line-height: 1.29em;
   margin: 0 auto;
-  max-width: 141rem;
+  max-width: 154rem;
+}
+
+.about-hero__title strong {
+  font-weight: 500;
 }
 
 .about-hero__anchor {
@@ -3757,7 +3766,7 @@ i {
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 1.33em;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
 }
 
 .about-hero__anchor img,
@@ -3771,7 +3780,7 @@ i {
 }
 
 .exhibition__title {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   color: #1B3128;
   font-weight: 600;
   font-size: 14rem;
@@ -4431,7 +4440,7 @@ i {
 .painting-preview__body {
   margin-bottom: 2rem;
   position: relative;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform: perspective(400px);
@@ -4661,7 +4670,7 @@ i {
 
 .portfolio__title {
   margin-bottom: 4rem;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   font-weight: 600;
   font-size: 14rem;
   line-height: 1.33em;
@@ -4729,7 +4738,7 @@ i {
 }
 
 .portfolio-card__bottom {
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
   max-width: 44.6rem;
 }
 
@@ -4894,7 +4903,7 @@ i {
       -ms-flex-align: center;
           align-items: center;
   gap: 5rem;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
 }
 
 .shop__nav-list a {
@@ -5189,7 +5198,7 @@ i {
   font-size: 1.8rem;
   line-height: 1.33em;
   margin-bottom: 0.4rem;
-  font-family: "IvyMode", sans-serif;
+  font-family: var(--titleFontFamily);
 }
 
 .busket-card__title a {
@@ -5479,7 +5488,7 @@ i {
     width: 100%;
     font-size: 2.4rem;
     line-height: 1em;
-    font-family: "IvyMode", sans-serif;
+    font-family: var(--titleFontFamily);
     font-weight: 400;
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;

@@ -305,7 +305,7 @@
         font-size: 1.8rem;
         line-height: 1.33em;
         margin-bottom: 0.4rem;
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
 
         & a {
             color: inherit !important;

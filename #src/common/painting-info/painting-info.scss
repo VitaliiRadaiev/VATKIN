@@ -112,7 +112,7 @@
     }
 
     &__title {
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         font-weight: 600;
         font-size: 3.6rem;
         line-height: 1.33em;
@@ -136,7 +136,7 @@
     }
 
     &__subtitle {
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         font-weight: 300;
         font-size: 14px;
         line-height: 1.33em;

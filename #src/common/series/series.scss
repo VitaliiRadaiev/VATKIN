@@ -1,6 +1,6 @@
 .series {
     padding: 7.2rem 0;
-    font-family: $titleFontFamily;
+    font-family: var(--titleFontFamily);
 
     @media (max-width: 1440px) {
         & > .container-sm {

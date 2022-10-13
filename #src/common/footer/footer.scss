@@ -13,7 +13,7 @@
         align-items: center;
         gap: 2rem;
         min-height: 6rem;
-        font-family: $titleFontFamily;
+        font-family: var(--titleFontFamily);
         padding: 1rem 0;
 
         @media (max-width: $md2+px) {
@@ -150,7 +150,7 @@
 
 .dropdown {
     position: relative;
-    font-family: $titleFontFamily;
+    font-family: var(--titleFontFamily);
     font-size: 1.8rem;
     text-transform: uppercase;
     line-height: 1.78em;
