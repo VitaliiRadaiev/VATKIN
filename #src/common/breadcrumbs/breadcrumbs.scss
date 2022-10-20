@@ -1,13 +1,12 @@
 .breadcrumbs {
     padding-left: 0;
-    padding-top: 5rem;
-    margin-bottom: 6.4rem;
     display: flex;
     flex-wrap: wrap;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 1.2rem;
-    line-height: 1.5em;
-    color: $textColorSecondary;
+    line-height: 1.33em;
+    color: #A2A2A2;
+    margin-bottom: 0;
 
     & > li {
         &:not(:last-child) {
@@ -20,7 +19,10 @@
     }
 
     & a {
-        color: $textColor;
         transition: all .3s ease;
+        opacity: 1 !important;
+        &:hover {
+            color: $textColor;
+        }
     }
 }

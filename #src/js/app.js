@@ -55,7 +55,7 @@ class App {
 		let links = document.querySelectorAll('a, button, .cursor-hover, [data-cursor-hover], .swiper-pagination-bullet, input, label, textarea, .select__option, .select__title');
 		let anchors = document.querySelectorAll('.anchor');
 		let cursorHidden = document.querySelectorAll('.cursor-hidden');
-		let cursorLight = document.querySelectorAll('.cursor-light');
+		let cursorLight = document.querySelectorAll('.cursor-light, #moove_gdpr_cookie_info_bar');
 
 		window.addEventListener('mousemove', cursor);
 
@@ -111,13 +111,13 @@ class App {
 		if (cursorLight.length) {
 			cursorLight.forEach(el => {
 				el.addEventListener("mouseleave", () => {
-					if (el.classList.contains("cursor-light")) {
+					if (el.classList.contains("cursor-light") || el.classList.contains("moove-gdpr-dark-scheme")) {
 						mouseCursor.classList.remove("cursor-light");
 					}
 				});
 
 				el.addEventListener("mouseover", () => {
-					if (el.classList.contains("cursor-light")) {
+					if (el.classList.contains("cursor-light") || el.classList.contains("moove-gdpr-dark-scheme")) {
 						mouseCursor.classList.add("cursor-light");
 					}
 				});
@@ -292,11 +292,10 @@ class App {
 
 				anchor.addEventListener('click', (e) => {
 					let el = document.querySelector(`#${id}`);
-					
+					console.log(el);
 					if (el) {
 						e.preventDefault();
 						let top = Math.abs(document.body.getBoundingClientRect().top) + el.getBoundingClientRect().top;
-
 						// if (header) {
 						// 	top = top - header.clientHeight;
 						// }

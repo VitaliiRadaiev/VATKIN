@@ -34,6 +34,10 @@
         }
     }
 
+    &__breadcrumbs {
+        margin-bottom: 1rem;
+    }
+
     &__slider {
         position: relative;
         width: 100%;
@@ -147,6 +151,67 @@
         }
     }
 
+    &__label {
+        font-weight: 300;
+        font-size: 1.4rem;
+        line-height: 1.33em;
+        margin-bottom: 1rem;
+    }
+
+    &__options {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem 2rem;
+        margin-bottom: 2rem;
+
+        & span {
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.33em;
+        }
+    }
+
+    &__option-btn {
+        outline: none;
+        box-shadow: none;
+        border-radius: 0;
+        display: inline-flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        background-color: #fff;
+        padding: 1rem 2rem;
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 1.33em;
+        color: #000;
+        opacity: 1 !important;
+        transition: all 0.3s ease;
+
+        @media (max-width: $md3+px) {
+            font-size: 12px;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+
+        &.active {
+            background-color: #000;
+            color: #fff;
+        }
+
+        &.error {
+            border-color: #f86f6f;
+            color: #f86f6f;
+        }
+    }
+
     &__meta {
         font-weight: 300;
         font-size: 1.8rem;
@@ -157,7 +222,7 @@
         @media (max-width: $md3+px) {
             font-size: 14px;
         }
-        
+
         & > * {
             display: inline-block;
 
@@ -165,7 +230,7 @@
                 margin-right: 0.2em;
 
                 &::after {
-                    content: '|';
+                    content: "|";
                     margin-left: 0.4em;
                 }
             }
@@ -191,6 +256,10 @@
         & > *:last-child {
             margin-bottom: 0;
         }
+
+        & strong {
+            font-weight: 500;
+        }
     }
 
     &__row {
@@ -201,6 +270,14 @@
                 margin-bottom: 2rem;
             }
         }
+
+        & > *:not(.painting-info__label):not(.painting-info__title-2) {
+            margin-bottom: 2rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0 !important;
+        }
     }
 
     &__link {
@@ -209,7 +286,7 @@
         text-transform: uppercase;
         font-weight: 600;
         align-self: flex-start;
-        
+
         &::before {
             font-weight: 400;
         }
@@ -235,6 +312,13 @@
         @media (max-width: $md3+px) {
             font-size: 2rem;
         }
+
+        & sub {
+            font-weight: 300;
+            font-size: 1.4rem;
+            line-height: 1.33em;
+            bottom: 0;
+        }
     }
 
     &__bottom-buttons {
@@ -248,27 +332,26 @@
             text-transform: none;
             font-weight: 300;
             align-self: initial;
-            
+
             &:last-child {
                 min-width: auto !important;
-                margin-right: 0 !important; 
+                margin-right: 0 !important;
             }
 
             @media (max-width: $md2+px) {
                 min-width: auto !important;
-                margin-right: 0 !important; 
+                margin-right: 0 !important;
             }
 
             @media (min-width: 992px) {
                 &:hover {
-                    font-weight: 600;   
+                    font-weight: 600;
                 }
             }
         }
     }
 
     &__buy-now {
-
     }
 }
 

@@ -84,3 +84,100 @@
         }
     }
 }
+
+#moove_gdpr_cookie_info_bar {
+    animation: fadeUp 0.4s ease;
+    z-index: 47 !important;
+    @keyframes fadeUp {
+        0% {transform: translateY(102%);}
+        100% {transform: translateY(0%);}
+    }
+
+    & > .moove-gdpr-info-bar-container {
+        padding: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+
+        & .moove-gdpr-info-bar-content {
+            display: flex !important;
+            justify-content: space-between;
+            min-height: 7rem;
+            padding: 2rem 0 2rem !important;
+            gap: 5rem;
+    
+            @media (max-width: 1440px) {
+                max-width: 89.2rem !important;
+            }
+    
+            @media (max-width: $md3+px) {
+                min-height: 7rem;
+                flex-direction: column;
+                padding: 20px 0 30px !important;
+                gap: 20px;
+            }
+    
+            width: calc(100% - 60px);
+            max-width: 146rem !important;
+            margin: 0 auto;
+            padding: 0;
+        
+            @media (max-width: $md1+px) {
+                width: calc(100% - 60px) !important;
+            }
+        
+            @media (max-width: $md2+px) {
+                width: calc(100% - 60px) !important;
+                max-width: none !important;
+            }
+            @media (max-width: $md3+px) {
+                width: calc(100% - 40px) !important;
+            }
+
+            & .moove-gdpr-cookie-notice {
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+        }
+
+        & .cookies-message__body {
+            display: block;
+            padding: 0;
+            min-height: auto;
+
+            & .cookies-message__text {
+                @media (max-width: $md3+px) {
+                    font-weight: 300;
+                    font-size: 12px !important;
+                    line-height: 16px !important;
+                }
+            }
+        }
+
+        & .moove-gdpr-button-holder {
+            padding: 0 !important;
+            @media (min-width: 768px) {
+                align-self: flex-start;
+            }
+            @media (max-width: $md3+px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            & .mgbutton  {
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+                outline: none !important;
+                @media (max-width: $md3+px) {
+                        align-self: center;
+                        font-size: 14px !important;
+                        line-height: 18px !important;
+                    
+                }
+            }
+        }
+    }
+}

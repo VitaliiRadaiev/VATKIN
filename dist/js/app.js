@@ -397,7 +397,7 @@ class App {
 		let links = document.querySelectorAll('a, button, .cursor-hover, [data-cursor-hover], .swiper-pagination-bullet, input, label, textarea, .select__option, .select__title');
 		let anchors = document.querySelectorAll('.anchor');
 		let cursorHidden = document.querySelectorAll('.cursor-hidden');
-		let cursorLight = document.querySelectorAll('.cursor-light');
+		let cursorLight = document.querySelectorAll('.cursor-light, #moove_gdpr_cookie_info_bar');
 
 		window.addEventListener('mousemove', cursor);
 
@@ -453,13 +453,13 @@ class App {
 		if (cursorLight.length) {
 			cursorLight.forEach(el => {
 				el.addEventListener("mouseleave", () => {
-					if (el.classList.contains("cursor-light")) {
+					if (el.classList.contains("cursor-light") || el.classList.contains("moove-gdpr-dark-scheme")) {
 						mouseCursor.classList.remove("cursor-light");
 					}
 				});
 
 				el.addEventListener("mouseover", () => {
-					if (el.classList.contains("cursor-light")) {
+					if (el.classList.contains("cursor-light") || el.classList.contains("moove-gdpr-dark-scheme")) {
 						mouseCursor.classList.add("cursor-light");
 					}
 				});
@@ -969,11 +969,10 @@ window.popup = {
 
 				anchor.addEventListener('click', (e) => {
 					let el = document.querySelector(`#${id}`);
-					
+					console.log(el);
 					if (el) {
 						e.preventDefault();
 						let top = Math.abs(document.body.getBoundingClientRect().top) + el.getBoundingClientRect().top;
-
 						// if (header) {
 						// 	top = top - header.clientHeight;
 						// }
@@ -1278,7 +1277,7 @@ window.popup = {
                             afterInit: () => {
                                 let buttonsPrev = promoHeader.querySelectorAll('[data-action="slide-prev"]');
                                 let buttonsNext = promoHeader.querySelectorAll('[data-action="slide-next"]');
-                    
+
                                 if (buttonsPrev.length) {
                                     buttonsPrev.forEach(btn => {
                                         btn.addEventListener('click', () => {
@@ -1363,16 +1362,46 @@ window.popup = {
             })
         }
 
+        // window.addEventListener('scroll', () => {
+        //     if (document.documentElement.clientWidth < 768) {
+        //         if (window.pageYOffset <= 0) {
+        //             slidesWrapper.classList.remove('last-slide');
+        //         } else {
+        //             slidesWrapper.classList.add('last-slide');
+        //         }
+        //     }
+        // })
+        let lastSlide = document.querySelector('.promo-header .swiper-slide:last-child');
+        let footer = document.querySelector('footer.footer.footer--mob');
 
-        let isScroll = window.pageYOffset;
+        let ts;
+        document.addEventListener('touchstart', (e) => {
+            ts = e.touches[0].clientY;
+        })
 
+        document.addEventListener('touchend', (e) => {
+            let te = e.changedTouches[0].clientY;
+            if (ts > te + 5) {
+                // down
+                    if(lastSlide.getBoundingClientRect().top <= 0) {
+                        let top = Math.abs(document.body.getBoundingClientRect().top) + footer.getBoundingClientRect().top;
+                        window.scrollTo({
+							top: top,
+							behavior: 'smooth',
+						})
+                        slidesWrapper.classList.add('last-slide');
+                        footer.classList.add('footer--visible');
+                    }
+            } else if (ts < te - 5) {
+                // up
+                if(footer.classList.contains('footer--visible')) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                    })
 
-        window.addEventListener('scroll', () => {
-            if (document.documentElement.clientWidth < 768) {
-                if (window.pageYOffset <= 0) {
                     slidesWrapper.classList.remove('last-slide');
-                } else {
-                    slidesWrapper.classList.add('last-slide');
+                    footer.classList.remove('footer--visible');
                 }
             }
         })
@@ -1514,25 +1543,87 @@ window.popup = {
 };
 		{
     let aboutHero = document.querySelector('[data-about-hero]');
-    if(aboutHero) {
+    if (aboutHero) {
         let anchor = aboutHero.querySelector('.about-hero__anchor');
         let bgItems = aboutHero.querySelectorAll('.about-hero__bg-item');
+        let nextElement = aboutHero.nextElementSibling;
 
         aboutHero.addEventListener('mousemove', (e) => {
             anchor.hidden = true;
             let hoverItem = document.elementFromPoint(e.clientX, e.clientY).closest('.about-hero__bg-item');
             anchor.hidden = false;
 
-            if(hoverItem) {
-                if(bgItems.length) {
+            if (hoverItem) {
+                if (bgItems.length) {
                     hoverItem.classList.add('hover');
                     bgItems.forEach(i => {
-                        if(i === hoverItem) return;
+                        if (i === hoverItem) return;
                         i.classList.remove('hover');
                     })
                 }
             }
         })
+
+        let ts;
+        document.addEventListener('touchstart', (e) => {
+            ts = e.touches[0].clientY;
+        })
+
+        aboutHero.addEventListener('touchmove', (e) => {
+            e.preventDefault()
+        })
+
+        aboutHero.addEventListener('touchend', (e) => {
+            let te = e.changedTouches[0].clientY;
+            
+            if (ts > te + 5) {
+                // down
+                setTimeout(() => {
+                    anchor.click();
+                }, 30)
+
+            } else if (ts < te - 5) {
+                // up
+               
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                    })
+                }, 30)
+
+            }
+        })
+
+        // nextElement.addEventListener('touchmove', (e) => {
+        //     if(nextElement.getBoundingClientRect().top > 69) {
+        //         e.preventDefault();
+        //     }
+        // })
+
+        // nextElement.addEventListener('touchend', (e) => {
+        //     let te = e.changedTouches[0].clientY;
+        //     if (ts > te + 5) {
+        //         // down
+        //         if(nextElement.getBoundingClientRect().top < 69) {
+        //             setTimeout(() => {
+        //                 anchor.click();
+        //             }, 30)
+        //         }
+
+        //     } else if (ts < te - 5) {
+        //         // up
+        //         if(nextElement.getBoundingClientRect().top > 69) {
+
+        //             setTimeout(() => {
+        //                 window.scrollTo({
+        //                     top: 0,
+        //                     behavior: 'smooth',
+        //                 })
+        //             }, 30)
+        //         }
+        //     }
+        // })
     }
 };
 		{
@@ -1725,7 +1816,7 @@ if ($cookieEl) {
 		{
     let messenger = document.querySelector('[data-messenger]');
     if(messenger) {
-        let footer = document.querySelector('.footer');
+        let footer = document.querySelector('.main-wrapper > .footer');
 
         const toggleLightMode = () => {
             let x = messenger.offsetLeft;
@@ -1756,7 +1847,7 @@ if ($cookieEl) {
             }, 2000)
 		});
 
-        document.addEventListener('scroll', (e) => {
+        window.addEventListener('scroll', (e) => {
             toggleLightMode();
             
             let footerPositionY = footer.getBoundingClientRect().top - document.documentElement.clientHeight;

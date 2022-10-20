@@ -1,7 +1,7 @@
 {
     let messenger = document.querySelector('[data-messenger]');
     if(messenger) {
-        let footer = document.querySelector('.footer');
+        let footer = document.querySelector('.main-wrapper > .footer');
 
         const toggleLightMode = () => {
             let x = messenger.offsetLeft;
@@ -32,7 +32,7 @@
             }, 2000)
 		});
 
-        document.addEventListener('scroll', (e) => {
+        window.addEventListener('scroll', (e) => {
             toggleLightMode();
             
             let footerPositionY = footer.getBoundingClientRect().top - document.documentElement.clientHeight;

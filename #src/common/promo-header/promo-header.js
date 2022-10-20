@@ -35,7 +35,7 @@
                             afterInit: () => {
                                 let buttonsPrev = promoHeader.querySelectorAll('[data-action="slide-prev"]');
                                 let buttonsNext = promoHeader.querySelectorAll('[data-action="slide-next"]');
-                    
+
                                 if (buttonsPrev.length) {
                                     buttonsPrev.forEach(btn => {
                                         btn.addEventListener('click', () => {
@@ -120,16 +120,46 @@
             })
         }
 
+        // window.addEventListener('scroll', () => {
+        //     if (document.documentElement.clientWidth < 768) {
+        //         if (window.pageYOffset <= 0) {
+        //             slidesWrapper.classList.remove('last-slide');
+        //         } else {
+        //             slidesWrapper.classList.add('last-slide');
+        //         }
+        //     }
+        // })
+        let lastSlide = document.querySelector('.promo-header .swiper-slide:last-child');
+        let footer = document.querySelector('footer.footer.footer--mob');
 
-        let isScroll = window.pageYOffset;
+        let ts;
+        document.addEventListener('touchstart', (e) => {
+            ts = e.touches[0].clientY;
+        })
 
+        document.addEventListener('touchend', (e) => {
+            let te = e.changedTouches[0].clientY;
+            if (ts > te + 5) {
+                // down
+                    if(lastSlide.getBoundingClientRect().top <= 0) {
+                        let top = Math.abs(document.body.getBoundingClientRect().top) + footer.getBoundingClientRect().top;
+                        window.scrollTo({
+							top: top,
+							behavior: 'smooth',
+						})
+                        slidesWrapper.classList.add('last-slide');
+                        footer.classList.add('footer--visible');
+                    }
+            } else if (ts < te - 5) {
+                // up
+                if(footer.classList.contains('footer--visible')) {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                    })
 
-        window.addEventListener('scroll', () => {
-            if (document.documentElement.clientWidth < 768) {
-                if (window.pageYOffset <= 0) {
                     slidesWrapper.classList.remove('last-slide');
-                } else {
-                    slidesWrapper.classList.add('last-slide');
+                    footer.classList.remove('footer--visible');
                 }
             }
         })
