@@ -9,7 +9,7 @@
     <div class="main-wrapper">
         <!-- == TOP LINE ================== -->
         <div class="top-line header" data-header>
-            <div class="top-line__body container" >
+            <div class="top-line__body container">
                 <button class="top-line__burger" data-action="open-menu">
                     <div class="top-line__burger-desk">
                         <img class="img-svg" src="img/icons/burger.svg" alt="img">
@@ -18,7 +18,132 @@
                         <img class="img-svg" src="img/icons/burger-mob.svg" alt="img">
                     </div>
                 </button>
-                <a href="#" class="top-line__basket">Card</a>
+                <div class="top-line__basket basket">
+                    <div class="basket__prview">
+                        <svg width="20" height="27" viewBox="0 0 20 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1" y="6.95215" width="18" height="19.0476" stroke="black" stroke-width="2"/>
+                            <path d="M5.38281 7.07792C5.38281 -1.02614 14.6136 -1.02597 14.6136 7.07792" stroke="black" stroke-width="2"/>
+                        </svg>    
+                        (1)
+                    </div>
+                    <div class="basket__dropdown">
+                        <div class="basket__title">Busket</div>
+                        <div class="basket__line"></div>
+                        <ul class="basket__list">
+                            <li>
+                                <div class="basket-card">
+                                    <div class="basket-card__img-wrap">
+                                        <a href="#">
+                                            <div class="basket-card__img">
+                                                <img src="img/photo/card-img-1.jpg" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="basket-card__inner">
+                                        <div class="basket-card__title"><a href="#">Title of painting</a></div>
+                                        <ul class="basket-card__info-list">
+                                            <li>
+                                                90 x 120
+                                            </li>
+                                            <li>
+                                                1 pc.
+                                            </li>
+                                        </ul>
+                                        <div class="basket-card__price">€5,000</div>
+                                    </div>
+                                    <button class="basket-card__close">
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="basket-card">
+                                    <div class="basket-card__img-wrap">
+                                        <a href="#">
+                                            <div class="basket-card__img">
+                                                <img src="img/photo/card-img-5.png" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="basket-card__inner">
+                                        <div class="basket-card__title"><a href="#">Title of painting</a></div>
+                                        <ul class="basket-card__info-list">
+                                            <li>
+                                                90 x 120
+                                            </li>
+                                            <li>
+                                                1 pc.
+                                            </li>
+                                        </ul>
+                                        <div class="basket-card__price">€5,000</div>
+                                    </div>
+                                    <button class="basket-card__close">
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="basket-card">
+                                    <div class="basket-card__img-wrap">
+                                        <a href="#">
+                                            <div class="basket-card__img">
+                                                <img src="img/photo/card-img-1.jpg" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="basket-card__inner">
+                                        <div class="basket-card__title"><a href="#">Title of painting</a></div>
+                                        <ul class="basket-card__info-list">
+                                            <li>
+                                                90 x 120
+                                            </li>
+                                            <li>
+                                                1 pc.
+                                            </li>
+                                        </ul>
+                                        <div class="basket-card__price">€5,000</div>
+                                    </div>
+                                    <button class="basket-card__close">
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="basket-card">
+                                    <div class="basket-card__img-wrap">
+                                        <a href="#">
+                                            <div class="basket-card__img">
+                                                <img src="img/photo/card-img-5.png" alt="">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="basket-card__inner">
+                                        <div class="basket-card__title"><a href="#">Title of painting</a></div>
+                                        <ul class="basket-card__info-list">
+                                            <li>
+                                                90 x 120
+                                            </li>
+                                            <li>
+                                                1 pc.
+                                            </li>
+                                        </ul>
+                                        <div class="basket-card__price">€5,000</div>
+                                    </div>
+                                    <button class="basket-card__close">
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="basket__total">
+                            <div class="basket__total-label">Total</div>
+                            <div class="basket__total-value">€5,000</div>
+                        </div>
+                        <a href="#" class="basket__btn btn-default">
+                            Go to busket
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -274,9 +399,24 @@
                         </li>
                     </ul>
                     <div class="busket__list-bottom">
-                        <div></div>
-                        <div>Total:</div>
-                        <div>€300</div>
+                        <div class="busket__list-bottom-row">
+                            <ul class="busket__list-bottom-list">
+                                <li>
+                                    <span>Shipping</span>
+                                    <span class="text-end">
+                                        Delivery cost depends <br>
+                                    on the region of delivery
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="busket__list-bottom-row">
+                            <div class="busket__list-bottom-total">
+                                <div>Total:</div>
+                                <div>€300</div>
+                            </div>
+                        </div>
+ 
                     </div>
                     <div class="busket__buttons">
                         <a href="#" class="busket__link">Continue shopping</a>

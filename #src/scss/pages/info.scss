@@ -1,0 +1,16 @@
+.info {
+    &__text {
+        max-width: 95.3rem;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.33em;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        & strong {
+            font-weight: 600;
+        }
+    }
+}

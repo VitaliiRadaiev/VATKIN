@@ -74,53 +74,32 @@
     }
 
     &__list-bottom {
-        display: flex;
-        align-items: center;
         border-bottom: 1px solid #000;
         padding-bottom: 2rem;
         margin-bottom: 4rem;
-        font-weight: 600;
-        font-size: 2.4rem;
-        line-height: 1.33em;
 
         @media (max-width: $md3+px) {
-            font-size: 2rem;
             margin-bottom: 2rem;
-        }
-
-        & > * {
-            &:nth-child(1) {
-                flex: 1 1 auto;
-
-                @media (max-width: $md3+px) {
-                    flex: 0 1 auto;
-                }
-            }
-            &:nth-child(2) {
-                flex: 0 0 15rem;
-
-                @media (max-width: $md2+px) {
-                    flex: 0 0 11rem;
-                }
-
-                @media (max-width: $md3+px) {
-                    flex: 1 1 auto;
-                }
-            }
-            &:nth-child(3) {
-                flex: 0 0 19.5rem;
-                text-align: right;
-
-                @media (max-width: $md2+px) {
-                    flex: 0 0 12rem;
-                }
-            }
         }
     }
 
     &__list-bottom__row {
         &:not(:last-child) {
             margin-bottom: 2rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__list-bottom-row {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
         }
     }
 
@@ -137,9 +116,22 @@
 
         & > li {
             display: flex;
-            align-items: center;
-            gap: 2rem;
             justify-content: space-between;
+            @media (max-width: $md2+px) {
+                gap: 2rem;
+            }
+            & > * {
+                @media (min-width: 992px) {
+                    &:nth-child(1) {
+                        flex: 0 0 15rem;
+                        margin-left: auto;
+                    }
+                    &:nth-child(2) {
+                        flex: 0 0 19.5rem;
+                        text-align: right;
+                    }
+                }
+            }
         }
     }
 
@@ -148,11 +140,32 @@
         align-items: center;
         justify-content: space-between;
         font-weight: 600;
-        font-size: 1.6rem;
+        font-size: 2.4rem;
         line-height: 1.33em;
+        // font-size: 1.6rem;
+        // line-height: 1.33em;
+
+        @media (max-width: $md2+px) {
+            gap: 2rem;
+        }
 
         @media (max-width: $md3+px) {
-            font-size: 14px;
+            font-size: 2rem;
+            // font-size: 14px;
+        }
+
+        & > * {
+            @media (min-width: 992px) {
+                &:nth-child(1) {
+                    flex: 0 0 15rem;
+                    margin-left: auto;
+                }
+                &:nth-child(2) {
+                    flex: 0 0 19.5rem;
+                    text-align: right;
+                }
+            }
+
         }
     }
 

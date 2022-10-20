@@ -96,4 +96,28 @@
             min-width: 23rem;
         }
     }
+
+    & .busket__list-bottom-list {
+        & > li {
+            gap: 2rem;
+            & > * {
+                flex: 0 1 auto !important;
+                margin-left: 0 !important;
+            }
+        }
+    }
+
+    & .busket__list-bottom-total {
+        gap: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.33em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+        }
+        & > * {
+            flex: 0 1 auto !important;
+            margin-left: 0 !important;
+        }
+    }
 }
