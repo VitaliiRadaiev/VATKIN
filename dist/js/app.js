@@ -376,6 +376,7 @@ class App {
 			this.tabsInit();
 			this.spollerInit();
 			this.initScrollParallax();
+			this.spollerRadioInit();
 		});
 
 
@@ -898,6 +899,7 @@ window.popup = {
 						}
 
 						trigger.addEventListener('click', (e) => {
+
 							e.preventDefault();
 							parent.classList.toggle('active');
 							trigger.classList.toggle('active');
@@ -917,6 +919,64 @@ window.popup = {
 							}
 						})
 					})
+				}
+			})
+		}
+	}
+
+	spollerRadioInit() {
+		let radioSpollers = document.querySelectorAll('[data-spoller-radio]');
+		if (radioSpollers.length) {
+			radioSpollers.forEach(radioSpoller => {
+				console.log(radioSpoller);
+				let triggers = radioSpoller.querySelectorAll('[data-spoller-trigger]');
+				if (triggers.length) {
+					// init
+					triggers.forEach(trigger => {
+						let parent = trigger.parentElement;
+						let input = trigger.querySelector('input');
+						let collapseContent = trigger.nextElementSibling;
+
+						if (input.checked) {
+							parent.classList.add('active');
+							trigger.classList.add('active');
+							collapseContent && this.utils.slideDown(collapseContent, 300);
+						} else {
+							parent.classList.remove('active');
+							trigger.classList.remove('active');
+							collapseContent && this.utils.slideUp(collapseContent, 300);
+						}
+					})
+
+
+					triggers.forEach(trigger => {
+						let input = trigger.querySelector('input');
+						trigger.addEventListener('click', (e) => {
+							e.preventDefault();
+							let parent = trigger.parentElement;
+							let input = trigger.querySelector('input');
+							let collapseContent = trigger.nextElementSibling;
+
+							if (input.checked) return;
+
+							input.checked = true;
+
+							parent.classList.add('active');
+							trigger.classList.add('active');
+							collapseContent && this.utils.slideDown(collapseContent, 300);
+
+							let event = new Event("change", { bubbles: true });
+							input.dispatchEvent(event);
+
+							triggers.forEach(i => {
+								if (i === trigger) return;
+								i.parentElement.classList.remove('active');
+								i.classList.remove('active');
+								i.nextElementSibling && this.utils.slideUp(i.nextElementSibling, 300);
+							})
+						})
+					})
+
 				}
 			})
 		}
@@ -981,7 +1041,7 @@ window.popup = {
 							top: top,
 							behavior: 'smooth',
 						})
-					} 
+					}
 				})
 
 			})
@@ -1949,7 +2009,7 @@ if (paintingPreview) {
 
 	componentsAfterLoad() {
 		let linksHoverWeight = document.querySelectorAll('.painting-info__bottom-buttons .painting-info__link');
-		if(linksHoverWeight.length) {
+		if (linksHoverWeight.length) {
 			linksHoverWeight.forEach(link => {
 				const setMinWidth = () => {
 					link.style.minWidth = `calc(${link.clientWidth}px + ${link.innerHTML.length * 0.19}px)`;
@@ -1989,8 +2049,8 @@ if (paintingPreview) {
 			let scrollUpdate = true;
 
 			scroll.on('scroll', (e) => {
-				if(e.scroll.y > (e.limit.y - 300)) {
-					if(scrollUpdate) {
+				if (e.scroll.y > (e.limit.y - 300)) {
+					if (scrollUpdate) {
 						scroll.update();
 						scrollUpdate = false;
 					}
@@ -2014,7 +2074,7 @@ if (paintingPreview) {
 						if (state === "enter") {
 							event.el.src = event.el.dataset.src;
 						} else {
-							
+
 						}
 						break;
 				}
@@ -2027,14 +2087,14 @@ if (paintingPreview) {
 
 		window.addEventListener('scroll', (e) => {
 			elements.forEach(el => {
-				if(document.documentElement.clientWidth >= 768) {
-					if ((el.getBoundingClientRect().top <= (window.innerHeight * 1.5 ) && el.getBoundingClientRect().bottom >= (window.innerHeight * 0.5))) {
+				if (document.documentElement.clientWidth >= 768) {
+					if ((el.getBoundingClientRect().top <= (window.innerHeight * 1.5) && el.getBoundingClientRect().bottom >= (window.innerHeight * 0.5))) {
 						let value = (el.getBoundingClientRect().top - (window.innerHeight / 2)) * 0.5;
 						let speed = el.dataset.scrollSpeed;
 						el.style.transform = `translateY(${value * speed}px)`;
 					}
 				} else {
-					if(el.hasAttribute('style')) {
+					if (el.hasAttribute('style')) {
 						el.removeAttribute('style');
 					}
 				}
@@ -2045,5 +2105,4 @@ if (paintingPreview) {
 
 let app = new App();
 app.init();
-
 

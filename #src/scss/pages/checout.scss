@@ -49,12 +49,40 @@
 
     &__checkbox-radio-list {
         padding-left: 0;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
         & > li {
             &:not(:last-child) {
                 margin-bottom: 0.7rem;
             }
+        }
+    }
+
+    &__checkbox-radio-list-collapse {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 1.1rem;
+        line-height: 1.33em;
+        max-width: 34.5rem;
+        margin-bottom: 2rem;
+    }
+
+    &__discount {
+        margin-bottom: 2rem;
+    }
+
+    &__link {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 1.33em;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
         }
     }
 
@@ -78,6 +106,8 @@
     }
 
     & .busket__list {
+        margin-bottom: 0;
+        border-bottom: none;
         & > li {
             &:not(:last-child) {
                 margin-bottom: 2rem;
@@ -95,6 +125,11 @@
         &.btn-default {
             min-width: 23rem;
         }
+    }
+
+    & .busket__list-bottom {
+        padding-top: 2rem;
+        border-top: 1px solid #000;
     }
 
     & .busket__list-bottom-list {
@@ -118,6 +153,46 @@
         & > * {
             flex: 0 1 auto !important;
             margin-left: 0 !important;
+        }
+    }
+}
+
+.dropdown-second {
+    &__title {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.25em;
+
+        & span {
+            position: relative;
+            padding-right: 2.5rem;
+            &:before {
+                font-family: "icomoon" !important;
+                position: absolute;
+                content: "\e910";
+                transition: all 0.3s ease 0s;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                color: #000 !important;
+                font-size: 0.8em;
+            }
+        }
+
+        &.active {
+            & span {
+                &:before {
+                    transform: translateY(-50%) scale(1, -1);
+                }
+            }
+        }
+    }
+
+    &__body {
+        padding-top: 1rem;
+
+        & > *:last-child {
+            margin-bottom: 0;
         }
     }
 }

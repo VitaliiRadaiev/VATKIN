@@ -4574,6 +4574,11 @@ i {
   color: inherit;
 }
 
+.input--border {
+  border: 1px solid #000;
+  padding: 0.6rem 1rem;
+}
+
 .textarea {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4635,14 +4640,14 @@ i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.25em;
 }
 
 .checkbox-radio input {
@@ -4679,6 +4684,7 @@ i {
   background-position: center;
   background-size: 85%;
   background-repeat: no-repeat;
+  margin-top: 0.1em;
 }
 
 .checkbox-radio__circle {
@@ -4708,15 +4714,17 @@ i {
   opacity: 0;
 }
 
-.checkbox-radio__text {
-  font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 1.25em;
-}
-
-.checkbox-radio--md .checkbox-radio__text {
+.checkbox-radio--md {
   font-size: 1.6rem;
   line-height: 1.62em;
+}
+
+.checkbox-radio--md .checkbox-radio__circle {
+  margin-top: 0.2em;
+}
+
+.checkbox-radio--md .checkbox-radio__square {
+  margin-top: 0.4em;
 }
 
 .disabled {
@@ -5817,11 +5825,35 @@ i {
 
 .checkout__checkbox-radio-list {
   padding-left: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .checkout__checkbox-radio-list > li:not(:last-child) {
   margin-bottom: 0.7rem;
+}
+
+.checkout__checkbox-radio-list-collapse {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.checkout__text {
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.33em;
+  max-width: 34.5rem;
+  margin-bottom: 2rem;
+}
+
+.checkout__discount {
+  margin-bottom: 2rem;
+}
+
+.checkout__link {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.33em;
 }
 
 .checkout .busket {
@@ -5847,6 +5879,11 @@ i {
   text-align: right;
 }
 
+.checkout .busket__list {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
 .checkout .busket__list > li:not(:last-child) {
   margin-bottom: 2rem;
 }
@@ -5863,6 +5900,11 @@ i {
 
 .checkout .busket__btn.btn-default {
   min-width: 23rem;
+}
+
+.checkout .busket__list-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid #000;
 }
 
 .checkout .busket__list-bottom-list > li {
@@ -5887,6 +5929,47 @@ i {
       -ms-flex: 0 1 auto !important;
           flex: 0 1 auto !important;
   margin-left: 0 !important;
+}
+
+.dropdown-second__title {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.25em;
+}
+
+.dropdown-second__title span {
+  position: relative;
+  padding-right: 2.5rem;
+}
+
+.dropdown-second__title span:before {
+  font-family: "icomoon" !important;
+  position: absolute;
+  content: "\e910";
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #000 !important;
+  font-size: 0.8em;
+}
+
+.dropdown-second__title.active span:before {
+  -webkit-transform: translateY(-50%) scale(1, -1);
+      -ms-transform: translateY(-50%) scale(1, -1);
+          transform: translateY(-50%) scale(1, -1);
+}
+
+.dropdown-second__body {
+  padding-top: 1rem;
+}
+
+.dropdown-second__body > *:last-child {
+  margin-bottom: 0;
 }
 
 .thank-you {
@@ -5952,10 +6035,6 @@ i {
 
 .info__text > *:last-child {
   margin-bottom: 0;
-}
-
-.info__text strong {
-  font-weight: 600;
 }
 
 @media (min-width: 576px) {
@@ -8092,7 +8171,7 @@ i {
     height: 90px;
   }
 
-  .checkbox-radio--md .checkbox-radio__text {
+  .checkbox-radio--md {
     font-size: 14px;
   }
 
@@ -8502,6 +8581,10 @@ i {
 
   .checkout {
     padding: 40px 0;
+  }
+
+  .checkout__link {
+    font-size: 14px;
   }
 
   .checkout .busket__list-bottom-total {
