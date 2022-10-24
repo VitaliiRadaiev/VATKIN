@@ -15,13 +15,6 @@
             opacity: 1 !important;
         }
 
-        @media (min-width: 992px) {
-            &:hover {
-                & img {
-                    transform: scale(2.2);
-                }
-            }
-        }
 
         & img {
             &[src$=".png"] {

@@ -6011,7 +6011,7 @@ i {
   width: 100%;
   max-width: 42rem;
   margin: 0 auto;
-  margin-bottom: 3.6rem;
+  margin-bottom: 3rem;
 }
 
 .thank-you__img img {
@@ -6019,11 +6019,23 @@ i {
   height: auto;
 }
 
-.thank-you .btn-default {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  min-width: 22rem;
+.thank-you__bottom {
+  font-size: 2.2rem;
+  line-height: 1.09em;
+  letter-spacing: 0.01em;
+  margin-bottom: 8rem;
+}
+
+.thank-you__link {
+  width: 7.4rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.thank-you__link img,
+.thank-you__link svg {
+  width: 7.4rem;
+  height: auto;
 }
 
 .info__text {
@@ -6817,12 +6829,6 @@ i {
     opacity: 1;
   }
 
-  .card__img:hover img {
-    -webkit-transform: scale(2.2);
-        -ms-transform: scale(2.2);
-            transform: scale(2.2);
-  }
-
   .series-card:hover .series-card__title {
     text-decoration: underline;
   }
@@ -6861,12 +6867,13 @@ i {
   }
 
   .others-works__img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
+    height: 34rem;
+  }
+
+  .others-works__title {
+    display: none;
   }
 
   .about-hero__anchor img,
@@ -8605,6 +8612,16 @@ i {
 
   .thank-you__img {
     margin-bottom: 2rem;
+  }
+
+  .thank-you__bottom {
+    font-size: 16px;
+    margin-bottom: 4rem;
+  }
+
+  .thank-you__link img,
+  .thank-you__link svg {
+    width: 40px;
   }
 }
 
