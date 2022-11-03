@@ -4,6 +4,7 @@ if (paintingPreview) {
     let myPanel = paintingPreview.querySelector('.painting-preview__wrap');
     let subpanel = paintingPreview.querySelector('.painting-preview__body');
     let parent = paintingPreview;
+    let title = paintingPreview.querySelector('.painting-preview__title');
 
     myPanel.onmousemove = transformPanel;
     myPanel.onmouseenter = handleMouseEnter;
@@ -55,4 +56,20 @@ if (paintingPreview) {
         });
     }
 
+    const setMinHeightByTitle = () => {
+        if(document.documentElement.clientWidth > 767.98) {
+            paintingPreview.style.minHeight = `calc(${title.clientHeight}px + 10rem)`;
+        } else {
+            paintingPreview.removeAttribute('style');
+        }
+    }
+
+    let id = setInterval(() => {
+        setMinHeightByTitle();
+    },20)
+    setTimeout(() => {
+        clearInterval(id);
+    },1000);
+
+    window.addEventListener('resize', setMinHeightByTitle);
 }

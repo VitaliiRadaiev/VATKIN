@@ -32,6 +32,12 @@
             display: flex;
             flex-direction: column;
         }
+
+        & > * {
+            &:empty {
+                display: none;
+            }
+        }
     }
 
     &__breadcrumbs {
@@ -259,6 +265,10 @@
 
         & strong {
             font-weight: 500;
+        }
+
+        & p {
+            margin-bottom: 0.8em;
         }
     }
 

@@ -1,5 +1,12 @@
 .painting-preview {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $md3+px) {
+        min-height: auto !important;
+    }
 
     &__wrap {
         padding: 10rem 0 11.5rem;
@@ -58,9 +65,13 @@
         transform: translate(-50%, -50%) translateZ(12rem) scale(0.7);
         z-index: 3;
         font-weight: 600;
-        font-size: 19rem;
+        font-size: 16rem;
         line-height: 1.4em;
         text-align: center;
+
+        @media (max-width: $md2+px) {
+            font-size: 14rem;
+        }
 
         @media (max-width: $md3+px) {
             display: none;

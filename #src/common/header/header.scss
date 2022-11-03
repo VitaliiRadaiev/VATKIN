@@ -6,6 +6,7 @@
     z-index: 47;
     background-color: #fff;
     transition: all 0.6s ease;
+    transform-style: preserve-3d;
 
     &__body {
         display: flex;
