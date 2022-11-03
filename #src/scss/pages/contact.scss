@@ -68,6 +68,33 @@
     }
 
     &__social {
+        & .footer__social {
+            padding-left: 0;
+            margin-bottom: 0;
+            display: flex;
+            gap: 2.3rem;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            justify-content: initial;
+            flex-direction: row !important;
+
+            & > li {
+                flex: 0 1 auto !important;
+                &:nth-child(3) {
+                    transform: translateY(0.03em);
+                }
+            }
+
+            & a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                &:hover {
+                    opacity: 0.5 !important;
+                }
+            }
+        }
     }
 
     &__img {

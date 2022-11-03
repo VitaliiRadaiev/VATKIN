@@ -35,6 +35,7 @@
 
         buttonsOpenMenu.forEach(btn => {
             btn.addEventListener('click', () => {
+                if(btn.classList.contains('top-line__burger--crosshair')) return;
                 menu.classList.add('menu--open');
                 document.documentElement.classList.add('overflow-hidden');
                 document.body.classList.add('menu-is-open');
@@ -47,6 +48,26 @@
                 document.documentElement.classList.remove('overflow-hidden');
                 document.body.classList.remove('menu-is-open');
             })
+        })
+    }
+
+    let headerBasket = document.querySelector('[data-header-basket]');
+    if(headerBasket) {
+        let previewIcon = headerBasket.querySelector('.basket__prview');
+        let burger = document.querySelector('.top-line__burger');
+
+        previewIcon.addEventListener('click', () => {
+            headerBasket.classList.toggle('basket--open');
+            burger.classList.toggle('top-line__burger--crosshair');
+            document.documentElement.classList.toggle('overflow-hidden');
+        })
+
+        burger.addEventListener('click', () => {
+            if(burger.classList.contains('top-line__burger--crosshair')) {
+                headerBasket.classList.remove('basket--open');
+                burger.classList.remove('top-line__burger--crosshair');
+                document.documentElement.classList.remove('overflow-hidden');
+            }
         })
     }
 }

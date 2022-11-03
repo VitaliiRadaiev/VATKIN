@@ -27,16 +27,34 @@
 
     &__burger {
         width: 3rem;
+        height: 3rem;
         padding: 0;
-        height: auto;
         background-color: transparent;
         border-radius: 0;
         outline: none;
         position: relative;
-        padding: 1rem 0;
+
 
         @media (max-width: $md2+px) {
             width: 2.8rem;
+        }
+
+        & > span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            display: block;
+            transition: all .3s ease;
+
+            &:nth-child(1) {
+                transform: translateY(-0.5rem);
+            }
+            &:nth-child(2) {
+                transform: translateY(0.5rem);
+            }
         }
 
         & img,
@@ -45,20 +63,15 @@
             height: auto;
         }
 
-        &-desk {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none;
-
-            @media (max-width: $md3+px) {
-                display: none;
+        &--crosshair {
+            & span {
+                &:nth-child(1) {
+                    transform: translateY(-50%) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    transform: translateY(-50%) rotate(-45deg);
+                }
             }
-        }
-        &-mob {
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
     }
 
@@ -502,18 +515,37 @@
     position: relative;
     padding: 2rem 0;
 
-    &:hover {
-        & .basket__prview {
-            & svg {
-                color: #000;
-                transition: fill .3s ease 0s;
+    @media (min-width: 992px) {
+        &:hover {
+            & .basket__prview {
+                & svg {
+                    color: #000;
+                    transition: fill .3s ease 0s;
+                }
+            }
+    
+            & .basket__dropdown {
+                opacity: 1;
+                visibility: visible;
+                transition: all .3s ease 0s;
             }
         }
+    }
 
-        & .basket__dropdown {
-            opacity: 1;
-            visibility: visible;
-            transition: all .3s ease 0s;
+    &--open {
+        @media (max-width: $md2+px) {
+            & .basket__prview {
+                & svg {
+                    color: #000;
+                    transition: fill .3s ease 0s;
+                }
+            }
+    
+            & .basket__dropdown {
+                opacity: 1;
+                visibility: visible;
+                transition: all .3s ease 0s;
+            }
         }
     }
 
@@ -557,10 +589,25 @@
         visibility: hidden;
 
         @media (max-width: $md2+px) {
-            right: calc((4rem + 2.8rem) * -1);
+            right: calc((4rem + 2.8rem + 30px) * -1);
+            width: 100vw;
+            max-width: none;
+            box-shadow: none;
+            transition: all .3s ease 0s;
+
+            &:before {
+                position: absolute;
+                content: '';
+                z-index: 1;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(#000, 0.4);
+            }
         }
-        @media (max-width: $md2+px) {
-            right: calc((2rem + 2.8rem) * -1);
+        @media (max-width: $md3+px) {
+            right: calc((2rem + 2.8rem + 20px) * -1);
         }
     }
 
@@ -628,7 +675,6 @@
         font-size: 2rem;
         line-height: 1.33em;
         margin-bottom: 2rem;
-        border-top: 1px solid #000;
         border-bottom: 1px solid #000;
     }
 
@@ -648,10 +694,6 @@
     gap: 2rem;
     position: relative;
 
-    @media (max-width: $md3+px) {
-        gap: 1rem;
-    }
-
     &__img-wrap {
         flex: 0 0 auto;
     }
@@ -666,7 +708,8 @@
         padding: 1rem;
 
         @media (max-width: $md3+px) {
-            width: 8rem;
+            width: 6.9rem;
+            height: 5.2rem;
         }
 
         & img {
@@ -688,7 +731,7 @@
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
-        padding-right: 2rem;
+       
     }
 
     &__title {
@@ -696,6 +739,7 @@
         font-weight: 600;
         font-size: 1.6rem;
         line-height: 1.33em;
+        padding-right: 2rem;
 
         & a {
             color: inherit !important;
@@ -709,12 +753,28 @@
         font-weight: 300;
         font-size: 1.2rem;
         line-height: 1.33em;
+        padding-right: 2rem;
+
+        @media (max-width: $md3+px) {
+            & > li {
+                &:last-child {
+                    padding-right: 50px;
+                }
+            }
+        }
     }
 
     &__price {
         font-weight: 600;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         line-height: 1.33em;
+        padding-right: 2rem;
+
+        @media (max-width: $md3+px) {
+            text-align: right;
+            margin-top: -1.5em;
+            padding-right: 0;
+        }
     }
 
     &__close {

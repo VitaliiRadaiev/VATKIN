@@ -58,14 +58,33 @@
     }
 
     &__bottom {
+        font-family: $titleFontFamily;
+    }
+
+    &__bottom-title {
         font-size: 2.2rem;
         line-height: 1.09em;
         letter-spacing: 0.01em;
-        margin-bottom: 8rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
 
         @media (max-width: $md3+px) {
             font-size: 16px;
-            margin-bottom: 4rem;
+        }
+    }
+
+    &__bottom-social {
+        & .footer__social {
+            justify-content: center;
+            gap: 1rem 3rem !important;
+
+            @media (max-width: $md3+px) {
+                line-height: 1.4em ;
+            }
+
+            & > li {
+                flex: 0 1 auto;
+            }
         }
     }
 

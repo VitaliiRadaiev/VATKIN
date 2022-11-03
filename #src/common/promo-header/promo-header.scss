@@ -290,11 +290,12 @@
                 max-height: 300px;
             }
         }
+    }
 
+    &__bottom-hover {
+        display: none;
         @media (min-width: 768px) {
-            &:before {
                 position: absolute;
-                content: "series";
                 top: calc(100% + 1.8rem);
                 left: 0;
                 width: 100%;
@@ -304,7 +305,8 @@
                 font-weight: 400;
                 transition: all .3s ease;
                 opacity: 0;
-            }
+                display: block;
+            
         }
     }
 
@@ -323,14 +325,6 @@
 
         &-main {
             transition: all 0.3s ease;
-        }
-        &-hover {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: all 0.3s ease;
-            opacity: 0;
         }
     }
 
