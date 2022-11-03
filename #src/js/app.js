@@ -402,6 +402,7 @@ class App {
 		@@include('../common/messenger/messenger.js');
 		@@include('../common/quantity/quantity.js');
 		@@include('../common/painting-preview/painting-preview.js');
+		@@include('../common/wallet-code/wallet-code.js');
 	}
 
 	componentsAfterLoad() {

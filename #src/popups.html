@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "Vatkin"
+})
+
+<body>
+    <div class="_preload-body"></div>
+    <!-- == TOP LINE ================== -->
+    <div class="main-wrapper">
+        @@include('common/header/_header.html',{
+        "mod": "",
+        "styles": ""
+        })
+        <!-- == // TOP LINE ================== -->
+        <!-- data-padding-top-header-size -->
+
+        <main class="_page thank-you-page">
+            <div data-padding-top-header-size></div>
+
+            <div class="container-sm">
+                <div class="text-content">
+                    <ul>
+                        <li>
+                            <a href="#confirm" data-popup="open-popup">Confirm Payment</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+
+        @@include('common/popup/_popup-confirm.html')
+
+    </div>
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>

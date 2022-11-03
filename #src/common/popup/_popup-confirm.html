@@ -1,0 +1,43 @@
+<div class="popup" id="confirm">
+    <!-- Можно так же открыть/закрыть попап с помощью js методов, которые в глобальной видимости
+    window.popup.open('#confirm');
+    window.popup.close('#confirm');
+    -->
+    <div class="popup__close cursor-hover" data-popup="close-popup"><span></span></div>
+    <div class="popup__body">
+        <div class="popup__content">
+            <form action="/">
+                <div class="confirm">
+                    <h3 class="confirm__title">Confrim payment</h3>
+                    <div class="confirm__text">
+                        USDT TRC-20 <br>
+                        the crypto wallet for your withdrawal
+                    </div>
+                    <div class="confirm__img">
+                        <img src="img/photo/qr.png" alt="">
+                    </div>
+                    <div class="confirm__text">Send 1,200 USDT (in ONE payment) to:</div>
+                    <div class="confirm__wallet wallet-code" data-wallet-code>
+                        <div class="wallet-code__code">TDRL4k2eyMvuzoVkBPrdNTSfYdjkz4HmLh</div>
+                        <button type="button" class="wallet-code__copy" data-text="Copied">
+                            <img src="img/icons/copy.svg" alt="">
+                        </button>
+                        <a href="#" class="wallet-code__link">
+                            <img src="img/icons/link.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="confirm__checkbox">
+                        <label class="checkbox-radio">
+                            <input type="checkbox">
+                            <div class="checkbox-radio__square"></div>
+                            <div class="checkbox-radio__text">I've just dropped money into the specified wallet</div>
+                        </label>
+                    </div>
+                    <div class="confirm__button-wrap">
+                        <button class="confirm__submit btn-default">confirm payment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

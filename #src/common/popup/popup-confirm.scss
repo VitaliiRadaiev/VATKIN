@@ -1,0 +1,52 @@
+.confirm {
+    font-family: $mainFontFamily;
+    & > * {
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    &__title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 2.4rem;
+        line-height: 1.33em;
+        font-family: $mainFontFamily;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.33em;
+    }
+
+    &__img {
+        height: 15.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__wallet {
+        margin-bottom: 2rem !important;
+    }
+
+    &__checkbox {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__button-wrap {
+        text-align: center;
+    }
+
+    &__submit {
+        min-width: 25rem;
+    }
+}
