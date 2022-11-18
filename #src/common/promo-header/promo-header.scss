@@ -87,7 +87,7 @@
                     display: none;
                 }
                 & [data-action="slide-next"] {
-                    opacity: 0;
+                    display: none;
                 }
             }
         }
@@ -338,7 +338,7 @@
         pointer-events: none;
         font-weight: 600;
         font-size: 19rem;
-        line-height: 1.4em;
+        line-height: 1.1em;
         transition: all 0.6s ease;
         overflow-wrap: break-word;
         opacity: 0;

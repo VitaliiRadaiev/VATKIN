@@ -95,30 +95,6 @@
     }
 }
 
-// .main-logo {
-//     top: 3rem;
-//     position: fixed;
-//     left: 51%;
-//     transform: translate(-50%, 0%);
-//     width: 100%;
-//     max-width: 16.4rem;
-//     z-index: 50;
-//     transition: all 0.6s ease;
-
-//     @media (max-width: $md2+px) {
-//         left: 2rem;
-//         top: 2rem;
-//         max-width: 11.5rem;
-//         transform: translate(0);
-//     }
-
-//     & img,
-//     & svg {
-//         width: 100%;
-//         height: auto;
-//     }
-// }
-
 .menu {
     position: fixed;
     top: 0;
@@ -356,7 +332,7 @@
         @media (max-width: $md2+px) {
             font-size: 3.4rem;
             line-height: 1.33em;
-            margin-bottom: 2rem;
+            margin-bottom: 0rem;
             min-width: 14.8rem;
         }
 
@@ -511,7 +487,16 @@
         }
     }
 }
+html[lang="uk"] {
+    & .menu__title {
+        white-space: nowrap;
+        font-size: 4rem;
 
+        @media (max-width: $md2+px) {
+            font-size: 2.4rem;
+        }
+    }
+}
 .basket {
     position: relative;
     padding: 2rem 0;
@@ -629,7 +614,7 @@
         margin-bottom: 0;
         overflow-y: auto;
         overflow-x: hidden;
-        max-height: 35rem;
+        max-height: 37rem;
         margin-right: -1rem;
         padding-right: 1rem;
         position: relative;

@@ -559,7 +559,7 @@ defer
                                     </li>
                                     <li>
                                         <label class="checkbox-radio checkbox-radio--md" data-spoller-trigger>
-                                            <input type="radio" name="payment" checked>
+                                            <input id="invoice" type="radio" name="payment">
                                             <div class="checkbox-radio__circle"></div>
                                             <div class="checkbox-radio__text">Invoice</div>
                                         </label>
@@ -580,6 +580,16 @@ defer
                                             </div>
                                         </div>
                                     </li>
+                                    <script>
+                                        let radio = document.querySelector('#invoice');
+                                        if(radio) {
+                                            setTimeout(() => {
+                                                radio.checked = true;
+    
+                                            }, 1000)
+                                        }
+                                    </script>
+
                                     <li>
                                         <label class="checkbox-radio checkbox-radio--md" data-spoller-trigger>
                                             <input type="radio" name="payment">

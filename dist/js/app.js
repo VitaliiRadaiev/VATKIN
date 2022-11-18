@@ -949,26 +949,47 @@ window.popup = {
 		let radioSpollers = document.querySelectorAll('[data-spoller-radio]');
 		if (radioSpollers.length) {
 			radioSpollers.forEach(radioSpoller => {
-				console.log(radioSpoller);
 				let triggers = radioSpoller.querySelectorAll('[data-spoller-trigger]');
 				if (triggers.length) {
 					// init
-					triggers.forEach(trigger => {
-						let parent = trigger.parentElement;
-						let input = trigger.querySelector('input');
-						let collapseContent = trigger.nextElementSibling;
+					let init = () => {
+						triggers.forEach(trigger => {
+							let parent = trigger.parentElement;
+							let input = trigger.querySelector('input');
+							let collapseContent = trigger.nextElementSibling;
+	
+	
+								if (input.checked) {
+									parent.classList.add('active');
+									trigger.classList.add('active');
+									collapseContent && this.utils.slideDown(collapseContent, 300);
+								}
+						})
+					}
+					init();
 
-						if (input.checked) {
-							parent.classList.add('active');
-							trigger.classList.add('active');
-							collapseContent && this.utils.slideDown(collapseContent, 300);
+					let recursion = () => {
+						let result = Array.from(triggers).some(trigger => {
+							let input = trigger.querySelector('input');
+							
+							if(input.checked) {
+								init();
+								return true;
+							} else {
+								return false;
+							}
+						})
+
+						if(result) {
+							return;
 						} else {
-							parent.classList.remove('active');
-							trigger.classList.remove('active');
-							collapseContent && this.utils.slideUp(collapseContent, 300);
+							setTimeout(() => {
+								recursion();
+							}, 100)
 						}
-					})
+					}
 
+					recursion();
 
 					triggers.forEach(trigger => {
 						let input = trigger.querySelector('input');

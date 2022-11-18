@@ -25,6 +25,10 @@
         margin-left: 0;
 	}
 
+    &.card__btn--added::after {
+        transform: translate(0) !important;
+    }
+
     @media (min-width: 992px) {
         &:hover {
             &:after {
