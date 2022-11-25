@@ -1,6 +1,6 @@
 .busket {
     padding-top: 4rem;
-    padding-bottom: 12rem;
+    padding-bottom: 4rem;
 
     @media (max-width: $md3+px) {
         padding: 40px 0;
@@ -126,12 +126,16 @@
             & > * {
                 @media (min-width: 992px) {
                     &:nth-child(1) {
-                        flex: 0 0 15rem;
-                        margin-left: auto;
+                        flex: 0 0 auto;
+                        margin-right: auto;
                     }
                     &:nth-child(2) {
-                        flex: 0 0 19.5rem;
+                        flex: 1 1 auto;
                         text-align: right;
+
+                        & br {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -160,8 +164,8 @@
         & > * {
             @media (min-width: 992px) {
                 &:nth-child(1) {
-                    flex: 0 0 15rem;
-                    margin-left: auto;
+                    flex: 0 0 auto;
+                    margin-right: auto;
                 }
                 &:nth-child(2) {
                     flex: 0 0 19.5rem;
@@ -396,7 +400,7 @@
         }
     }
 
-    &__close {
+    &__close, & .basket-card__close {
         position: absolute;
         top: 0.8rem;
         right: 0;

@@ -88,6 +88,8 @@
         line-height: 1.78em;
         margin-left: auto;
         margin-right: auto;
+        display: flex;
+        align-items: center;
 
         @media (max-width: $md2+px) {
             flex: 0 1 100%;
@@ -122,11 +124,48 @@
                 }
             
         }
+
+        @media (min-width: 768px) {
+            & .footer__payment-cards {
+                padding-left: 1.8rem;
+                position: relative;
+                margin-left: 1.8rem;
+    
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    left: 0;
+                    width: 1px;
+                    height: 2.6rem;
+                    transform: translateY(-50%);
+                    background-color: #000;
+                }
+            }
+        }
+
+    }
+
+    &__payment-cards {
+        margin-right: auto;
+        display: flex;
+        gap: 1.6rem;
+
+
+        & > * {
+            flex: 0 0 auto;
+        }
+
+        & img {
+            height: 1.8rem;
+            width: auto;
+            display: block;
+        }
     }
 
     &__language {
-        margin-left: auto;
         display: flex;
+        flex: 0 0 auto;
 
         @media (max-width: $md3+px) {
             flex: 0 1 calc(50% - 0.5rem);
@@ -136,8 +175,8 @@
     }
 
     &__currency {
-        margin-right: auto;
         display: flex;
+        flex: 0 0 auto;
         @media (max-width: $md3+px) {
             flex: 0 1 calc(50% - 0.5rem);
             margin-right: 0;
@@ -149,6 +188,7 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+        margin-left: auto;
 
         @media (max-width: $md3+px) {
             order: 4;
