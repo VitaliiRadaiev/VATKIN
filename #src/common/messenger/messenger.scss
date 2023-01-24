@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 48;
     right: 6rem;
-    bottom: 4rem;
+    bottom: 8rem;
     color: $titlceColor;
     transition: all 0.3s ease;
     opacity: 1;
@@ -10,7 +10,7 @@
 
     @media (max-width: $md1+px) {
         right: 4rem;
-        bottom: 4rem;
+        bottom: 8rem;
     }
     @media (max-width: $md2+px) {
         right: 3rem;

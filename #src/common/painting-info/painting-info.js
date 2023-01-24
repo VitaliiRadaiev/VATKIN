@@ -3,10 +3,10 @@
     if(paintingInfoSlider) {
         let sliderData = new Swiper(paintingInfoSlider.querySelector('.swiper'), {
             effect: 'fade',
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
             observer: true,
             observeParents: true,
             slidesPerView: 1,

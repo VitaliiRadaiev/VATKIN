@@ -401,6 +401,11 @@ figure {
 	}
 }
 
+[disabled], .disabled {
+	pointer-events: none;
+	opacity: 0.4;
+}
+
 @keyframes upDown {
 	0% {
 		transform: translateY(-10%);

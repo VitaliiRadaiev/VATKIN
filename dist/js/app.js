@@ -377,6 +377,7 @@ class App {
 			this.spollerInit();
 			this.initScrollParallax();
 			this.spollerRadioInit();
+			this.checkboxPoliticsValidate();
 		});
 
 
@@ -527,6 +528,17 @@ class App {
         let previewIcon = headerBasket.querySelector('.basket__prview');
         let burger = document.querySelector('.top-line__burger');
 
+        headerBasket.addEventListener('mouseenter', () => {
+            if(document.documentElement.clientWidth >= 992) {
+                headerBasket.classList.add('basket--open');
+            }
+        })
+        headerBasket.addEventListener('mouseleave', () => {
+            if(document.documentElement.clientWidth >= 992) {
+                headerBasket.classList.remove('basket--open');
+            }
+        })
+
         previewIcon.addEventListener('click', () => {
             headerBasket.classList.toggle('basket--open');
             burger.classList.toggle('top-line__burger--crosshair');
@@ -540,6 +552,30 @@ class App {
                 document.documentElement.classList.remove('overflow-hidden');
             }
         })
+
+        window.headerBasket = {
+            open: () => {
+                header.classList.remove('header--hide');
+                document.body.classList.remove('logo-is-hide');
+                if(document.documentElement.clientWidth >= 992) {
+                    headerBasket.classList.add('basket--open');
+                } else {
+                    headerBasket.classList.add('basket--open');
+                    burger.classList.add('top-line__burger--crosshair');
+                    document.documentElement.classList.add('overflow-hidden');
+                }
+            },
+
+            close: () => {
+                if(document.documentElement.clientWidth >= 992) {
+                    headerBasket.classList.remove('basket--open');
+                } else {
+                    headerBasket.classList.remove('basket--open');
+                    burger.classList.remove('top-line__burger--crosshair');
+                    document.documentElement.classList.remove('overflow-hidden');
+                }
+            }
+        }
     }
 };
 	}
@@ -790,10 +826,10 @@ window.popup = {
     if(paintingInfoSlider) {
         let sliderData = new Swiper(paintingInfoSlider.querySelector('.swiper'), {
             effect: 'fade',
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -1336,6 +1372,32 @@ window.popup = {
 				setFontSize();
 
 				window.addEventListener('resize', setFontSize);
+			})
+		}
+	}
+
+	checkboxPoliticsValidate() {
+		let politicsCheckboxAll = document.querySelectorAll('[data-confirm-checkbox]');
+		if(politicsCheckboxAll.length) {
+			politicsCheckboxAll.forEach(politicsCheckbox => {
+				let form = politicsCheckbox.closest('form');
+				
+				
+				form.addEventListener('click', (e) => {
+					if(e.target.closest('.checkbox-radio')) {
+						let input = e.target.closest('.checkbox-radio').querySelector('input[data-confirm-checkbox]');
+						if(input) {
+							let button = form.querySelector('button[type="submit"');
+							if(input.checked) {
+								button.removeAttribute('disabled');
+								button.classList.remove('disabled');
+							} else {
+								button.setAttribute('disabled', 'true');
+								button.classList.add('disabled');
+							}
+						}
+					}
+				})
 			})
 		}
 	}
@@ -1919,6 +1981,10 @@ if ($cookieEl) {
     let messenger = document.querySelector('[data-messenger]');
     if(messenger) {
         let footer = document.querySelector('.main-wrapper > .footer');
+
+        if(!footer) {
+            footer = document.querySelector('body > .footer');
+        }
 
         const toggleLightMode = () => {
             let x = messenger.offsetLeft;

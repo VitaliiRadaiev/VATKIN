@@ -3,6 +3,10 @@
     if(messenger) {
         let footer = document.querySelector('.main-wrapper > .footer');
 
+        if(!footer) {
+            footer = document.querySelector('body > .footer');
+        }
+
         const toggleLightMode = () => {
             let x = messenger.offsetLeft;
             let y = messenger.offsetTop;

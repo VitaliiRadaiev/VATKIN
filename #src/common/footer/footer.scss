@@ -16,6 +16,7 @@
         min-height: 6rem;
         font-family: var(--titleFontFamily);
         padding: 1rem 0;
+        position: relative;
 
         @media (max-width: $md2+px) {
             flex-wrap: wrap;
@@ -30,6 +31,7 @@
     &__copy {
         font-size: 1.2rem;
         line-height: 1.25em;
+        margin-right: auto;
 
         @media (max-width: $md3+px) {
             font-weight: 300;
@@ -91,7 +93,19 @@
         display: flex;
         align-items: center;
 
+        @media (min-width: 1268px) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: $md1+px) {
+            font-size: 1.6rem;
+        }
+
         @media (max-width: $md2+px) {
+            font-size: 1.8rem;
             flex: 0 1 100%;
             order: -1;
             justify-content: space-between;
@@ -122,7 +136,14 @@
                     color: $titlceColor;
                     text-decoration: underline;
                 }
-            
+                
+
+        }
+
+        & > a {
+            & ~ a {
+                margin-left: 0.5rem;
+            }
         }
 
         @media (min-width: 768px) {
@@ -189,6 +210,11 @@
         align-items: center;
         gap: 2rem;
         margin-left: auto;
+
+        @media (min-width: 1268px) {
+            margin-left: 4%;
+            flex: 0 0 auto
+        }
 
         @media (max-width: $md3+px) {
             order: 4;

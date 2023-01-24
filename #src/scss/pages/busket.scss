@@ -1,6 +1,6 @@
 .busket {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     @media (max-width: $md3+px) {
         padding: 40px 0;
@@ -10,7 +10,7 @@
         font-weight: 700;
         font-size: 2.4rem;
         line-height: 1.33em;
-        margin-bottom: 2.4rem;
+        margin-bottom: 2rem;
 
         @media (max-width: $md3+px) {
             font-size: 2rem;
@@ -79,7 +79,7 @@
     &__list-bottom {
         border-bottom: 1px solid #000;
         padding-bottom: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
 
         @media (max-width: $md3+px) {
             margin-bottom: 2rem;
@@ -209,6 +209,33 @@
     &__btn {
         @media (max-width: $md4+px) {
             width: 100%;
+        }
+    }
+}
+
+.woocommerce-cart-form .busket__list {
+    @media (min-width: 992px) {
+        max-height: 29.3rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 0.5rem;
+        margin-right: -0.5rem;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #4e4e4e;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
+        &::-webkit-scrollbar-track {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 0px 0px #fff;
         }
     }
 }

@@ -1,6 +1,27 @@
+.product-page {
+    & .painting-info__slider .swiper-slide:first-child {
+        background-color: transparent;
+        padding: 0 !important;
+    }
+
+    & .painting-info__slider .swiper-slide img {
+        box-shadow: none !important;
+    }
+}
+
 .product {
-    padding-top: 10.5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @media (min-width: 992px) {
+        &:first-child {
+            padding-top: 2rem;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
 
     @media (max-width: $md3+px) {
         padding: 40px 0 0;
@@ -37,6 +58,9 @@
 
     & .painting-info__slider {
         & .swiper-slide {
+            @media (min-width: 992px) and (max-height: 792px) {
+                height: 46rem;
+            }
             @media (max-width: $md3+px) {
                 height: 35rem;
                 

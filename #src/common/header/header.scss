@@ -35,7 +35,6 @@
         outline: none;
         position: relative;
 
-
         @media (max-width: $md2+px) {
             width: 2.8rem;
         }
@@ -48,7 +47,7 @@
             height: 1px;
             background-color: #000;
             display: block;
-            transition: all .3s ease;
+            transition: all 0.3s ease;
 
             &:nth-child(1) {
                 transform: translateY(-0.5rem);
@@ -501,37 +500,18 @@ html[lang="uk"] {
     position: relative;
     padding: 2rem 0;
 
-    @media (min-width: 992px) {
-        &:hover {
-            & .basket__prview {
-                & svg {
-                    color: #000;
-                    transition: fill .3s ease 0s;
-                }
-            }
-    
-            & .basket__dropdown {
-                opacity: 1;
-                visibility: visible;
-                transition: all .3s ease 0s;
+    &--open {
+        & .basket__prview {
+            & svg {
+                color: #000;
+                transition: fill 0.3s ease 0s;
             }
         }
-    }
 
-    &--open {
-        @media (max-width: $md2+px) {
-            & .basket__prview {
-                & svg {
-                    color: #000;
-                    transition: fill .3s ease 0s;
-                }
-            }
-    
-            & .basket__dropdown {
-                opacity: 1;
-                visibility: visible;
-                transition: all .3s ease 0s;
-            }
+        & .basket__dropdown {
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.3s ease 0s;
         }
     }
 
@@ -552,7 +532,7 @@ html[lang="uk"] {
             margin-right: 0.4em;
             display: inline-block;
             transform: translateY(-0.1em);
-            transition: all .3s ease 0.2s;
+            transition: all 0.3s ease 0.2s;
             color: #fff;
 
             & rect {
@@ -570,7 +550,7 @@ html[lang="uk"] {
         max-width: calc(100vw - 40px);
         box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.16);
         padding: 2rem;
-        transition: all .3s ease 0.2s;
+        transition: all 0.3s ease 0.2s;
         opacity: 0;
         visibility: hidden;
 
@@ -579,11 +559,11 @@ html[lang="uk"] {
             width: 100vw;
             max-width: none;
             box-shadow: none;
-            transition: all .3s ease 0s;
+            transition: all 0.3s ease 0s;
 
             &:before {
                 position: absolute;
-                content: '';
+                content: "";
                 z-index: 1;
                 top: 100%;
                 left: 0;
@@ -640,7 +620,6 @@ html[lang="uk"] {
             border-radius: 10px;
             box-shadow: inset 0px 0px 0px 0px #fff;
         }
-    
 
         & > li {
             &:not(:first-child) {
@@ -717,11 +696,9 @@ html[lang="uk"] {
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
-       
     }
 
     &__title {
-        font-family: $titleFontFamily;
         font-weight: 600;
         font-size: 1.6rem;
         line-height: 1.33em;
@@ -777,7 +754,7 @@ html[lang="uk"] {
             display: block;
             &:before {
                 position: absolute;
-                content: '';
+                content: "";
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
@@ -787,7 +764,7 @@ html[lang="uk"] {
             }
             &:after {
                 position: absolute;
-                content: '';
+                content: "";
                 top: 50%;
                 left: 0;
                 transform: translateY(-50%);

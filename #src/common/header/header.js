@@ -56,6 +56,17 @@
         let previewIcon = headerBasket.querySelector('.basket__prview');
         let burger = document.querySelector('.top-line__burger');
 
+        headerBasket.addEventListener('mouseenter', () => {
+            if(document.documentElement.clientWidth >= 992) {
+                headerBasket.classList.add('basket--open');
+            }
+        })
+        headerBasket.addEventListener('mouseleave', () => {
+            if(document.documentElement.clientWidth >= 992) {
+                headerBasket.classList.remove('basket--open');
+            }
+        })
+
         previewIcon.addEventListener('click', () => {
             headerBasket.classList.toggle('basket--open');
             burger.classList.toggle('top-line__burger--crosshair');
@@ -69,5 +80,29 @@
                 document.documentElement.classList.remove('overflow-hidden');
             }
         })
+
+        window.headerBasket = {
+            open: () => {
+                header.classList.remove('header--hide');
+                document.body.classList.remove('logo-is-hide');
+                if(document.documentElement.clientWidth >= 992) {
+                    headerBasket.classList.add('basket--open');
+                } else {
+                    headerBasket.classList.add('basket--open');
+                    burger.classList.add('top-line__burger--crosshair');
+                    document.documentElement.classList.add('overflow-hidden');
+                }
+            },
+
+            close: () => {
+                if(document.documentElement.clientWidth >= 992) {
+                    headerBasket.classList.remove('basket--open');
+                } else {
+                    headerBasket.classList.remove('basket--open');
+                    burger.classList.remove('top-line__burger--crosshair');
+                    document.documentElement.classList.remove('overflow-hidden');
+                }
+            }
+        }
     }
 }

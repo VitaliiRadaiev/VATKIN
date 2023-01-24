@@ -35,6 +35,7 @@ class App {
 			this.spollerInit();
 			this.initScrollParallax();
 			this.spollerRadioInit();
+			this.checkboxPoliticsValidate();
 		});
 
 
@@ -408,6 +409,32 @@ class App {
 				setFontSize();
 
 				window.addEventListener('resize', setFontSize);
+			})
+		}
+	}
+
+	checkboxPoliticsValidate() {
+		let politicsCheckboxAll = document.querySelectorAll('[data-confirm-checkbox]');
+		if(politicsCheckboxAll.length) {
+			politicsCheckboxAll.forEach(politicsCheckbox => {
+				let form = politicsCheckbox.closest('form');
+				
+				
+				form.addEventListener('click', (e) => {
+					if(e.target.closest('.checkbox-radio')) {
+						let input = e.target.closest('.checkbox-radio').querySelector('input[data-confirm-checkbox]');
+						if(input) {
+							let button = form.querySelector('button[type="submit"');
+							if(input.checked) {
+								button.removeAttribute('disabled');
+								button.classList.remove('disabled');
+							} else {
+								button.setAttribute('disabled', 'true');
+								button.classList.add('disabled');
+							}
+						}
+					}
+				})
 			})
 		}
 	}
