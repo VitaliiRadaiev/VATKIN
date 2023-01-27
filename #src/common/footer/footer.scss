@@ -86,7 +86,7 @@
         padding-left: 0;
         margin-bottom: 0;
         font-weight: 300;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         line-height: 1.78em;
         margin-left: auto;
         margin-right: auto;
@@ -100,12 +100,9 @@
             transform: translate(-50%, -50%);
         }
 
-        @media (max-width: $md1+px) {
-            font-size: 1.6rem;
-        }
 
         @media (max-width: $md2+px) {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             flex: 0 1 100%;
             order: -1;
             justify-content: space-between;

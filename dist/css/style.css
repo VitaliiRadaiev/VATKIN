@@ -2888,7 +2888,7 @@ html[lang=uk] .menu__title {
   padding-left: 0;
   margin-bottom: 0;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   line-height: 1.78em;
   margin-left: auto;
   margin-right: auto;
@@ -3313,7 +3313,7 @@ html[lang=uk] .menu__title {
           align-items: center;
   background: #f0f0f0;
   overflow: hidden;
-  padding: 5rem;
+  padding: 2.5rem;
   z-index: 1;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -3349,7 +3349,7 @@ html[lang=uk] .menu__title {
           align-items: center;
   background: #f0f0f0;
   overflow: hidden;
-  padding: 5rem;
+  padding: 2.5rem;
   z-index: 2;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -3398,6 +3398,10 @@ html[lang=uk] .menu__title {
   margin-bottom: 2rem;
 }
 
+.card__price ins {
+  text-decoration: none;
+}
+
 .card__btn {
   margin-top: auto;
   font-weight: 600;
@@ -3432,8 +3436,14 @@ html[lang=uk] .menu__title {
   display: none;
 }
 
-.card--t-shirt:not(.img-with-shadow) .card__img-wrap img,
-.card--t-shirt:not(.img-with-shadow) .card__img-hover-wrap img {
+.card--img-full-cover .card__img-wrap,
+.card--img-full-cover .card__img-hover-wrap {
+  padding: 0;
+  background-color: #fff;
+}
+
+.card--img-full-cover .card__img-wrap img,
+.card--img-full-cover .card__img-hover-wrap img {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -3877,6 +3887,10 @@ html[lang=uk] .menu__title {
   font-size: 1.4rem;
   line-height: 1.33em;
   bottom: 0;
+}
+
+.painting-info__price ins {
+  text-decoration: none;
 }
 
 .painting-info__bottom-buttons {
@@ -6739,11 +6753,6 @@ html[lang=uk] .menu__title {
     display: none;
   }
 
-  .card--t-shirt .card__img-wrap,
-  .card--t-shirt .card__img-hover-wrap {
-    padding: 2.5rem;
-  }
-
   .series__anchor {
     display: none;
   }
@@ -7778,10 +7787,6 @@ html[lang=uk] .menu__title {
     width: calc(100% - 60px);
   }
 
-  .footer__links {
-    font-size: 1.6rem;
-  }
-
   .promo-header-card__title {
     font-size: 14rem;
   }
@@ -8003,7 +8008,7 @@ html[lang=uk] .menu__title {
   }
 
   .footer__links {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;

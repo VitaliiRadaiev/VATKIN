@@ -51,7 +51,7 @@
         align-items: center;
         background: #f0f0f0;
         overflow: hidden;
-        padding: 5rem;
+        padding: 2.5rem;
         z-index: 1;
         transition: all .3s ease;
 
@@ -80,7 +80,7 @@
         align-items: center;
         background: #f0f0f0;
         overflow: hidden;
-        padding: 5rem;
+        padding: 2.5rem;
         z-index: 2;
         transition: all .3s ease;
         opacity: 0;
@@ -143,6 +143,10 @@
         @media (max-width: $md3+px) {
             font-size: 14px;
         }
+
+        & ins {
+            text-decoration: none;
+        }
     }
 
     &__btn {
@@ -180,17 +184,13 @@
         display: none;
     }
 
-    &--t-shirt {
+    &--img-full-cover {
         & .card__img-wrap, & .card__img-hover-wrap {
-            @media (min-width: 768px) {
-                padding: 2.5rem;
-            }
-        }
-
-        &:not(.img-with-shadow) {
-            & .card__img-wrap img, & .card__img-hover-wrap img {
-                box-shadow: none;
-            }
+                padding: 0;
+                background-color: #fff;
+                & img {
+                    box-shadow: none;
+                }
         }
     }
 }

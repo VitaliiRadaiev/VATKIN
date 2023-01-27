@@ -331,6 +331,10 @@
             line-height: 1.33em;
             bottom: 0;
         }
+
+        & ins {
+            text-decoration: none;
+        }
     }
 
     &__bottom-buttons {
