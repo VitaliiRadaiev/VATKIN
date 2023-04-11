@@ -380,10 +380,26 @@
 
         & a {
             opacity: 1 !important;
+            position: relative;
+            
             @media (min-width: 992px) {
+                color: transparent;
+                &:after {
+                    position: absolute;
+                    content: attr(data-text);
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    transition: all .3s ease;
+                    color: $textColor;
+                    white-space: nowrap;
+                }
+
                 &:hover {
-                    font-weight: 600;
-                    text-decoration: underline;
+                    &::after {
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
                 }
             }
         }

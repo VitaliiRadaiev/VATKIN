@@ -2490,6 +2490,7 @@ i {
 
 .menu__list a {
   opacity: 1 !important;
+  position: relative;
 }
 
 .menu__language {
@@ -7416,7 +7417,24 @@ html[lang=uk] .menu__title {
     z-index: 4;
   }
 
-  .menu__list a:hover {
+  .menu__list a {
+    color: transparent;
+  }
+
+  .menu__list a:after {
+    position: absolute;
+    content: attr(data-text);
+    top: 0;
+    left: 0;
+    height: 100%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .menu__list a:hover::after {
     font-weight: 600;
     text-decoration: underline;
   }
